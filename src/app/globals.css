@@ -2,26 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .prose p {
+    @apply my-4;
+    margin: revert;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  .prose strong {
+    @apply font-bold;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .prose em {
+    @apply italic;
+  }
+
+  .prose u {
+    @apply underline;
+  }
+
+  .prose s {
+    @apply line-through;
+  }
+
+  .prose code {
+    @apply font-mono bg-gray-100 px-2 py-1 rounded;
+  }
+
+  .prose a {
+    @apply text-blue-600 underline;
+  }
+
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-gray-300;
+    margin: revert;
+  }
+
+  .prose hr {
+    @apply border-0 border-t border-gray-300;
+    margin: revert;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply pl-8;
+    margin: revert;
+    color: #000;
+  }
+
+  .prose table {
+    @apply w-full border-collapse;
+  }
+
+  .prose th,
+  .prose td {
+    @apply border border-gray-300 px-2 py-2 text-left;
+  }
+
+  .prose iframe {
+    @apply border-none;
+  }
+
+  .prose p[style*="text-align: center"] {
+    @apply text-center;
   }
 }
