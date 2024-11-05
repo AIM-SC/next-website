@@ -1,24 +1,8 @@
-// libs/microcms.ts
-
+import { ArticleType } from "@/types/microcms";
 import { createClient } from "microcms-js-sdk";
 import type {
   MicroCMSQueries,
-  MicroCMSImage,
-  MicroCMSDate,
 } from "microcms-js-sdk";
-
-export type Tag = {
-    title: string
-}
-
-//お知らせ・ブログの型定義
-export type Article = {
-  id: string;
-  title: string;
-  body: string;
-  tags: Tag[];
-  thumbnail: MicroCMSImage;
-} & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error("MICROCMS_SERVICE_DOMAIN is required");
@@ -36,13 +20,10 @@ export const client = createClient({
 
 // お知らせ一覧を取得
 export const getInfoList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Article>({
+  const listData = await client.getList<ArticleType>({
     endpoint: "posts",
     queries,
   });
-
-  // データの取得が目視しやすいよう明示的に遅延効果を追加
-  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return listData;
 };
@@ -53,7 +34,7 @@ export const getInfoDetail = async (
   queries?: MicroCMSQueries
 ) => {
   try {
-    const detailData = await client.get<Article>({
+    const detailData = await client.get<ArticleType>({
       endpoint: "posts",
       contentId,
       queries,
@@ -75,15 +56,12 @@ export const getInfoDetail = async (
 
 // ブログ一覧を取得
 export const getBlogList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Article>({
+  const listData = await client.getList<ArticleType>({
     endpoint: "techblogs",
     queries,
   });
 
   console.log(listData)
-
-  // データの取得が目視しやすいよう明示的に遅延効果を追加
-  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return listData;
 };
@@ -94,7 +72,7 @@ export const getBlogDetail = async (
   queries?: MicroCMSQueries
 ) => {
   try {
-    const detailData = await client.get<Article>({
+    const detailData = await client.get<ArticleType>({
       endpoint: "techblogs",
       contentId,
       queries,
