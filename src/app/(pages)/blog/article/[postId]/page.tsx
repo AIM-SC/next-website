@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getBlogDetail, getBlogList } from "../../../../../../libs/microcms";
+import { getBlogDetail, getBlogList } from "../../../../../libs/microcms";
 import Article from "@/app/components/article";
 
 export async function generateStaticParams() {

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Articlelist from "@/app/components/articlelist";
-import { LIMIT } from "../../../../../libs/constants";
-import { getBlogList } from "../../../../../libs/microcms";
+import { LIMIT } from "../../../../libs/constants";
+import { getBlogList } from "../../../../libs/microcms";
 
 export async function generateStaticParams() {
 
@@ -20,6 +20,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Blog({ params }: { params: { pageId: string } }) {
+  console.log(params.pageId)
   const currentPage = parseInt(params.pageId, 10);
 
   const articlesListQueries = {

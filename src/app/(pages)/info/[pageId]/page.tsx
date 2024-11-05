@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Articlelist from "@/app/components/articlelist";
-import { LIMIT } from "../../../../../libs/constants";
-import { getInfoList } from "../../../../../libs/microcms";
+import { LIMIT } from "../../../../libs/constants";
+import { getInfoList } from "../../../../libs/microcms";
 
 export async function generateStaticParams() {
 

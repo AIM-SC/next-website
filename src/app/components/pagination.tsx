@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LIMIT } from "../../../libs/constants";
+import { LIMIT } from "../../libs/constants";
 
 export const Pagination = ({
   totalCount,
