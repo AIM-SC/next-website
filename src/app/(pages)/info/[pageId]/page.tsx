@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Articlelist from "@/app/components/articlelist";
-import { LIMIT } from "../../../../libs/constants";
-import { getInfoList } from "../../../../libs/microcms";
+import { LIMIT } from "@/libs/constants";
+import { getInfoList } from "@/libs/microcms";
 
 export async function generateStaticParams() {
   const queries = { limit: LIMIT, fields: "id" };
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Info({ params }: { params: { pageId: string } }) {
-  const currentPage = parseInt(params.pageId, 10);
+  const currentPage = Number.parseInt(params.pageId, 10);
 
   const initialQueries = { limit: LIMIT, fields: "id" };
   const articlesListResponse = await getInfoList(initialQueries).catch(() => notFound());
@@ -44,27 +44,27 @@ export default async function Info({ params }: { params: { pageId: string } }) {
   }
 
   return (
-    <div className="bg-[#F0EBDC] text-black font-bold text-[20px] leading-10">
-      <div className="max-w-full mx-[3%] my-[5%] py-[75px] pb-[30px]">
+    <div className="bg-[#F0EBDC] font-bold text-[20px] text-black leading-10">
+      <div className="mx-[3%] my-[5%] max-w-full py-[75px] pb-[30px]">
         <div
           id="side_line"
-          className="fixed writing-mode-vertical-rl text-xs font-semibold tracking-wide"
+          className="writing-mode-vertical-rl fixed font-semibold text-xs tracking-wide"
         >
-          <div className="left_side [writing-mode:vertical-rl] hidden lg:block fixed top-[280px] left-[7px] ml-1">
+          <div className="left_side fixed top-[280px] left-[7px] ml-1 hidden [writing-mode:vertical-rl] lg:block">
             <p>AIM COMMONS</p>
           </div>
-          <div className="right_side [writing-mode:vertical-rl] hidden lg:block fixed top-[280px] right-[7px] mr-1">
+          <div className="right_side fixed top-[280px] right-[7px] mr-1 hidden [writing-mode:vertical-rl] lg:block">
             <p>AIM COMMONS</p>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mb-[3%] px-[13%]">
-          <div className="text-base text-[#d9ae4c] text-center font-bold">
+        <div className="mb-[3%] flex flex-col gap-4 px-[13%]">
+          <div className="text-center font-bold text-[#d9ae4c] text-base">
             NEWS
           </div>
-          <div className="text-4xl text-black text-center font-semibold">
+          <div className="text-center font-semibold text-4xl text-black">
             お知らせ
           </div>
-          <div className="text-lg text-gray-600 text-center font-bold">
+          <div className="text-center font-bold text-gray-600 text-lg">
             AIM Commonsからのお知らせ一覧
           </div>
         </div>
