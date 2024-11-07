@@ -4,10 +4,9 @@ import { LIMIT } from "../../../../libs/constants";
 import { getBlogList } from "../../../../libs/microcms";
 
 export async function generateStaticParams() {
-
   const queries = { limit: LIMIT, fields: "id" };
   const articlesListResponse = await getBlogList(queries);
-  const { totalCount: totalCount } = articlesListResponse;
+  const { totalCount } = articlesListResponse;
 
   const range = (start: number, end: number) =>
     Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -20,20 +19,27 @@ export async function generateStaticParams() {
 }
 
 export default async function Blog({ params }: { params: { pageId: string } }) {
-  console.log(params.pageId)
   const currentPage = parseInt(params.pageId, 10);
+
+  const initialQueries = { limit: LIMIT, fields: "id" };
+  const articlesListResponse = await getBlogList(initialQueries).catch(() => notFound());
+  const { totalCount } = articlesListResponse;
+
+  const maxPage = Math.ceil(totalCount / LIMIT);
+
+  if (isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
+    return notFound();
+  }
 
   const articlesListQueries = {
     limit: LIMIT,
     offset: (currentPage - 1) * LIMIT,
   };
 
-  const articlesListResponse = await getBlogList(articlesListQueries).catch(
-    () => notFound()
-  );
-  const { contents, totalCount } = articlesListResponse;
+  const blogPageResponse = await getBlogList(articlesListQueries).catch(() => notFound());
+  const { contents } = blogPageResponse;
 
-  if (!contents || totalCount === 0) {
+  if (!contents) {
     return <h1>No contents</h1>;
   }
 

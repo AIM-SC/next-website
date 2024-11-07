@@ -4,10 +4,9 @@ import { LIMIT } from "../../../../libs/constants";
 import { getInfoList } from "../../../../libs/microcms";
 
 export async function generateStaticParams() {
-
   const queries = { limit: LIMIT, fields: "id" };
   const articlesListResponse = await getInfoList(queries);
-  const { totalCount: totalCount } = articlesListResponse;
+  const { totalCount } = articlesListResponse;
 
   const range = (start: number, end: number) =>
     Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -22,17 +21,25 @@ export async function generateStaticParams() {
 export default async function Info({ params }: { params: { pageId: string } }) {
   const currentPage = parseInt(params.pageId, 10);
 
+  const initialQueries = { limit: LIMIT, fields: "id" };
+  const articlesListResponse = await getInfoList(initialQueries).catch(() => notFound());
+  const { totalCount } = articlesListResponse;
+
+  const maxPage = Math.ceil(totalCount / LIMIT);
+
+  if (isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
+    return notFound();
+  }
+
   const articlesListQueries = {
     limit: LIMIT,
     offset: (currentPage - 1) * LIMIT,
   };
 
-  const articlesListResponse = await getInfoList(articlesListQueries).catch(
-    () => notFound()
-  );
-  const { contents, totalCount } = articlesListResponse;
+  const articlePageResponse = await getInfoList(articlesListQueries).catch(() => notFound());
+  const { contents } = articlePageResponse;
 
-  if (!contents || totalCount === 0) {
+  if (!contents) {
     return <h1>No contents</h1>;
   }
 
@@ -44,10 +51,10 @@ export default async function Info({ params }: { params: { pageId: string } }) {
           className="fixed writing-mode-vertical-rl text-xs font-semibold tracking-wide"
         >
           <div className="left_side [writing-mode:vertical-rl] hidden lg:block fixed top-[280px] left-[7px] ml-1">
-            <p >AIM COMMONS</p>
+            <p>AIM COMMONS</p>
           </div>
           <div className="right_side [writing-mode:vertical-rl] hidden lg:block fixed top-[280px] right-[7px] mr-1">
-            <p >AIM COMMONS</p>
+            <p>AIM COMMONS</p>
           </div>
         </div>
         <div className="flex flex-col gap-4 mb-[3%] px-[13%]">
