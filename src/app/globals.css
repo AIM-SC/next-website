@@ -6,12 +6,14 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Utilities Layer */
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
 	}
 }
 
+/* Base Layer */
 @layer base {
 	:root {
 		--background: 0 0% 100%;
@@ -75,4 +77,70 @@ body {
 	body {
 		@apply bg-background text-foreground;
 	}
+}
+
+/* Components Layer */
+@layer components {
+  .prose p {
+    @apply my-4;
+    margin: revert;
+  }
+
+  .prose strong {
+    @apply font-bold;
+  }
+
+  .prose em {
+    @apply italic;
+  }
+
+  .prose u {
+    @apply underline;
+  }
+
+  .prose s {
+    @apply line-through;
+  }
+
+  .prose code {
+    @apply font-mono bg-gray-100 px-2 py-1 rounded;
+  }
+
+  .prose a {
+    @apply text-blue-600 underline;
+  }
+
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-gray-300;
+    margin: revert;
+  }
+
+  .prose hr {
+    @apply border-0 border-t border-gray-300;
+    margin: revert;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply pl-8;
+    margin: revert;
+    color: #000;
+  }
+
+  .prose table {
+    @apply w-full border-collapse;
+  }
+
+  .prose th,
+  .prose td {
+    @apply border border-gray-300 px-2 py-2 text-left;
+  }
+
+  .prose iframe {
+    @apply border-none;
+  }
+
+  .prose p[style*="text-align: center"] {
+    @apply text-center;
+  }
 }
