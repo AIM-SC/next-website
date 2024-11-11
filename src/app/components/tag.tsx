@@ -14,7 +14,7 @@ import type { TagType } from "@/types/microcms";
             </div>
           ))
         ) : (
-          <div className="w-full"></div>
+          <div className="w-full" />
         )}
       </div>
     );

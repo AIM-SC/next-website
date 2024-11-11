@@ -27,7 +27,7 @@ export default async function Info({ params }: { params: { pageId: string } }) {
 
   const maxPage = Math.ceil(totalCount / LIMIT);
 
-  if (isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
+  if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
     return notFound();
   }
 
