@@ -21,7 +21,7 @@ const TopCard: React.FC<TopCardProps> = ({ title, notes, subtitle, content, butt
       <div className="flex flex-col space-y-2">
         {content.map((item, index) => (
           <div key={index}>
-            <div className="flex justify-between">
+            <div className="flex flex-col md:flex-row justify-between">
               <span className="text-gray-800">{item.name}</span>
               <span className="text-[#d9ae4c]">{item.time}</span>
             </div>
