@@ -1,16 +1,14 @@
-import React from 'react';
-
-interface titleProps {
+type Props = {
   maintitle: string;
   subtitle: string;
-}
+};
 
-const Title: React.FC<titleProps> = ({  maintitle, subtitle }) => {
+const Title = ({ maintitle, subtitle }: Props) => {
   return (
-    <div className="bg-white w-full rounded-md">
+    <div className="w-full rounded-md bg-white">
       <div className='p-3'>
-        <h2 className="text-lg font-bold mb-2">{maintitle}</h2>
-        <h3 className="text-m text-[#d9ae4c] mb-2">{subtitle}</h3>
+        <h2 className="mb-2 font-bold text-lg">{maintitle}</h2>
+        <h3 className="mb-2 text-[#d9ae4c] text-m">{subtitle}</h3>
       </div>
     </div>
   );

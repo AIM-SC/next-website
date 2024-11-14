@@ -1,31 +1,8 @@
-"use client";
 
-import React from 'react';
-import styled from 'styled-components';
-import Box from '../../components/Box';
-import Title from '../../components/Title';
+import Box from '../../components/box';
+import Swiper from  '../../components/swiper'
+import Title from '../../components/title';
 import TopCard from '../../components/topCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
-
-const StyledSwiper = styled(Swiper)`
-  width: 100%;
-  margin-bottom: 2rem;
-
-  .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-`;
 
 const TopPage = () => {
 
@@ -68,32 +45,14 @@ const TopPage = () => {
   return (
     <div className="bg-[#F0EBDC]">
       {/* Swiperセクション */}
-      <StyledSwiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        loop= {true}
-        spaceBetween={20}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-      >
-        <SwiperSlide>
-          <img src="\images\main01.jpg" alt="Slide 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="\images\main02.jpg" alt="Slide 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="images\main03.jpg" alt="Slide 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        </SwiperSlide>
-      </StyledSwiper>
-
+      <Swiper />
 
       {/* Aboutセクション */}
-      <div className="flex flex-col rounded md:flex-row justify-center bg-white items-center gap-4 my-8 p-8 m-8 ">
+      <div className="m-8 my-8 flex flex-col items-center justify-center gap-4 rounded bg-white p-8 md:flex-row ">
         <div className="w-full md:w-1/2">
           <img className="rounded-md" src="images\about.png" alt="説明画像" />
         </div>
-        <div className="w-full md:w-1/2 about_main">
+        <div className="about_main w-full md:w-1/2">
           <Title 
             maintitle="AIM Commons(ラーニングコモンズ)とは？"
             subtitle="ABOUT US"
@@ -107,13 +66,13 @@ const TopPage = () => {
       </div>
 
       {/* 開室時間とお知らせの表示 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 m-8">
+      <div className="m-8 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2">
         <OpeningHours />
         <Information />
       </div>
 
       {/* 追加情報を表示するボックス */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center m-8">
+      <div className="m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
         <Box img="images/home01.jpg" title="利用案内" subtitle="INSTRUCTION" description="アクセス/PC・機器貸出方法" />
         <Box img="images/floor06.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
         <Box img="images/home03.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />

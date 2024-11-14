@@ -1,23 +1,22 @@
-import React from 'react';
-import Title from './Title';
+import Title from './title';
 
-interface BoxProps {
+type Props = {
   img: string;
   title: string;
   subtitle: string;
   description: string;
-}
+};
 
-const Box: React.FC<BoxProps> = ({ img, title, subtitle, description }) => {
+const Box = ({ img, title, subtitle, description }: Props) => {
   return (
-    <div className="bg-white w-full rounded-md">
-      <img src={img} alt="AIMの説明画像" className="w-full h-auto mb-4 rounded-md" />
+    <div className="w-full rounded-md bg-white">
+      <img src={img} alt="AIMの説明画像" className="mb-4 h-auto w-full rounded-md" />
       <div className='p-3'>
         <Title 
           maintitle={title}
           subtitle={subtitle}
         />
-        <p className="text-sm text-gray-600">{description}</p>
+        <p className="text-gray-600 text-sm">{description}</p>
       </div>
     </div>
   );
