@@ -1,4 +1,4 @@
-import { ArticleType } from "@/types/microcms";
+import type { ArticleType } from "@/types/microcms";
 import { createClient } from "microcms-js-sdk";
 import type {
   MicroCMSQueries,

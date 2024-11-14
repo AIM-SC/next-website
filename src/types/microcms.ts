@@ -1,4 +1,4 @@
-import { MicroCMSDate, MicroCMSImage } from "microcms-js-sdk";
+import type { MicroCMSDate, MicroCMSImage } from "microcms-js-sdk";
 
 export type TagType = {
     title: string;
