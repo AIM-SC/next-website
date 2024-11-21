@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Image from "next/image";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
@@ -31,15 +32,39 @@ const ClientSwiper = () => (
     pagination={{ clickable: true }}
     scrollbar={{ draggable: true }}
   >
-    <SwiperSlide>
-      <img src="\images\main01.jpg" alt="Slide 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src="\images\main02.jpg" alt="Slide 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src="images\main03.jpg" alt="Slide 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-    </SwiperSlide>
+
+  <SwiperSlide>
+    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+      <Image 
+        src="/images/main01.jpg" 
+        alt="Slide 1" 
+        width={400}
+        height={300}
+        className='h-full w-full'
+      />
+    </div>
+  </SwiperSlide>
+  <SwiperSlide>
+    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+      <Image 
+        src="/images/main02.jpg" 
+        alt="Slide 2" 
+        width={400}
+        height={300}
+        className='h-full w-full'
+      />
+    </div>
+  </SwiperSlide>
+  <SwiperSlide>
+      <Image 
+        src="/images/main03.jpg" 
+        alt="Slide 3" 
+        width={400}
+        height={300}
+        className='h-full w-full'
+      />
+  </SwiperSlide>
+
   </StyledSwiper>
 );
 

@@ -3,17 +3,17 @@ import Link from "next/link";
 import Image from "next/image"; 
 
 type Props = {
-  img: string;
+  src: string;
   title: string;
   subtitle: string;
   description: string;
 };
 
-const Box = ({ img, title, subtitle, description }: Props) => {
+const Box = ({ src, title, subtitle, description }: Props) => {
   return (
     <div className="w-full rounded-md bg-white">
       <Image 
-        src={img} 
+        src={src} 
         alt="AIMの説明画像" 
         className="mb-4 h-auto w-full rounded-md" 
         width={500} 

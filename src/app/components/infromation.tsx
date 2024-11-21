@@ -8,7 +8,7 @@ type Props = {
   content: Array<{ name: string; time: string }>;
 };
 
-const TopCard = ({ title, notes, subtitle, content,  }: Props) => {
+const Information = ({ title, notes, subtitle, content,  }: Props) => {
   return (
     <div className="mb-4 rounded-lg bg-white p-6">
       <div className="mb-4 border-b text-center">
@@ -33,4 +33,4 @@ const TopCard = ({ title, notes, subtitle, content,  }: Props) => {
   );
 };
 
-export default TopCard;
+export default Information;

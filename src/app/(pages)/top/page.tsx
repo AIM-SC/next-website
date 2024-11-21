@@ -2,27 +2,37 @@
 import Box from '../../components/box';
 import Swiper from  '../../components/swiper'
 import Title from '../../components/title';
-import TopCard from '../../components/infromation';
+import Information from '../../components/infromation';
 import Time from '../../components/time'
 import Image from "next/image"; 
+import { LIMIT } from "@/libs/constants";
+import { getBlogList } from "@/libs/microcms";
+import { notFound } from "next/navigation";
 
-const TopPage = () => {
-  const Information = () => {
-    const informationContent = [
-      { name: '2024/10/10', time: '2024年度後期開室のお知らせ（相模原）' },
-      { name: '2024/07/25', time: '留学生の方々にミニワークショップを開催しました' },
-      { name: '2024/07/02', time: '2024年度夏季休業期間開室のお知らせ' },
-    ];
 
-    return (
-      <TopCard
-        title="お知らせ"
-        notes=""
-        subtitle="INFORMATION"
-        content={informationContent}
-      />
-    );
-  };
+
+
+const TopPage = async () => {
+
+  const currentPage = 1;
+
+  // 記事リストの取得
+  const initialQueries = { limit: LIMIT, fields: "id" };
+  const articlesListResponse = await getBlogList(initialQueries).catch(() => notFound());
+  const { totalCount } = articlesListResponse;
+
+  const maxPage = Math.ceil(totalCount / LIMIT);
+  if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
+    return notFound();
+  }
+
+  // お知らせデータの取得
+  const informationQueries = { limit: 5, fields: "title,date" };
+  const informationResponse = await getBlogList(informationQueries).catch(() => notFound());
+  const informationContent = informationResponse.contents.map((item: { title: string; createdAt: string; }) => ({
+    name: item.title,
+    time: item.createdAt,
+  }));
 
   return (
     <div className="bg-[#F0EBDC]">
@@ -69,18 +79,23 @@ const TopPage = () => {
         />
 
         {/* お知らせの表示 */}
-        <Information />
+        <Information
+          title="お知らせ"
+          notes=""
+          subtitle="INFORMATION"
+          content={informationContent}
+        />
       </div>
 
 
       {/* 追加情報を表示するボックス */}
       <div className="m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
-        <Box img="/images/home01.jpg" title="利用案内" subtitle="INSTRUCTION" description="アクセス/PC・機器貸出方法" />
-        <Box img="/images/floor06.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
-        <Box img="/images/home03.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
-        <Box img="/images/home01.jpg" title="技術ブログ" subtitle="BLOG" description="技術的な投稿" />
-        <Box img="/images/floor06.jpg" title="新しい設備" subtitle="NEW FACILITIES" description="新しく導入された設備" />
-        <Box img="/images/kizai.jpg" title="機器貸し出し" subtitle="FACILITIES" description="機器の貸し出し" />
+        <Box src="/images/home01.jpg" title="利用案内" subtitle="INSTRUCTION" description="アクセス/PC・機器貸出方法" />
+        <Box src="/images/floor06.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
+        <Box src="/images/home03.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
+        <Box src="/images/home01.jpg" title="技術ブログ" subtitle="BLOG" description="技術的な投稿" />
+        <Box src="/images/floor06.jpg" title="新しい設備" subtitle="NEW FACILITIES" description="新しく導入された設備" />
+        <Box src="/images/kizai.jpg" title="機器貸し出し" subtitle="FACILITIES" description="機器の貸し出し" />
       </div>
     </div>
   );
