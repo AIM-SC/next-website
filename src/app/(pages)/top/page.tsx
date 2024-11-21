@@ -2,28 +2,11 @@
 import Box from '../../components/box';
 import Swiper from  '../../components/swiper'
 import Title from '../../components/title';
-import TopCard from '../../components/topCard';
+import TopCard from '../../components/infromation';
+import Time from '../../components/time'
+import Image from "next/image"; 
 
 const TopPage = () => {
-
-  const OpeningHours = () => {
-    const openingHoursContent = [
-      { name: '青山', time: '9:00-21:00' },
-      { name: '相模原', time: '9:00-20:00' },
-      { name: '受付時間', time: '9:45-16:30' },
-    ];
-
-    return (
-      <TopCard
-        title="開室時間"
-        notes="※授業実施日のみ"
-        subtitle="OPENING HOURS"
-        content={openingHoursContent}
-        button={undefined}
-      />
-    );
-  };
-
   const Information = () => {
     const informationContent = [
       { name: '2024/10/10', time: '2024年度後期開室のお知らせ（相模原）' },
@@ -37,7 +20,6 @@ const TopPage = () => {
         notes=""
         subtitle="INFORMATION"
         content={informationContent}
-        button="一覧を見る"
       />
     );
   };
@@ -50,7 +32,15 @@ const TopPage = () => {
       {/* Aboutセクション */}
       <div className="m-8 my-8 flex flex-col items-center justify-center gap-4 rounded bg-white p-8 md:flex-row ">
         <div className="w-full md:w-1/2">
-          <img className="rounded-md" src="images\about.png" alt="説明画像" />
+          <Image 
+            src="/images/about.png" 
+            alt="AIMの説明画像" 
+            className="mb-4 h-auto w-full rounded-md" 
+            width={500} 
+            height={300} 
+            layout="responsive" 
+            objectFit="cover"  
+          />
         </div>
         <div className="about_main w-full md:w-1/2">
           <Title 
@@ -65,20 +55,32 @@ const TopPage = () => {
         </div>
       </div>
 
-      {/* 開室時間とお知らせの表示 */}
-      <div className="m-8 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2">
-        <OpeningHours />
+      <div className="m-8 grid grid-cols-1 gap-8 sm:grid-cols-[4fr_6fr] md:grid-cols-[4fr_6fr]">
+        {/* 開室時間の表示 */}
+        <Time
+          title="開室時間"
+          notes="※授業実施日のみ"
+          subtitle="OPENING HOURS"
+          locations={[
+            { id: "aoyama", name: "青山", time: "9:00 - 21:00" },
+            { id: "sagamihara", name: "相模原", time: "9:00 - 20:00" },
+            { id: "reception", name: "受付時間", time: "9:45 - 16:30" },
+          ]}
+        />
+
+        {/* お知らせの表示 */}
         <Information />
       </div>
 
+
       {/* 追加情報を表示するボックス */}
       <div className="m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
-        <Box img="images/home01.jpg" title="利用案内" subtitle="INSTRUCTION" description="アクセス/PC・機器貸出方法" />
-        <Box img="images/floor06.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
-        <Box img="images/home03.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
-        <Box img="images/home01.jpg" title="技術ブログ" subtitle="BLOG" description="技術的な投稿" />
-        <Box img="images/floor06.jpg" title="新しい設備" subtitle="NEW FACILITIES" description="新しく導入された設備" />
-        <Box img="images/kizai.jpg" title="機器貸し出し" subtitle="FACILITIES" description="機器の貸し出し" />
+        <Box img="/images/home01.jpg" title="利用案内" subtitle="INSTRUCTION" description="アクセス/PC・機器貸出方法" />
+        <Box img="/images/floor06.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
+        <Box img="/images/home03.jpg" title="施設紹介" subtitle="FACILITIES" description="AIM Commonsの設備" />
+        <Box img="/images/home01.jpg" title="技術ブログ" subtitle="BLOG" description="技術的な投稿" />
+        <Box img="/images/floor06.jpg" title="新しい設備" subtitle="NEW FACILITIES" description="新しく導入された設備" />
+        <Box img="/images/kizai.jpg" title="機器貸し出し" subtitle="FACILITIES" description="機器の貸し出し" />
       </div>
     </div>
   );
