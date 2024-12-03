@@ -1,8 +1,10 @@
 import type { MicroCMSDate, MicroCMSImage } from "microcms-js-sdk";
 
 export type TagType = {
-    title: string;
-}
+  id: string;
+  title: string;
+  path: string;
+} & MicroCMSDate;
 
 export type ArticleType = {
   id: string;
@@ -11,3 +13,7 @@ export type ArticleType = {
   tags: TagType[];
   thumbnail: MicroCMSImage;
 } & MicroCMSDate;
+
+export type ArticleWithSourceType = ArticleType & {
+  source: "blog" | "info";
+};

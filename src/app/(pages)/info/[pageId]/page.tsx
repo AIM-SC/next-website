@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Articlelist from "@/app/components/articlelist";
 import { LIMIT } from "@/libs/constants";
-import { getInfoList } from "@/libs/microcms";
+import { getInfoList, getTagList } from "@/libs/microcms";
+import Tag from "@/app/components/tag";
 
 export async function generateStaticParams() {
   const queries = { limit: LIMIT, fields: "id" };
@@ -37,7 +38,9 @@ export default async function Info({ params }: { params: { pageId: string } }) {
   };
 
   const articlePageResponse = await getInfoList(articlesListQueries).catch(() => notFound());
+  const tagListResponse = await getTagList().catch(() => notFound());
   const { contents } = articlePageResponse;
+  const tagContents = tagListResponse.contents;
 
   if (!contents) {
     return <h1>No contents</h1>;
@@ -74,6 +77,11 @@ export default async function Info({ params }: { params: { pageId: string } }) {
           currentPage={currentPage}
           totalCount={totalCount}
         />
+        <hr className="mt-8 border-[#d9ae4c] border-[1px]" />
+        <div className="mt-2 ml-2">タグから探す</div>
+        <div className="mt-2 ml-4">
+          <Tag tags={tagContents} variant="card" />
+        </div>
       </div>
     </div>
   );
