@@ -31,7 +31,8 @@ const TopPage = async () => {
   const informationResponse = await getBlogList(informationQueries).catch(() => notFound());
   const informationContent = informationResponse.contents.map((item: { title: string; createdAt: string; }) => ({
     name: item.title,
-    time: item.createdAt,
+    time: item.createdAt//ここを直す
+    //time: format(new Date(item.createdAt), "yyyy.MM.dd"),
   }));
 
   return (
