@@ -1,8 +1,9 @@
-import type { ArticleType } from "@/types/microcms";
+import type { ArticleType, ArticleWithSourceType, TagType } from "@/types/microcms";
 import { createClient } from "microcms-js-sdk";
 import type {
   MicroCMSQueries,
 } from "microcms-js-sdk";
+import { LIMIT } from "./constants";
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error("MICROCMS_SERVICE_DOMAIN is required");
@@ -61,8 +62,6 @@ export const getBlogList = async (queries?: MicroCMSQueries) => {
     queries,
   });
 
-  console.log(listData)
-
   return listData;
 };
 
@@ -91,3 +90,100 @@ export const getBlogDetail = async (
     return null;
   }
 };
+
+// タグの一覧を取得
+export const getTagList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<TagType>({
+    endpoint: "tags",
+    queries: {
+      ...queries,
+      fields: "id,title,path",
+    },
+  });
+
+  return listData;
+};
+
+//カテゴリ一覧を取得
+// カテゴリー記事一覧を取得する関数
+export const getCategoryArticleList = async (
+  tagPath: string,
+  queries?: MicroCMSQueries
+) => {
+  console.log("Fetching articles for tagPath:", tagPath);
+
+  const allArticles: ArticleWithSourceType[] = [];
+  const limit = 50; // 一度に取得する最大件数
+  let total = 0;
+
+  try {
+    // posts と techblogs の記事を逐次取得
+    const fetchArticles = async (endpoint: "posts" | "techblogs", source: "info" | "blog") => {
+      let offset = 0;
+      while (true) {
+        console.log(`Fetching ${endpoint} articles with offset ${offset}`);
+        const data = await client.getList<ArticleType>({
+          endpoint,
+          queries: { limit, offset },
+        });
+
+        total = data.totalCount;
+        allArticles.push(
+          ...data.contents.map((article): ArticleWithSourceType => ({
+            ...article,
+            source, // 明示的に "info" または "blog" を指定
+          }))
+        );
+
+        if (offset + limit >= total) {
+          break; // 全件取得済み
+        }
+        offset += limit; // 次のページに進む
+      }
+    };
+
+    // posts の記事取得
+    await fetchArticles("posts", "info");
+    // techblogs の記事取得
+    await fetchArticles("techblogs", "blog");
+
+    console.log("All fetched articles:", allArticles);
+
+    // タグに基づいてフィルタリング
+    const filteredArticles = allArticles.filter((article) =>
+      article.tags?.some((tag) => tag.path.trim().toLowerCase() === tagPath.trim().toLowerCase())
+    );
+
+    console.log("Filtered articles:", filteredArticles);
+
+    // ソートとページネーションの適用
+    filteredArticles.sort((a, b) => {
+      const dateA = new Date(a.publishedAt ?? a.createdAt).getTime();
+      const dateB = new Date(b.publishedAt ?? b.createdAt).getTime();
+      return dateB - dateA;
+    });
+
+    const totalCount = filteredArticles.length;
+    const offsetQuery = queries?.offset || 0;
+    const limitQuery = queries?.limit || LIMIT;
+    const paginatedArticles = filteredArticles.slice(
+      offsetQuery,
+      offsetQuery + limitQuery
+    );
+
+    return {
+      contents: paginatedArticles,
+      totalCount,
+    };
+  } catch (err) {
+    console.error("Error fetching articles:", err);
+    throw err;
+  }
+};
+
+
+
+
+
+
+
