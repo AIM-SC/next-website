@@ -8,8 +8,7 @@ export type Entry = {
     link: string;
     author: Author;
     published: string;
-    updated: string;
-    "media:group": any;
+    updated: string
   };
   
 export type Author = {

@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { Props } from "@/types";
+import type { Props } from "@/types";
 
 export default function SwitchMovieType({ longVideoIds, shortVideoIds }: Props) {
     const [filterType, setFilterType] = useState("longMovie");
@@ -12,22 +12,20 @@ export default function SwitchMovieType({ longVideoIds, shortVideoIds }: Props) 
     const getFilteredVideos = () => {
         if (filterType === "longMovie") {
             return longVideoIds;
-        } else if (filterType === "shortsMovie") {
-            return shortVideoIds;
-        }
-        return [];
+        } 
+        return shortVideoIds;
     };
 
     const filteredVideos = getFilteredVideos();
 
     return (
-        <div className="bg-[#F0EBDC] w-full">
-            <div className="flex justify-center space-x-6 my-8">
+        <div className="w-full bg-[#F0EBDC]">
+            <div className="my-8 flex justify-center space-x-6">
                 <label
-                    className={`px-10 py-6 border-2 rounded-lg cursor-pointer ${
+                    className={`cursor-pointer rounded-lg border-2 px-10 py-6 ${
                         filterType === "longMovie"
-                            ? "bg-white text-black text-xl font-bold border-black"
-                            : "bg-white text-black text-xl border-black"
+                            ? "border-black bg-white font-bold text-black text-xl"
+                            : "border-black bg-white text-black text-xl"
                     }`}
                 >
                     <input
@@ -38,13 +36,13 @@ export default function SwitchMovieType({ longVideoIds, shortVideoIds }: Props) 
                         onChange={handleFilterChange}
                         className="hidden"
                     />
-                    <span className="inline-block mr-2">&gt;</span> 動画
+                    <span className="mr-2 inline-block">&gt;</span> 動画
                 </label>
                 <label
-                    className={`px-10 py-6 border-2 rounded-lg cursor-pointer ${
+                    className={`cursor-pointer rounded-lg border-2 px-10 py-6 ${
                         filterType === "shortsMovie"
-                            ? "bg-white text-black text-lg font-bold border-black"
-                            : "bg-white text-black text-lg font-bold border-black"
+                            ? "border-black bg-white font-bold text-black text-lg"
+                            : "border-black bg-white font-bold text-black text-lg"
                     }`}
                 >
                     <input
@@ -55,11 +53,11 @@ export default function SwitchMovieType({ longVideoIds, shortVideoIds }: Props) 
                         onChange={handleFilterChange}
                         className="hidden"
                     />
-                    <span className="inline-block mr-2">&gt;</span> ショート
+                    <span className="mr-2 inline-block">&gt;</span> ショート
                 </label>
             </div>
 
-            <div className="bg-white mx-[3%] rounded-md">
+            <div className="mx-[3%] rounded-md bg-white">
                 <div
                     className={`grid gap-4 ${
                         filterType === "longMovie"
@@ -67,8 +65,8 @@ export default function SwitchMovieType({ longVideoIds, shortVideoIds }: Props) 
                             : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
                     }`}
                 >
-                    {filteredVideos.map((videoId, index) => (
-                        <div key={`video-${index}`} className="flex mx-[8%] my-[10%]">
+                    {filteredVideos.map((videoId) => (
+                        <div key={`video-${videoId}`} className="mx-[8%] my-[10%] flex">
                             <iframe
                                 className={`w-full ${
                                     filterType === "longMovie" ? "aspect-video" : "aspect-[9/16]"
@@ -77,7 +75,7 @@ export default function SwitchMovieType({ longVideoIds, shortVideoIds }: Props) 
                                 title={`Video - ${videoId}`}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                            ></iframe>
+                            />
                         </div>
                     ))}
                 </div>
