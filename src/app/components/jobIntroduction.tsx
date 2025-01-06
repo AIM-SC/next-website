@@ -1,21 +1,21 @@
 import Image from "next/image";
 
+
 type Props = {
   image: string;
   alt: string;
   title: string;
-  text: string;
+  text: React.ReactNode;
 };
 
 const JobIntroduction = ({ image, alt, title, text }: Props) => {
   return (
-    <div className="flex flex-col bg-white rounded-md p-4 mx-[8%] my-[8%]">
+    <div className="mx-[8%] my-[8%] flex flex-col rounded-md bg-white p-4">
       {/* 画像の表示 */}
-      <div className="w-full mb-4">
+      <div className="mb-4 w-full">
         <Image 
           src={image} 
           alt={alt} 
-          layout="intrinsic" 
           width={640}       
           height={360}      
           className="rounded-md"
@@ -23,8 +23,8 @@ const JobIntroduction = ({ image, alt, title, text }: Props) => {
       </div>
       {/* テキストエリア */}
       <div className="text-left">
-        <div className="text-xl font-bold mb-2">{title}</div>
-        <div className="text-sm" dangerouslySetInnerHTML={{ __html: text }}></div>
+        <div className="mb-2 font-bold text-xl">{title}</div>
+        <div className="text-sm">{text}</div>
       </div>
     </div>
   );
