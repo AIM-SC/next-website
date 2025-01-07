@@ -28,7 +28,6 @@ const Information = ({ title, notes, subtitle, content }: Props) => {
 					一覧を見る
 				</Link>
 			</div>
-			<div></div>
 		</div>
 	);
 };
