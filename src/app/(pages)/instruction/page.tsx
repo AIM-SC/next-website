@@ -47,7 +47,7 @@ const InstractionPage = async () => {
             </div>
           </div>
           <h2 className="font-bold text-xl">利用者が気持ちよく使うためのお願い</h2>
-          <div className='m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-3 md:grid-cols-3'>
+          <div className='m-8 grid grid-cols-2 gap-4 text-center sm:grid-cols-3 md:grid-cols-3'>
             <Rule image="/images/rule01.png" text="学習目的での利用をお願いします" note="" />
             <Rule image="/images/rule02.png" text="食事はできません" note="(蓋が閉まる＆直立する飲み物は飲むことができます)" />
             <Rule image="/images/rule03.png" text="荷物を置いての長時間退出はご遠慮ください" note="" />
