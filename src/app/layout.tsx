@@ -30,7 +30,22 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				<Header />
-				{children}
+				<div className="bg-[#F0EBDC]">
+					<div className="mx-[3%] max-w-full py-[75px] pb-[30px]">
+						<div
+							id="side_line"
+							className="writing-mode-vertical-rl fixed font-semibold text-xs tracking-wide"
+						>
+							<div className="left_side fixed top-[280px] left-[7px] ml-1 hidden [writing-mode:vertical-rl] lg:block">
+								<p>AIM COMMONS</p>
+							</div>
+							<div className="right_side fixed top-[280px] right-[7px] mr-1 hidden [writing-mode:vertical-rl] lg:block">
+								<p>AIM COMMONS</p>
+							</div>
+						</div>
+						{children}
+					</div>
+				</div>
 			</body>
 		</html>
 	);
