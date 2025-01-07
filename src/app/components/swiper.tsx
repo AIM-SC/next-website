@@ -25,7 +25,7 @@ const StyledSwiper = styled(Swiper)`
 
 const ClientSwiper = () => (
   <StyledSwiper
-    modules={[Navigation, Pagination, Scrollbar, A11y]}
+    modules={[Navigation, Pagination, A11y]}
     loop={true}
     spaceBetween={20}
     slidesPerView={1}
@@ -34,35 +34,34 @@ const ClientSwiper = () => (
   >
 
   <SwiperSlide>
-    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+    <div style={{ position: 'relative', width: '100%', height: '90%' }}>
       <Image 
         src="/images/main01.jpg" 
         alt="Slide 1" 
-        width={400}
-        height={300}
-        className='h-full w-full'
+        width={1920}
+        height={1080}
       />
     </div>
   </SwiperSlide>
   <SwiperSlide>
-    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+    <div style={{ position: 'relative', width: '100%', height: '90%' }}>
       <Image 
         src="/images/main02.jpg" 
         alt="Slide 2" 
-        width={400}
-        height={300}
-        className='h-full w-full'
+        width={1920}
+        height={1080}
       />
     </div>
   </SwiperSlide>
   <SwiperSlide>
+    <div style={{ position: 'relative', width: '100%', height: '90%' }}>
       <Image 
         src="/images/main03.jpg" 
         alt="Slide 3" 
-        width={400}
-        height={300}
-        className='h-full w-full'
+        width={1920}
+        height={1080}
       />
+    </div>
   </SwiperSlide>
 
   </StyledSwiper>

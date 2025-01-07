@@ -15,7 +15,7 @@ const Box = ({ src, title, subtitle, description }: Props) => {
       <Image 
         src={src} 
         alt="AIMの説明画像" 
-        className="mb-4 h-auto w-full rounded-md" 
+        className="mb-4 rounded-md" 
         width={500} 
         height={300} 
         layout="responsive" 
