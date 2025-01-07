@@ -34,7 +34,7 @@ const InstractionPage = async () => {
           <img src="/images/go01.jpg" alt="" />
           <p className='text-[#8C8C8C]'>相模原：B棟　4階</p>
           <img src="/images/go02.jpg" alt="" />
-          <h3>相模原キャンパス：動画での説明は<a href="http://localhost:3000/instruction" className='text-[#d9ae4c]'>こちら</a></h3>
+          <h3>相模原キャンパス：動画での説明は<a href="https://www.youtube.com/shorts/7wUXAheGLBo" className='text-[#d9ae4c]'>こちら</a></h3>
           <h2 className="my-8 font-bold text-xl">開室時間</h2>
           <div className="m-8 flex flex-col justify-center md:flex-row">
             <div className="mr-5 flex items-center justify-center">
