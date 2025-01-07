@@ -18,18 +18,16 @@ const Explain = ({ image, title, subtitle, link, time, notes }: Props) => {
                     <a href={link} className="rounded-lg bg-[#F0EBDC] p-3">利用案内はこちら</a>
                     {time && time.length > 0 && (
                     <ul className="list-none">
-                        {time.map((time, index) => (
-                            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                            <li key={index}>{time}</li>
+                        {time.map((time) => (
+                            <li key={time}>{time}</li>
                         ))}
                     </ul>
                 )}
                 </div>
                 {notes && notes.length > 0 && (
                     <ul className="list-disc pl-5">
-                        {notes.map((note, index) => (
-                            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                            <li key={index}>{note}</li>
+                        {notes.map((note) => (
+                            <li key={note}>{note}</li>
                         ))}
                     </ul>
                 )}

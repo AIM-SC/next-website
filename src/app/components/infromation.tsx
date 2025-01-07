@@ -5,7 +5,7 @@ type Props = {
   title: string;
   notes: string;
   subtitle: string;
-  content: Array<{ name: string; time: string }>;
+  content: Array<{ name: string; time: string; id: string}>;
 };
 
 const Information = ({ title, notes, subtitle, content,  }: Props) => {
@@ -17,14 +17,17 @@ const Information = ({ title, notes, subtitle, content,  }: Props) => {
       <div className="flex flex-col space-y-2 text-center">
         {content.map((item) => (
           <div key={item.name}>
-            <div className="flex flex-col justify-between transition-opacity hover:opacity-50 md:flex-row">
-              <span className="text-gray-800 ">{item.name}</span>
-              <span className="">{item.time}</span>
-            </div>
+            <a href={`/info/article/${item.id}`}>
+              <div className="flex flex-col justify-between transition-opacity hover:opacity-50 md:flex-row">
+                <span className="">{item.time}</span>
+                <span className="text-gray-800 ">{item.name}</span>
+              </div>
+            </a>
+
             <hr className="my-2 border-0 border-gray-400 border-t border-dashed" />
           </div>
         ))}
-        <Link href="/blog/1" className="transition-opacity hover:opacity-50">一覧を見る</Link>
+        <Link href="/info" className="transition-opacity hover:opacity-50">一覧を見る</Link>
       </div>
       <div>
         
