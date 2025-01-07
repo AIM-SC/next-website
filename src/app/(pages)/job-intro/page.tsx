@@ -2,24 +2,18 @@ import JobIntroduction from "@/app/components/jobIntroduction";
 
 const jobIntroductionPage = () => {
 	return (
-		<div className="my-[5%] bg-[#F0EBDC] pt-[55px] pb-[30px]">
-			<div className="left_side fixed top-[280px] left-[7px] ml-1 hidden [writing-mode:vertical-rl] lg:block">
-				<p>AIM COMMONS</p>
+		<div className="font-bold text-[20px] text-black leading-10">
+			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
+				<div className="text-center font-bold text-[#d9ae4c] text-base">
+					JOB INTRODUCTION
+				</div>
+				<div className="text-center font-semibold text-4xl text-black">
+					業務紹介
+				</div>
+				<div className="text-center font-bold text-gray-600 text-lg">
+					受付で常駐している学生スタッフの業務をご紹介します
+				</div>
 			</div>
-			<div className="right_side fixed top-[280px] right-[7px] mr-1 hidden [writing-mode:vertical-rl] lg:block">
-				<p>AIM COMMONS</p>
-			</div>
-
-			<div className="mb-5 text-center font-bold text-[#d9ae4c] text-base">
-				JOB INTRODUCTION
-			</div>
-			<div className="mb-5 text-center font-semibold text-3xl text-black">
-				業務紹介
-			</div>
-			<div className="text-center font-bold text-black text-lg">
-				受付で常駐している学生スタッフの業務をご紹介します
-			</div>
-
 			<div className="mx-[3%] mt-[1%] grid grid-cols-1 gap-4 rounded-md bg-white sm:grid-cols-2 lg:grid-cols-3">
 				<JobIntroduction
 					image="/images/IMG_0091.JPG"

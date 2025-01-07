@@ -1,7 +1,7 @@
 const footer = () => {
 	return (
 		<div>
-			<div className="flex justify-center gap-3 font-bold text-base">
+			<div className="mt-6 flex justify-center gap-3 font-bold text-base">
 				<a href="https://www.aoyama.ac.jp/" target="_blank" rel="noreferrer">
 					青山学院大学公式サイト
 					<span className="material-symbols-outlined mb-1 ml-1 align-middle">

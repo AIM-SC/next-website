@@ -11,13 +11,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const MenuList = [
-	{ label: "利用案内", value: "guide" },
-	{ label: "お知らせ", value: "news" },
-	{ label: "技術ブログ", value: "technical-blog" },
+	{ label: "利用案内", value: "instruction" },
+	{ label: "お知らせ", value: "info" },
+	{ label: "技術ブログ", value: "blog" },
 	{ label: "施設紹介", value: "introduce" },
 	{ label: "動画配信", value: "movies" },
-	{ label: "業務内容", value: "works" },
-	{ label: "お問い合わせ", value: "contacts" },
+	{ label: "業務紹介", value: "job-intro" },
+	{ label: "貸出機器一覧", value: "equipments" },
 ];
 
 export default function Header() {
