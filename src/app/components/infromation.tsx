@@ -1,5 +1,5 @@
-import Title from './title';
-import  Link from "next/link"
+import Title from "./title";
+import Link from "next/link";
 
 type Props = {
   title: string;
