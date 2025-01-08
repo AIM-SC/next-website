@@ -1,101 +1,135 @@
 import Image from "next/image";
+import { LIMIT } from "@/libs/constants";
+import { getBlogList } from "@/libs/microcms";
+import { notFound } from "next/navigation";
+import Title from "./components/title";
+import Time from "./components/time";
+import Information from "./components/infromation";
+import Box from "./components/box";
+import ClientSwiper from "./components/swiper";
 
-export default function Home() {
+const TopPage = async () => {
+	const currentPage = 1;
+
+	// 記事リストの取得
+	const initialQueries = { limit: LIMIT, fields: "id" };
+	const articlesListResponse = await getBlogList(initialQueries).catch(() =>
+		notFound(),
+	);
+	const { totalCount } = articlesListResponse;
+
+	const maxPage = Math.ceil(totalCount / LIMIT);
+	if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
+		return notFound();
+	}
+
+	// お知らせデータの取得
+	const informationQueries = { limit: 5, fields: "title,date" };
+	const informationResponse = await getBlogList(informationQueries).catch(() =>
+		notFound(),
+	);
+	const informationContent = informationResponse.contents.map(
+		(item: { title: string; createdAt: string }) => ({
+			name: item.title,
+			time: item.createdAt,
+		}),
+	);
+
 	return (
-		<div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-			<main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-				<Image
-					className="dark:invert"
-					src="https://nextjs.org/icons/next.svg"
-					alt="Next.js logo"
-					width={180}
-					height={38}
-					priority
-				/>
-				<ol className="list-inside list-decimal text-center font-[family-name:var(--font-geist-mono)] text-sm sm:text-left">
-					<li className="mb-2">
-						Get started by editing{" "}
-						<code className="rounded bg-black/[.05] px-1 py-0.5 font-semibold dark:bg-white/[.06]">
-							src/app/page.tsx
-						</code>
-						.
-					</li>
-					<li>Save and see your changes instantly.</li>
-				</ol>
+		<div className="bg-[#F0EBDC]">
+			{/* Swiperセクション */}
+			<ClientSwiper />
 
-				<div className="flex flex-col items-center gap-4 sm:flex-row">
-					<a
-						className="flex h-10 items-center justify-center gap-2 rounded-full border border-transparent border-solid bg-foreground px-4 text-background text-sm transition-colors hover:bg-[#383838] sm:h-12 sm:px-5 sm:text-base dark:hover:bg-[#ccc]"
-						href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<Image
-							className="dark:invert"
-							src="https://nextjs.org/icons/vercel.svg"
-							alt="Vercel logomark"
-							width={20}
-							height={20}
-						/>
-						Deploy now
-					</a>
-					<a
-						className="flex h-10 items-center justify-center rounded-full border border-black/[.08] border-solid px-4 text-sm transition-colors hover:border-transparent hover:bg-[#f2f2f2] sm:h-12 sm:min-w-44 sm:px-5 sm:text-base dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Read our docs
-					</a>
+			{/* Aboutセクション */}
+			<div className="m-8 my-8 flex flex-col items-center justify-center gap-4 rounded bg-white p-8 md:flex-row ">
+				<div className="w-full md:w-1/2">
+					<Image
+						src="/images/about.png"
+						alt="AIMの説明画像"
+						className="mb-4 h-auto w-full rounded-md"
+						width={500}
+						height={300}
+						layout="responsive"
+						objectFit="cover"
+					/>
 				</div>
-			</main>
-			<footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image
-						aria-hidden
-						src="https://nextjs.org/icons/file.svg"
-						alt="File icon"
-						width={16}
-						height={16}
+				<div className="about_main w-full md:w-1/2">
+					<Title
+						maintitle="AIM Commons(ラーニングコモンズ)とは？"
+						subtitle="ABOUT US"
 					/>
-					Learn
-				</a>
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image
-						aria-hidden
-						src="https://nextjs.org/icons/window.svg"
-						alt="Window icon"
-						width={16}
-						height={16}
-					/>
-					Examples
-				</a>
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image
-						aria-hidden
-						src="https://nextjs.org/icons/globe.svg"
-						alt="Globe icon"
-						width={16}
-						height={16}
-					/>
-					Go to nextjs.org →
-				</a>
-			</footer>
+					<div className="about_sub">
+						<p>
+							交流しながら学習できる共同学習スペースです。学習目的に限り、開室時間内は誰でも自由に利用することができます。PCや撮影機器、ブースの貸出も行っています。グループワークに適した机・椅子やホワイトボードなど、学生同士の学びも促進するための設備があり、教職員スタッフやAIM
+							Commons学生スタッフが授業時間外の学生の学びをサポートします。
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div className="m-8 grid grid-cols-1 gap-8 sm:grid-cols-[4fr_6fr] md:grid-cols-[4fr_6fr]">
+				{/* 開室時間の表示 */}
+				<Time
+					title="開室時間"
+					notes="※授業実施日のみ"
+					subtitle="OPENING HOURS"
+					locations={[
+						{ id: "aoyama", name: "青山", time: "9:00 - 21:00" },
+						{ id: "sagamihara", name: "相模原", time: "9:00 - 20:00" },
+						{ id: "reception", name: "受付時間", time: "9:45 - 16:30" },
+					]}
+				/>
+
+				{/* お知らせの表示 */}
+				<Information
+					title="お知らせ"
+					notes=""
+					subtitle="INFORMATION"
+					content={informationContent}
+				/>
+			</div>
+
+			{/* 追加情報を表示するボックス */}
+			<div className="m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
+				<Box
+					src="/images/home01.jpg"
+					title="利用案内"
+					subtitle="INSTRUCTION"
+					description="アクセス/PC・機器貸出方法"
+				/>
+				<Box
+					src="/images/floor06.jpg"
+					title="施設紹介"
+					subtitle="FACILITIES"
+					description="AIM Commonsの設備"
+				/>
+				<Box
+					src="/images/home03.jpg"
+					title="施設紹介"
+					subtitle="FACILITIES"
+					description="AIM Commonsの設備"
+				/>
+				<Box
+					src="/images/home01.jpg"
+					title="技術ブログ"
+					subtitle="BLOG"
+					description="技術的な投稿"
+				/>
+				<Box
+					src="/images/floor06.jpg"
+					title="新しい設備"
+					subtitle="NEW FACILITIES"
+					description="新しく導入された設備"
+				/>
+				<Box
+					src="/images/kizai.jpg"
+					title="機器貸し出し"
+					subtitle="FACILITIES"
+					description="機器の貸し出し"
+				/>
+			</div>
 		</div>
 	);
-}
+};
+
+export default TopPage;
