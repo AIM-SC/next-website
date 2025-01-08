@@ -17,7 +17,6 @@ const MenuList = [
 	{ label: "施設紹介", value: "introduce" },
 	{ label: "動画配信", value: "movies" },
 	{ label: "業務紹介", value: "job-intro" },
-	{ label: "貸出機器一覧", value: "equipments" },
 ];
 
 export default function Header() {
@@ -48,6 +47,12 @@ export default function Header() {
 										<Link href={`/${item.value}`}>{item.label}</Link>
 									</li>
 								))}
+								<li className={cn("px-5 py-3")}>
+									<Link href={"https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?gid=0#gid=0"} target="_blank">貸出機器一蘭</Link>
+								</li>
+								<li className={cn("px-5 py-3")}>
+									<Link href={"https://www.aim.aoyama.ac.jp/customer_support/"} target="_blank">お問い合わせ</Link>
+								</li>
 							</ul>
 						</SheetContent>
 					</Sheet>
