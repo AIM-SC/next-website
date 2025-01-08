@@ -1,38 +1,28 @@
 import Image from "next/image";
-import { LIMIT } from "@/libs/constants";
-import { getBlogList } from "@/libs/microcms";
+import { getInfoList } from "@/libs/microcms";
 import { notFound } from "next/navigation";
+import { format } from "date-fns";
+import ClientSwiper from "./components/swiper";
 import Title from "./components/title";
 import Time from "./components/time";
 import Information from "./components/infromation";
 import Box from "./components/box";
-import ClientSwiper from "./components/swiper";
 
 const TopPage = async () => {
-	const currentPage = 1;
-
-	// 記事リストの取得
-	const initialQueries = { limit: LIMIT, fields: "id" };
-	const articlesListResponse = await getBlogList(initialQueries).catch(() =>
-		notFound(),
-	);
-	const { totalCount } = articlesListResponse;
-
-	const maxPage = Math.ceil(totalCount / LIMIT);
-	if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
-		return notFound();
-	}
-
 	// お知らせデータの取得
-	const informationQueries = { limit: 5, fields: "title,date" };
-	const informationResponse = await getBlogList(informationQueries).catch(() =>
+	const informationQueries = { limit: 5, fields: "title,updatedAt,id" };
+	const informationResponse = await getInfoList(informationQueries).catch(() =>
 		notFound(),
 	);
+	console.log(informationResponse);
 	const informationContent = informationResponse.contents.map(
-		(item: { title: string; createdAt: string }) => ({
-			name: item.title,
-			time: item.createdAt,
-		}),
+		(item: { title: string; updatedAt: string; id: string }) => {
+			return {
+				name: item.title,
+				time: format(new Date(item.updatedAt), "yyyy/MM/dd"),
+				id: item.id,
+			};
+		},
 	);
 
 	return (
@@ -41,7 +31,7 @@ const TopPage = async () => {
 			<ClientSwiper />
 
 			{/* Aboutセクション */}
-			<div className="m-8 my-8 flex flex-col items-center justify-center gap-4 rounded bg-white p-8 md:flex-row ">
+			<div className="m-8 my-8 flex flex-col items-center justify-center gap-4 rounded bg-white p-8 md:flex-row">
 				<div className="w-full md:w-1/2">
 					<Image
 						src="/images/about.png"
