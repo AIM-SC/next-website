@@ -1,8 +1,6 @@
 import SwitchCampus from "../../components/switchCampus";
 
-
 const moviePage = async () => {
-
 	return (
 		<div className="text-[20px] text-black leading-10">
 			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
@@ -13,21 +11,13 @@ const moviePage = async () => {
 					施設紹介
 				</div>
 				<div className="text-center font-bold text-gray-600 text-lg">
-          設備について詳しくご紹介します
+					設備について詳しくご紹介します
 				</div>
 			</div>
-
-			{/* <div className="mx-auto">
-				<SwitchMovieType
-					longVideoIds={longVideoIds}
-					shortVideoIds={shortVideoIds}
-				/>
-			</div> */}
-    <div className="min-h-screen bg-[#F0EBDC]">
-      <SwitchCampus />
-    </div>
-
-
+      
+			<div className="min-h-screen bg-[#F0EBDC]">
+				<SwitchCampus />
+			</div>
 		</div>
 	);
 };
