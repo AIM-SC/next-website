@@ -48,7 +48,10 @@ export default function Header() {
 									</li>
 								))}
 								<li className={cn("px-5 py-3")}>
-									<Link href={"https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?gid=0#gid=0"} target="_blank">貸出機器一蘭</Link>
+									<Link href={"https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?gid=0#gid=0"} target="_blank">貸出機器一覧</Link>
+								</li>
+								<li className={cn("px-5 py-3")}>
+									<Link href={"https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28"} target="_blank">ワークショップ</Link>
 								</li>
 								<li className={cn("px-5 py-3")}>
 									<Link href={"https://www.aim.aoyama.ac.jp/customer_support/"} target="_blank">お問い合わせ</Link>
