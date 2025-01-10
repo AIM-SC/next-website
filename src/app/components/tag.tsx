@@ -10,8 +10,8 @@ export default function Tag({
 }) {
 	const tagClass =
 		variant === "card"
-			? "p-1 px-3 rounded-full h-fit w-fit bg-[#d9ae4c] shadow-sm cursor-pointer"
-			: "p-1 px-3 rounded-full h-fit w-fit bg-[#d9ae4c] cursor-pointer";
+			? "p-1 px-3 rounded-full h-fit w-fit bg-[#d9ae4c] shadow-sm cursor-pointer font-bold"
+			: "p-1 px-3 rounded-full h-fit w-fit bg-[#d9ae4c] text-sm shadow-sm cursor-pointer font-bold";
 
 	return (
 		<div className="flex h-6 flex-wrap gap-2 text-white text-xs">
