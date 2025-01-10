@@ -76,6 +76,8 @@ const config: Config = {
             '--tw-prose-pre-bg': '#fff',
             '--tw-prose-th-borders': '#000',
             '--tw-prose-td-borders': '#000',
+            maxWidth: '65%',
+            minWidth: '65%',
           },
         },
       },

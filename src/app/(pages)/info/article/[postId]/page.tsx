@@ -27,7 +27,7 @@ export default async function StaticDetailPage({
 	}
 
 	return (
-		<div className="font-bold text-[20px] text-black leading-10">
+		<div className="text-[20px] text-black leading-10">
 			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
 				<div className="text-center font-bold text-[#d9ae4c] text-base">
 					NEWS
