@@ -23,11 +23,11 @@ export const Pagination = ({
 		condition ? "opacity-50 pointer-events-none" : "";
 
 	return (
-		<ul className="mt-8 flex items-center justify-center space-x-4">
+		<ul className="mt-8 flex items-center justify-center space-x-1 md:space-x-4">
 			<li>
 				<Link
 					href={createHref(1)}
-					className={`rounded-md bg-[#F6F3EA] p-2 px-3 text-lg shadow hover:opacity-70 ${isDisabled(
+					className={`rounded-md bg-[#F6F3EA] p-1 px-2 text-sm shadow hover:opacity-70 md:p-2 md:px-3 md:text-lg ${isDisabled(
 						currentPage === 1,
 					)}`}
 				>
@@ -37,7 +37,7 @@ export const Pagination = ({
 			<li>
 				<Link
 					href={createHref(currentPage - 1)}
-					className={`rounded-md bg-[#F6F3EA] p-2 px-3 text-lg shadow hover:opacity-70 ${isDisabled(
+					className={`rounded-md bg-[#F6F3EA] p-1 px-2 text-sm shadow hover:opacity-70 md:p-2 md:px-3 md:text-lg ${isDisabled(
 						currentPage === 1,
 					)}`}
 				>
@@ -45,14 +45,14 @@ export const Pagination = ({
 				</Link>
 			</li>
 			<li>
-				<span className="rounded-md bg-[#F6F3EA] p-2 px-3 text-lg shadow">
+				<span className="rounded-md bg-[#F6F3EA] p-1 px-2 text-xs shadow md:p-2 md:px-3 md:text-lg">
 					{currentPage} / {totalPages}
 				</span>
 			</li>
 			<li>
 				<Link
 					href={createHref(currentPage + 1)}
-					className={`rounded-md bg-[#F6F3EA] p-2 px-3 text-lg shadow hover:opacity-70 ${isDisabled(
+					className={`rounded-md bg-[#F6F3EA] p-1 px-2 text-sm shadow hover:opacity-70 md:p-2 md:px-3 md:text-lg ${isDisabled(
 						currentPage === totalPages,
 					)}`}
 				>
@@ -62,7 +62,7 @@ export const Pagination = ({
 			<li>
 				<Link
 					href={createHref(totalPages)}
-					className={`rounded-md bg-[#F6F3EA] p-2 px-3 text-lg shadow hover:opacity-70 ${isDisabled(
+					className={`rounded-md bg-[#F6F3EA] p-1 px-2 text-sm shadow hover:opacity-70 md:p-2 md:px-3 md:text-lg ${isDisabled(
 						currentPage === totalPages,
 					)}`}
 				>

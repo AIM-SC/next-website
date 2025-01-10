@@ -36,7 +36,7 @@ export default function RootLayout({
 				/>
 				<Header />
 				<div className="bg-[#F0EBDC]">
-					<div className="mx-[3%] max-w-full py-[75px] pb-[30px]">
+					<div className="mx-[5vw] max-w-full py-[75px] pb-[30px]">
 						<div
 							id="side_line"
 							className="writing-mode-vertical-rl fixed font-semibold text-xs tracking-wide"
