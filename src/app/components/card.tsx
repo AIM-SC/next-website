@@ -19,7 +19,7 @@ export default function Card({ content }: { content: ArticleType }) {
 					{content.title}
 				</h1>
 				<div className="mb-2 font-semibold text-gray-600 text-sm">
-					{format(new Date(content.createdAt), "yyyy.MM.dd")}
+					{format(new Date(content.publishedAt || content.updatedAt), "yyyy.MM.dd")}
 				</div>
 				<Tag tags={content.tags} variant="card" />
 			</div>

@@ -167,8 +167,8 @@ export const getCategoryArticleList = async (
 
 		// ソートとページネーションの適用
 		filteredArticles.sort((a, b) => {
-			const dateA = new Date(a.publishedAt ?? a.createdAt).getTime();
-			const dateB = new Date(b.publishedAt ?? b.createdAt).getTime();
+			const dateA = new Date(a.publishedAt ?? a.updatedAt).getTime();
+			const dateB = new Date(b.publishedAt ?? b.updatedAt).getTime();
 			return dateB - dateA;
 		});
 

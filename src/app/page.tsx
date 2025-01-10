@@ -10,16 +10,16 @@ import Box from "./components/box";
 
 const TopPage = async () => {
 	// お知らせデータの取得
-	const informationQueries = { limit: 5, fields: "title,updatedAt,id" };
+	const informationQueries = { limit: 5, fields: "title,publishedAt,updatedAt,id" };
 	const informationResponse = await getInfoList(informationQueries).catch(() =>
 		notFound(),
 	);
 	console.log(informationResponse);
 	const informationContent = informationResponse.contents.map(
-		(item: { title: string; updatedAt: string; id: string }) => {
+		(item) => {
 			return {
 				name: item.title,
-				time: format(new Date(item.updatedAt), "yyyy/MM/dd"),
+				time: format(new Date(item.publishedAt || item.updatedAt), "yyyy/MM/dd"),
 				id: item.id,
 			};
 		},

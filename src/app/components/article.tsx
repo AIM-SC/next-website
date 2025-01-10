@@ -11,7 +11,7 @@ export default function Article({ content }: { content: ArticleType }) {
 				<div className="mb-2 flex justify-between">
 					<Tag tags={content.tags} variant="article" />
 					<h2 className="text-right font-semibold text-gray-600">
-						{format(content.createdAt, "yyyy.MM.dd")}
+						{format(content.publishedAt || content.updatedAt, "yyyy.MM.dd")}
 					</h2>
 				</div>
 				<hr className="mb-[5%] border-gray-600" />
