@@ -52,14 +52,14 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 
 	return (
 		<div className="font-bold text-[20px] text-black leading-10">
-			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
-				<div className="text-center font-bold text-[#d9ae4c] text-base">
+			<div className="mb-[4vh] flex flex-col gap-2 px-[13%] md:gap-4">
+				<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
 					BLOG
 				</div>
-				<div className="text-center font-semibold text-4xl text-black">
+				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
 					ブログ
 				</div>
-				<div className="text-center font-bold text-gray-600 text-lg">
+				<div className="text-center font-bold text-gray-600 text-sm md:text-lg">
 					AIM Commonsスタッフからの発信
 				</div>
 			</div>
@@ -71,7 +71,7 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 			/>
 			<hr className="mt-8 border-[#d9ae4c] border-[1px]" />
 			<div className="mt-2 ml-2">タグから探す</div>
-			<div className="mt-2 ml-4">
+			<div className="mt-2 mb-6 ml-4">
 				<Tag tags={tagContents} variant="card" />
 			</div>
 		</div>
