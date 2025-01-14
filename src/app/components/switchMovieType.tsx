@@ -1,6 +1,10 @@
 "use client";
 import { useState } from "react";
-import type { Props } from "@/types";
+
+type Props = {
+	longVideoIds: string[];
+	shortVideoIds: string[];
+};
 
 export default function SwitchMovieType({
 	longVideoIds,
