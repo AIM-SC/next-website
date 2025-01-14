@@ -1,15 +1,22 @@
 import { XMLParser } from "fast-xml-parser";
 import SwitchMovieType from "../../components/switchMovieType";
-import type { Entry, VideoId } from "@/types";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+type VideoId = string;
+
+type Entry = {
+	"yt:videoId": string;
+	title: string;
+};
 
 const moviePage = async () => {
 	const xmlFileUrl =
 		"https://www.youtube.com/feeds/videos.xml?channel_id=UCPvxIswjXQ1VU2H3WyBss8w";
 
 	const response = await fetch(xmlFileUrl);
-	const parser = new XMLParser();
 	const xmlText = await response.text();
+	const parser = new XMLParser();
 	const jsonObj = parser.parse(xmlText);
 
 	const entries: Entry[] = jsonObj.feed.entry;
@@ -49,14 +56,15 @@ const moviePage = async () => {
 					shortVideoIds={shortVideoIds}
 				/>
 			</div>
-			<Button className="mx-auto block rounded-lg bg-red-600 px-4 py-2 font-bold text-lg text-white">
-				<a
+
+			<Button className="mx-auto mt-[2%] block rounded-lg bg-red-600 px-4 py-2 font-bold text-lg text-white">
+				<Link
 					href="https://www.youtube.com/channel/UCPvxIswjXQ1VU2H3WyBss8w"
 					target="_blank"
 					rel="noreferrer"
 				>
 					AIMCommons公式YouTubeチャンネルへ
-				</a>
+				</Link>
 			</Button>
 		</div>
 	);
