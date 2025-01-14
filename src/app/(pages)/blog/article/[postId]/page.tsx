@@ -27,12 +27,12 @@ export default async function StaticDetailPage({
 	}
 
 	return (
-		<div className="text-[20px] text-black leading-10">
+		<div className="py-[75px] text-[20px] text-black leading-10">
 			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
-				<div className="text-center font-bold text-[#d9ae4c] text-base">
+			<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
 					BLOG
 				</div>
-				<div className="text-center font-semibold text-4xl text-black">
+				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
 					ブログ
 				</div>
 			</div>

@@ -51,7 +51,7 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 	}
 
 	return (
-		<div className="font-bold text-[20px] text-black leading-10">
+		<div className="py-[75px] font-bold text-[20px] text-black leading-10">
 			<div className="mb-[4vh] flex flex-col gap-2 px-[13%] md:gap-4">
 				<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
 					BLOG
