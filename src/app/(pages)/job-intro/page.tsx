@@ -6,18 +6,18 @@ const jobIntroductionPage = () => {
 		<div className="text-[20px] text-black leading-10">
 			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
 				<div className="text-center font-bold text-[#d9ae4c] text-base">
-					JOB INTRODUCTION
+					RECRUIT
 				</div>
 				<div className="text-center font-semibold text-4xl text-black">
-					業務紹介
+					採用情報
 				</div>
 				<div className="text-center font-bold text-gray-600 text-lg">
-					受付で常駐している学生スタッフの業務をご紹介します
+					情報メディアセンター学生スタッフの採用情報をご紹介します。
 				</div>
 			</div>
 			<div className="mx-[3%] mt-[1%] grid grid-cols-1 gap-4 rounded-md bg-white sm:grid-cols-2 lg:grid-cols-3">
 				<JobIntroduction
-					image="/images/IMG_0091.JPG"
+					image="/images/pc_rental.jpg"
 					title="PC貸出"
 					text={
 						<div className="indent-4">
