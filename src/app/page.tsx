@@ -7,6 +7,7 @@ import Title from "./components/title";
 import Time from "./components/time";
 import Information from "./components/infromation";
 import Box from "./components/box";
+import AbleCard from "./components/ableCard/ableCard";
 
 const TopPage = async () => {
 	// お知らせデータの取得
@@ -56,6 +57,27 @@ const TopPage = async () => {
 						</p>
 					</div>
 				</div>
+			</div>
+
+			<div className="m-8 grid grid-cols-1 gap-3 md:grid-cols-3">
+				<AbleCard
+					srcUrl="/images/ableCard/1.png"
+					title="学習スペースの利用"
+					description="グループワークに適した机・椅子やホワイトボード・大画面モニターなどを、その場で利用できます。"
+					linkArray={[{ name: "詳細はこちら", link: "/" }]}
+				/>
+				<AbleCard
+					srcUrl="/images/ableCard/2.png"
+					title="機器レンタル"
+					description="ノートPCをはじめ、カメラや充電器、高性能PCブースなどを借りることができます。"
+					linkArray={[{ name: "機器貸出の詳細", link: "/" }, { name: "貸出機器の一覧", link: "/" }]}
+				/>
+				<AbleCard
+					srcUrl="/images/ableCard/3.png"
+					title="WorkShopへの参加"
+					description="学生スタッフが開講する無料のワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
+					linkArray={[{ name: "青山はこちら", link: "/" }, { name: "相模原はこちら", link: "/" }]}
+				/>
 			</div>
 
 			<div className="m-8 grid grid-cols-1 gap-8 sm:grid-cols-[4fr_6fr] md:grid-cols-[4fr_6fr]">
