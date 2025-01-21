@@ -69,13 +69,13 @@ const TopPage = async () => {
 				<AbleCard
 					srcUrl="/images/ableCard/2.png"
 					title="機器レンタル"
-					description="ノートPCをはじめ、カメラや充電器、高性能PCブースなどを借りることができます。"
+					description="ノートPCをはじめ、カメラや充電器、動画編集ブースなどを借りることができます。"
 					linkArray={[{ name: "機器貸出の詳細", link: "/" }, { name: "貸出機器の一覧", link: "/" }]}
 				/>
 				<AbleCard
 					srcUrl="/images/ableCard/3.png"
 					title="WorkShopへの参加"
-					description="学生スタッフが開講する無料のワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
+					description="学生スタッフが開講するワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
 					linkArray={[{ name: "青山はこちら", link: "/" }, { name: "相模原はこちら", link: "/" }]}
 				/>
 			</div>
