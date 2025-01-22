@@ -8,7 +8,7 @@ type Props = {
 
 const JobIntroduction = ({ image, title, text }: Props) => {
 	return (
-		<div className="mx-[8%] my-[8%] flex flex-col rounded-md bg-white p-4">
+		<div className="flex flex-col rounded-md bg-white">
 			{/* 画像の表示 */}
 			<div className="relative mb-4 aspect-[16/9] w-full">
 				<Image
