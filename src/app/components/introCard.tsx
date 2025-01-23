@@ -1,54 +1,64 @@
-import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
 type Props = {
 	image: string;
-	alt: string;
 	title: string;
+	url?: string;
+	time: string;
 	text: React.ReactNode;
-	exsampleText?: React.ReactNode;
+	accordionText?: React.ReactNode;
 };
 
-const introCard = ({ image, alt, title, text, exsampleText }: Props) => {
-	const [isOpen, setIsOpen] = useState(false);
-
-	const toggleContent = () => {
-		setIsOpen(!isOpen);
-	};
-
+const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 	return (
 		<div className="mx-[8%] my-[8%] flex flex-col items-start bg-white p-4">
-			{/* 画像の表示 */}
-			<div className="mb-4 w-full">
-				<Image src={image} alt={alt} width={640} height={360} />
+			<div className="relative mb-4 aspect-[16/9] w-full">
+				<Image
+					src={image}
+					alt={title}
+					fill
+					className="mb-4 rounded object-cover"
+				/>
 			</div>
 
-			{/* タイトルエリア */}
-			<div className="flex w-full items-center justify-between sm:block">
-				<div className="font-bold text-xl">{title}</div>
-				<button
-					type="button"
-					onClick={toggleContent}
-					className="block font-bold text-gray-500 text-xl focus:outline-none sm:hidden"
-				>
-					{isOpen ? "−" : "+"}
-				</button>
-			</div>
+			<div className="mb-3 font-bold text-xl">{title}</div>
 
-			{/* コンテンツエリア */}
-			<div className={`pb-3 text-left ${isOpen ? "block" : "hidden"} sm:block`}>
-				<div className="text-base">
-					{text && <div className="space-y-4">{text}</div>}
-				</div>
-				{exsampleText && (
-					<>
-						<span className="bg-[#F0EBDC] px-2 py-2 text-base">
-							例えばこんな使い方
-						</span>
-						<div className="text-base">{exsampleText}</div>
-					</>
+			<div className="mt-1 w-full rounded bg-muted p-2">
+				<div className="text-base text-black">{time}</div>
+			</div>
+			<div className="mt-2 text-base">{text}</div>
+
+			<Accordion type="multiple" className="w-full">
+				<AccordionItem value="item-1">
+					<AccordionTrigger>利用方法</AccordionTrigger>
+					<AccordionContent>
+						{url ? (
+							<div className="text-base">
+								利用方法は
+								<Link target="_blank" href={url} className="text-blue-500 hover:opacity-70">
+									こちら
+								</Link>
+								をご確認ください。
+							</div>
+						) : (
+							<div className="text-base">利用に申請は必要ありません。</div>
+						)}
+					</AccordionContent>
+				</AccordionItem>
+				{accordionText && (
+					<AccordionItem value="item-2">
+						<AccordionTrigger>注意事項</AccordionTrigger>
+						<AccordionContent>{accordionText}</AccordionContent>
+					</AccordionItem>
 				)}
-			</div>
+			</Accordion>
 		</div>
 	);
 };
