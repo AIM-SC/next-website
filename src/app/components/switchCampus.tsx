@@ -2,6 +2,7 @@
 import { useState } from "react";
 import IntroCard from "@/app/components/introCard";
 import Image from "next/image";
+import Rule from "@/app/components/rule";
 
 export default function SwitchCampus() {
 	const [selectedCampus, setSelectedCampus] = useState("sagamihara");
@@ -16,8 +17,8 @@ export default function SwitchCampus() {
 				<label
 					className={`cursor-pointer rounded-lg border-2 px-5 py-6 sm:px-10 ${
 						selectedCampus === "aoyama"
-							? "border-black bg-white font-bold text-black text-sm sm:text-xl"
-							: "border-black bg-white text-black text-sm sm:text-xl"
+							? "border-black bg-white font-bold text-sm sm:text-xl"
+							: "border-black bg-white text-sm sm:text-xl"
 					}`}
 				>
 					<input
@@ -28,13 +29,14 @@ export default function SwitchCampus() {
 						onChange={handleCampusChange}
 						className="hidden"
 					/>
-					<span className="mr-2 inline-block">&gt;</span> 青山キャンパス
+					<span className="mr-2">&gt;</span> 青山
+					<span className="hidden sm:inline">キャンパス</span>
 				</label>
 				<label
 					className={`cursor-pointer rounded-lg border-2 px-5 py-6 sm:px-10 ${
 						selectedCampus === "sagamihara"
-							? "border-black bg-white font-bold text-black text-sm sm:text-xl"
-							: "border-black bg-white text-black text-sm sm:text-xl"
+							? "border-black bg-white font-bold text-sm sm:text-xl"
+							: "border-black bg-white text-sm sm:text-xl"
 					}`}
 				>
 					<input
@@ -45,174 +47,240 @@ export default function SwitchCampus() {
 						onChange={handleCampusChange}
 						className="hidden"
 					/>
-					<span className="mr-2 inline-block">&gt;</span> 相模原キャンパス
+					<span className="mr-2">&gt;</span> 相模原
+					<span className="hidden sm:inline">キャンパス</span>
 				</label>
 			</div>
 
 			<div className="mx-[3%] rounded-md bg-white">
 				{selectedCampus === "sagamihara" && (
 					<div>
-						<div className="my-8 flex items-center justify-center">
+						<div className="pt-5 text-center">
+							<h2 className="font-bold text-xl">アクセスマップ</h2>
+							<p className="text-[#8C8C8C]">相模原：B棟 4階</p>
+						</div>
+						<div className="mb-5">
 							<Image
-								src="/images/floor00.png"
+								src="/images/go02.jpg"
 								alt={"map"}
 								width={1120}
 								height={840}
+								className="mx-auto"
 							/>
 						</div>
+						<h2 className="text-center font-bold text-xl">室内案内図</h2>
+						<Image
+							src="/images/floor00.png"
+							alt={"map"}
+							width={1120}
+							height={840}
+							className="mx-auto h-[70%] w-[70%] items-center"
+						/>
+						<div className="text-center">
+							<h2 className="my-5 font-bold text-xl">開室時間</h2>
+							<p className="text-3xl text-[#d9ae4c]">9:00-20:00</p>
+						</div>
+
 						<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 							<IntroCard
 								image="/images/floor01.jpg"
-								alt="受付"
-								title="受付"
+								title="PC貸出"
+								url="https://www.aim.aoyama.ac.jp/rental/note-pc/"
+								time="受付：9:45-16:30（返却は16:45まで）"
 								text={
-									<ul className="space-y-4">
+									<div className="text-base">
+										WindowsノートPC、MacBook Airを借りることができます。
+									</div>
+								}
+								accordionText={
+									<ul className="list-disc pl-4 text-base">
+										<li>当日返却、利用は学内のみでお願いします。</li>
 										<li>
-											PCや機材、ブースの貸し出しを行っています。詳しくは
-											利用案内 をご覧ください。
+											電源を消すと自動的にデータが消去されるため、PC本体内にデータは保存できません。
 										</li>
+									</ul>
+								}
+							/>
+							<IntroCard
+								image="/images/kizai.jpg"
+								title="機器貸出"
+								url="https://www.aim.aoyama.ac.jp/rental/production/"
+								time="受付：9:45-16:30（返却は16:45まで）"
+								text={
+									<div>
+										充電器や一眼レフカメラ、4Kビデオカメラ等を借りることができます。
+									</div>
+								}
+								accordionText={
+									<ul className="list-disc pl-4 text-base">
+										<li>一部機器はAIM Commons内でのみ利用できます。</li>
 										<li>
-											9:45-16:30は、AIM
-											Commonsスタッフが駐在していますので、ラーコモに関する疑問などはお気軽にお声がけください。
+											機器を日をまたいで借りる場合は、次開室日の正午までにご返却ください。
 										</li>
 									</ul>
 								}
 							/>
 							<IntroCard
 								image="/images/floor02.jpg"
-								alt="説明カード"
 								title="静音ブース"
+								url="https://www.aim.aoyama.ac.jp/rental/meetingpod/"
+								time="受付：9:45-16:30（返却は16:45まで）"
 								text={
-									<ul className="space-y-4">
-										<li>
-											防音になっていて、ゼミや研究室のオンラインミーティングなどで声を出して参加することができます。(完全防音ではありません)
-										</li>
-										<li>30分単位で最大90分まで予約可能です。</li>
-										<li>※使用したい場合は、受付で貸出手続きをしてください。</li>
+									<div>
+										ゼミや研究室のオンラインミーティング等に声を出して参加することができます。
+									</div>
+								}
+								accordionText={
+									<ul className="list-disc pl-4 text-base">
+										<li>利用は教育研究目的に限ります。</li>
+										<li>完全防音ではありません。</li>
 									</ul>
 								}
 							/>
 							<IntroCard
 								image="/images/floor03.jpg"
-								alt="説明カード"
 								title="動画編集ブース"
+								url="https://www.aim.aoyama.ac.jp/rental/production/"
+								time="受付：9:45-16:30（返却は16:45まで）"
 								text={
-									<ul className="space-y-4">
-										<li>
-											自分のパソコンだと動きが重い、Adobeを使ってみたい人、ぜひご活用ください。
-										</li>
-										<li>
-											Windows、Macともに動画編集に適したソフト（Adobe）が入っているパソコンを使用することができます。
-										</li>
-										<li>※使用したい場合は、受付で貸出手続きをしてください。</li>
-									</ul>
+									<div>
+										Windows、Macともに動画編集に適したソフト（Adobe）が入っているPCを利用できます。
+									</div>
 								}
 							/>
 							<IntroCard
 								image="/images/floor04.jpg"
-								alt="説明カード"
-								title="作業スペース/ソファ"
+								title="ソファ"
+								time="利用：9:00-20:00"
 								text={
-									<ul className="space-y-4">
-										<li>
-											背の高いソファ席なので周りの視覚などを遮り集中して作業ができます。すべての席の横にはホワイトボードがあり、グループでの学習にも活用できます。
-										</li>
-										<li>
-											パソコンと接続できる大きめのディスプレイが利用できる席もご自由にお使いいただけます。
-										</li>
-									</ul>
-								}
-								exsampleText={
-									<ul className="ml-6 list-disc">
-										<li>グループで学習したい方</li>
-										<li>一人で集中して学習したい方</li>
-										<li>ディスプレイを利用してプレゼンの練習をしたい方</li>
-										<li>ホワイトボードを利用して学習したい方</li>
-									</ul>
+									<div>
+										すべての席の横にホワイトボードがあり、グループ学習に最適です。
+									</div>
 								}
 							/>
 							<IntroCard
 								image="/images/floor05.jpg"
-								alt="説明カード"
-								title="作業スペース/畳"
-								text={
-									<p>畳の席でくつろぎながら少人数で作業することができます。</p>
-								}
-								exsampleText={
-									<ul className="ml-6 list-disc">
-										<li>ゆったりと学習したい方</li>
-									</ul>
-								}
+								title="畳"
+								time="利用：9:00-20:00"
+								text={<div>靴を脱いで、少人数で作業することができます。</div>}
 							/>
 							<IntroCard
 								image="/images/floor06.jpg"
-								alt="説明カード"
-								title="作業スペース/PC設備"
+								title="PC設備"
+								time="利用：9:00-20:00"
 								text={
-									<p>
-										PCが設置してある席です。専用ソフトが入っているのでIT講習会の勉強もできます。
-									</p>
+									<div>PCが設置してある席です。IT講習会の勉強もできます。</div>
 								}
-								exsampleText={
-									<ul className="ml-6 list-disc">
-										<li>友達と相談しあいながらIT講習会の勉強をしたい方</li>
+								accordionText={
+									<ul className="list-disc pl-4 text-base">
+										<li>一番左の席は、セカンドモニターとしてのみ利用できます。</li>
+										<li>離席する際は、必ずサインアウトしてください。</li>
 									</ul>
 								}
 							/>
 							<IntroCard
 								image="/images/floor07.jpg"
-								alt="説明カード"
-								title="作業スペース/個人用"
+								title="個人用作業スペース"
+								time="利用：9:00-20:00"
 								text={
-									<ul className="space-y-4">
-										<li>
-											デスクライトが設備されているため、手元を照らしながら作業することができます。
-										</li>
-										<li>
-											脚の長い机と椅子が設置されており、まるでカフェにいるような感覚で勉強できます。
-										</li>
-									</ul>
-								}
-								exsampleText={
-									<ul className="ml-6 list-disc">
-										<li>手元が明るい場所で学習したい方</li>
-										<li>カフェのような空間で学習したい方</li>
-									</ul>
+									<div>
+										デスクライトが設備されているため、手元を照らしながら作業することができます。
+									</div>
 								}
 							/>
 							<IntroCard
 								image="/images/floor08.jpg"
-								alt="説明カード"
 								title="フリースペース"
+								time="利用：9:00-20:00"
 								text={
-									<p>
-										ホワイトボードがあるので、簡易的な仕切りとして使ったり、メモとして使うことができます
-									</p>
-								}
-								exsampleText={
-									<ul className="ml-6 list-disc">
-										<li>一人で学習したい方</li>
-										<li>ホワイトボードでメモしながら学習したい方</li>
-									</ul>
+									<div>
+										ホワイトボードを簡易的な仕切りとして使ったり、メモとして使うことができます。
+									</div>
 								}
 							/>
 							<IntroCard
 								image="/images/floor09.jpg"
-								alt="説明カード"
 								title="プリンター"
+								url="https://www.aim.aoyama.ac.jp/printstation/"
+								time="利用：9:00-20:00"
 								text={
-									<p>
+									<div>
 										自習スペースやご自身のパソコンから印刷することができます。
-									</p>
+									</div>
 								}
+							/>
+							<IntroCard
+								image="/images/lend02.jpg"
+								title="PC貸出ロッカー"
+								url="https://www.aim.aoyama.ac.jp/rental/note-pc/"
+								time="利用：8:30-20:00"
+								text={
+									<div>
+										ロッカーに学生証をかざすだけでPCを借りることができます。
+									</div>
+								}
+								accordionText={
+									<ul className="list-disc pl-4 text-base">
+										<li>B棟4Fサポートラウンジ前の廊下にあります。</li>
+										<li>1日に借りられるのは、1人1台までです。</li>
+									</ul>
+								}
+							/>
+						</div>
+
+						<h2 className="pt-5 text-center font-bold text-xl">利用者が気持ちよく使うためのお願い</h2>
+						<div className="m-8 grid grid-cols-2 gap-4 text-center sm:grid-cols-3 md:grid-cols-3">
+							<Rule
+								image="/images/rule01.png"
+								text="学習目的での利用をお願いします"
+							/>
+							<Rule
+								image="/images/rule02.png"
+								text="食事はできません"
+								note="（蓋が閉まる＆直立する飲み物は持ち込めます。
+									コンビニコーヒーのように、紙カップに簡単なフタが付いただけの容器は禁止です。）"
+							/>
+							<Rule
+								image="/images/rule03.png"
+								text="荷物を置いての長時間退出はご遠慮ください"
+							/>
+							<Rule
+								image="/images/rule04.png"
+								text="他の人の学習の妨げになる音出しはご遠慮ください"
+								note="(ゲーム、大きな声での会話モニターを使用した動画鑑賞など)"
+							/>
+							<Rule
+								image="/images/rule05.png"
+								text="睡眠目的での利用はご遠慮ください"
+							/>
+							<Rule
+								image="/images/rule06.png"
+								text="各座席に決められた定員数を守ってください"
 							/>
 						</div>
 					</div>
 				)}
 				{selectedCampus === "aoyama" && (
-					<div className="flex h-64 items-center justify-center bg-white">
-						<p className="font-bold text-2xl text-gray-500">Coming Soon</p>
-					</div>
+					<>
+						<div className="pt-5 text-center">
+							<h2 className="font-bold text-xl">アクセスマップ</h2>
+							<p className="text-[#8C8C8C]">青山：18号館　地下1階・1階</p>
+						</div>
+						<Image
+							src="/images/aoyama-lc-map-1F.jpg"
+							alt={"map"}
+							width={1920}
+							height={2710}
+							className="mx-auto my-3 h-[50%] w-[50%]"
+						/>
+						<Image
+							src="/images/aoyama-lc-map-B1.jpg"
+							alt={"map"}
+							width={1920}
+							height={2710}
+							className="mx-auto h-[50%] w-[50%]"
+						/>
+					</>
 				)}
 			</div>
 		</div>

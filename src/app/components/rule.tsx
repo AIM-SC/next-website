@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Props = {
 	image: string;
 	text: string;
@@ -6,10 +8,16 @@ type Props = {
 
 const Rule = ({ image, text, note }: Props) => {
 	return (
-		<div className="mb-4 flex flex-col items-center rounded-lg bg-white p-2 sm:p-6">
-			<img className="w-4/5" src={image} alt="" />
-			<p className="mt-10 leading-5">{text}</p>
-			<p className="mt-3 text-[#8C8C8C] leading-5">{note}</p>
+		<div className="mb-4 flex flex-col items-center bg-white p-2 sm:p-6">
+			<div className="relative aspect-[1/1] w-[50%]">
+				<Image 
+					src={image} 	
+					alt="禁止" 
+					fill
+					/>
+			</div>
+			<div className="mt-10 text-lg leading-5">{text}</div>
+			<div className="mt-3 text-[#8C8C8C] text-base leading-5">{note}</div>
 		</div>
 	);
 };
