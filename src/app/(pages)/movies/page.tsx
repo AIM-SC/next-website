@@ -38,13 +38,13 @@ const moviePage = async () => {
 	shortVideoIds = shortVideoIds.slice(0, 9);
 
 	return (
-		<div className="py-[75px] font-bold text-[20px] text-black leading-10">
+		<div className="py-[75px] text-[20px] text-black leading-10">
 			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
 				<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
 					MOVIES
 				</div>
 				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
-					動画配信
+					YouTube
 				</div>
 				<div className="text-center font-bold text-gray-600 text-sm md:text-lg">
 					AIM Commons配信動画一覧
@@ -63,7 +63,7 @@ const moviePage = async () => {
 					target="_blank"
 					rel="noreferrer"
 				>
-					AIMCommons公式YouTubeチャンネルへ
+					すべての動画を見るにはこちら
 				</Link>
 			</Button>
 		</div>
