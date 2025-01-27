@@ -3,6 +3,12 @@ import Articlelist from "@/app/components/articlelist";
 import { LIMIT } from "@/libs/constants";
 import { getInfoList, getTagList } from "@/libs/microcms";
 import Tag from "@/app/components/tag";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "お知らせ",
+	description: "AIM Commonsからのお知らせ一覧です",
+};
 
 export async function generateStaticParams() {
 	const queries = { limit: LIMIT, fields: "id" };
