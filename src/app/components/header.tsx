@@ -47,7 +47,7 @@ export default function Header() {
 							</p>
 							<ul>
 								<li className={cn("px-5 py-3")}>
-									<Link href={"/instruction"}>利用案内</Link>
+									<Link href={"/introduce"}>利用案内</Link>
 								</li>
 								<li className={cn("px-5 py-3")}>
 									<Link
@@ -106,14 +106,10 @@ export default function Header() {
 									<Link href={"/info"}>お知らせ</Link>
 								</li>
 								<li className={cn("px-5 py-3")}>
-									<Link href={"/blog"} target="_blank">
-										技術ブログ
-									</Link>
+									<Link href={"/blog"}>技術ブログ</Link>
 								</li>
 								<li className={cn("px-5 py-3")}>
-									<Link href={"/movies"} target="_blank">
-										配信動画
-									</Link>
+									<Link href={"/movies"}>YouTube動画</Link>
 								</li>
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />

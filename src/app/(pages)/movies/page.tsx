@@ -49,7 +49,7 @@ const moviePage = async () => {
 					MOVIES
 				</div>
 				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
-					YouTube
+					YouTube動画
 				</div>
 				<div className="text-center font-bold text-gray-600 text-sm md:text-lg">
 					AIM Commons配信動画一覧
