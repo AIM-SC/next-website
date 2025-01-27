@@ -10,7 +10,7 @@ export default function SwitchMovieType({
 	longVideoIds,
 	shortVideoIds,
 }: Props) {
-	const [filterType, setFilterType] = useState("longMovie");
+	const [filterType, setFilterType] = useState("shortsMovie");
 
 	const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setFilterType(event.target.value);
@@ -31,8 +31,8 @@ export default function SwitchMovieType({
 				<label
 					className={`cursor-pointer rounded-lg border-2 px-10 py-6 ${
 						filterType === "longMovie"
-							? "border-black bg-white font-bold text-black text-xl"
-							: "border-black bg-white text-black text-xl"
+							? "border-black bg-white font-bold text-black text-sm sm:text-xl"
+							: "border-black bg-white text-sm sm:text-xl"
 					}`}
 				>
 					<input
@@ -43,13 +43,13 @@ export default function SwitchMovieType({
 						onChange={handleFilterChange}
 						className="hidden"
 					/>
-					<span className="mr-2 inline-block">&gt;</span> 動画
+					<span className="mr-2">&gt;</span> 動画
 				</label>
 				<label
 					className={`cursor-pointer rounded-lg border-2 px-10 py-6 ${
 						filterType === "shortsMovie"
-							? "border-black bg-white font-bold text-black text-lg"
-							: "border-black bg-white font-bold text-black text-lg"
+							? "border-black bg-white font-bold text-sm sm:text-xl"
+							: "border-black bg-white text-sm sm:text-xl"
 					}`}
 				>
 					<input
@@ -60,7 +60,7 @@ export default function SwitchMovieType({
 						onChange={handleFilterChange}
 						className="hidden"
 					/>
-					<span className="mr-2 inline-block">&gt;</span> ショート
+					<span className="mr-2">&gt;</span> ショート
 				</label>
 			</div>
 

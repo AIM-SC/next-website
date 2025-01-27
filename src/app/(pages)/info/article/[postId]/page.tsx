@@ -2,6 +2,26 @@ import { notFound } from "next/navigation";
 import { getInfoDetail, getInfoList } from "../../../../../libs/microcms";
 import Article from "@/app/components/article";
 
+export async function generateMetadata({
+	params: { postId },
+}: {
+	params: { postId: string };
+}) {
+	const article = await getInfoDetail(postId);
+
+	if (!article) {
+		return {
+			title: "お知らせ",
+			description: "AIM Commonsからのお知らせ一覧です",
+		};
+	}
+
+	return {
+		title: `${article.title}`,
+		description: article.body,
+	};
+}
+
 export async function generateStaticParams() {
 	const { contents } = await getInfoList();
 
