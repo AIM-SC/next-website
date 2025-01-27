@@ -42,7 +42,11 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 						{url ? (
 							<div className="text-base">
 								利用方法は
-								<Link target="_blank" href={url} className="text-blue-500 hover:opacity-70">
+								<Link
+									target="_blank"
+									href={url}
+									className="text-blue-500 hover:opacity-70"
+								>
 									こちら
 								</Link>
 								をご確認ください。

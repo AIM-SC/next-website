@@ -1,4 +1,10 @@
 import SwitchCampus from "../../components/switchCampus";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "施設紹介",
+	description: "AIM Commonsの施設について詳しくご紹介します",
+};
 
 const moviePage = async () => {
 	return (

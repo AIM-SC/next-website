@@ -2,9 +2,14 @@ import { XMLParser } from "fast-xml-parser";
 import SwitchMovieType from "../../components/switchMovieType";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "YouTube",
+	description: "AIM Commonsが作成している配信動画の一覧です",
+};
 
 type VideoId = string;
-
 type Entry = {
 	"yt:videoId": string;
 	title: string;
