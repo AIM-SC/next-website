@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -62,8 +63,12 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const gaId = process.env.GA_ID || "";
 	return (
-		<html lang="en">
+		<html lang="ja">
+			<head>
+				<GoogleAnalytics gaId={gaId} />
+			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
