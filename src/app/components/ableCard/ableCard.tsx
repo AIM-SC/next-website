@@ -26,7 +26,7 @@ export default function AbleCard({
 			<div className="space-y-2">
 				{linkArray.map((link) => (
 					<Link href={link.link}
-						className="block flex items-center gap-2 rounded-md border border-black px-3 py-2"
+						className="flex items-center gap-2 rounded-md border border-black px-3 py-2"
 						key={link.name}
 					>
                         <FontAwesomeIcon icon={faChevronRight} className="size-3"/>
