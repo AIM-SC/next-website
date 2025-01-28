@@ -8,6 +8,7 @@ import Time from "./components/time";
 import Information from "./components/infromation";
 import Box from "./components/box";
 import AbleCard from "./components/ableCard/ableCard";
+import { faBookOpenReader, faChalkboardTeacher, faLaptop } from "@fortawesome/free-solid-svg-icons";
 
 const TopPage = async () => {
 	// お知らせデータの取得
@@ -61,13 +62,13 @@ const TopPage = async () => {
 
 			<div className="m-8 grid grid-cols-1 gap-3 md:grid-cols-3">
 				<AbleCard
-					srcUrl="/images/ableCard/1.png"
+					icon={faBookOpenReader}
 					title="学習スペースの利用"
 					description="グループワークに適した机・椅子やホワイトボード・大画面モニターなどを、その場で利用できます。"
 					linkArray={[{ name: "詳細はこちら", link: "/" }]}
 				/>
 				<AbleCard
-					srcUrl="/images/ableCard/2.png"
+					icon={faLaptop}
 					title="機器レンタル"
 					description="ノートPCをはじめ、カメラや充電器、動画編集ブースなどを借りることができます。"
 					linkArray={[
@@ -76,7 +77,7 @@ const TopPage = async () => {
 					]}
 				/>
 				<AbleCard
-					srcUrl="/images/ableCard/3.png"
+					icon={faChalkboardTeacher}
 					title="WorkShopへの参加"
 					description="学生スタッフが開講するワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
 					linkArray={[
