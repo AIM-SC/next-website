@@ -15,18 +15,18 @@ const Information = ({ title, notes, subtitle, content }: Props) => {
 				<Title maintitle={title} subtitle={subtitle} notes={notes} />
 			</div>
 			<div className="flex flex-col space-y-2 text-center">
-				{content.map((item) => (
-					<div key={item.name}>
-						<a href={`/info/article/${item.id}`}>
-							<div className="flex flex-col justify-between transition-opacity hover:opacity-50 md:flex-row">
-								<span className="">{item.time}</span>
-								<span className="text-gray-800 ">{item.name}</span>
-							</div>
-						</a>
-
-						<hr className="my-2 border-0 border-gray-400 border-t border-dashed" />
+			{content.map((item) => (
+				<div key={item.name}>
+					<Link href={`/info/article/${item.id}`}>
+					<div className="flex flex-col justify-between transition-opacity hover:opacity-50 md:flex-row">
+						<span className="">{item.time}</span>
+						<span className="text-gray-800 truncate max-w-[400px]">{item.name}</span>
 					</div>
+					</Link>
+					<hr className="my-2 border-0 border-gray-400 border-t border-dashed" />
+				</div>
 				))}
+
 				<Link href="/info" className="transition-opacity hover:opacity-50">
 					一覧を見る
 				</Link>

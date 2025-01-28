@@ -14,7 +14,7 @@ const Title = ({ maintitle, subtitle, notes }: Props) => {
 					<h2 className="font-bold text-lg">{maintitle}</h2>
 					{notes && <p className="text-gray-400 text-sm">{notes}</p>}
 				</div>
-				<h3 className="mb-2 text-[#d9ae4c] text-m">{subtitle}</h3>
+				<h3 className="mb-2 text-[#d9ae4c] text-m w-auto">{subtitle}</h3>
 			</div>
 		</div>
 	);
