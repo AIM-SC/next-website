@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import { BIZ_UDPGothic } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-
-const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
-});
-const geistMono = localFont({
-	src: "./fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
-});
 
 export const metadata: Metadata = {
 	title: {
@@ -58,19 +47,22 @@ export const metadata: Metadata = {
 	},
 };
 
+const udp = BIZ_UDPGothic({ subsets: ["latin"], weight: ["400","700"] });
+
 export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	const gaId = process.env.GA_ID || "";
+
 	return (
 		<html lang="ja">
 			<head>
 				<GoogleAnalytics gaId={gaId} />
 			</head>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={udp.className}
 			>
 				<link
 					rel="stylesheet"
