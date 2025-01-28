@@ -6,6 +6,8 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
 	image: string;
@@ -40,14 +42,15 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 					<AccordionTrigger>利用方法</AccordionTrigger>
 					<AccordionContent>
 						{url ? (
-							<div className="text-base">
+							<div className="flex text-base">
 								利用方法は
 								<Link
 									target="_blank"
 									href={url}
-									className="text-blue-500 hover:opacity-70"
+									className="flex items-center gap-1 text-blue-500 hover:opacity-70"
 								>
 									こちら
+									<FontAwesomeIcon icon={faLink} className="size-5 text-black" />
 								</Link>
 								をご確認ください。
 							</div>

@@ -8,6 +8,7 @@ import Time from "./components/time";
 import Information from "./components/infromation";
 import Box from "./components/box";
 import AbleCard from "./components/ableCard/ableCard";
+import { faBookOpenReader, faChalkboardTeacher, faLaptop } from "@fortawesome/free-solid-svg-icons";
 
 const TopPage = async () => {
 	// お知らせデータの取得
@@ -59,33 +60,35 @@ const TopPage = async () => {
 				</div>
 			</div>
 
+			<div className="text-center"><h1 className="font-bold text-[26px]">AIMCommonsでできること</h1></div>
 			<div className="m-8 grid grid-cols-1 gap-3 md:grid-cols-3">
 				<AbleCard
-					srcUrl="/images/ableCard/1.png"
+					icon={faBookOpenReader}
 					title="学習スペースの利用"
 					description="グループワークに適した机・椅子やホワイトボード・大画面モニターなどを、その場で利用できます。"
-					linkArray={[{ name: "詳細はこちら", link: "/" }]}
+					linkArray={[{ name: "詳細はこちら", link: "/introduce" }]}
 				/>
 				<AbleCard
-					srcUrl="/images/ableCard/2.png"
+					icon={faLaptop}
 					title="機器レンタル"
 					description="ノートPCをはじめ、カメラや充電器、動画編集ブースなどを借りることができます。"
 					linkArray={[
 						{ name: "機器貸出の詳細", link: "/" },
-						{ name: "貸出機器の一覧", link: "/" },
+						{ name: "貸出機器の一覧", link: "https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?pli=1&gid=0#gid=0" },
 					]}
 				/>
 				<AbleCard
-					srcUrl="/images/ableCard/3.png"
+					icon={faChalkboardTeacher}
 					title="WorkShopへの参加"
 					description="学生スタッフが開講するワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
 					linkArray={[
-						{ name: "青山はこちら", link: "/" },
-						{ name: "相模原はこちら", link: "/" },
+						{ name: "青山はこちら", link: "https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443" },
+						{ name: "相模原はこちら", link: "https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28" },
 					]}
 				/>
 			</div>
 
+			<div className="text-center"><h1 className="font-bold text-[26px]">インフォメーション</h1></div>
 			<div className="m-8 grid grid-cols-1 gap-8 sm:grid-cols-[4fr_6fr] md:grid-cols-[4fr_6fr]">
 				{/* 開室時間の表示 */}
 				<Time
@@ -109,43 +112,79 @@ const TopPage = async () => {
 			</div>
 
 			{/* 追加情報を表示するボックス */}
-			<div className="m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
-				<Box
-					src="/images/home01.jpg"
-					title="利用案内"
-					subtitle="INSTRUCTION"
-					description="アクセス/PC・機器貸出方法"
-				/>
-				<Box
-					src="/images/floor06.jpg"
-					title="施設紹介"
-					subtitle="FACILITIES"
-					description="AIM Commonsの設備"
-				/>
-				<Box
-					src="/images/home03.jpg"
-					title="施設紹介"
-					subtitle="FACILITIES"
-					description="AIM Commonsの設備"
-				/>
-				<Box
-					src="/images/home01.jpg"
-					title="技術ブログ"
-					subtitle="BLOG"
-					description="技術的な投稿"
-				/>
-				<Box
-					src="/images/floor06.jpg"
-					title="新しい設備"
-					subtitle="NEW FACILITIES"
-					description="新しく導入された設備"
-				/>
-				<Box
-					src="/images/kizai.jpg"
-					title="機器貸し出し"
-					subtitle="FACILITIES"
-					description="機器の貸し出し"
-				/>
+			<div className="text-center"><h1 className="font-bold text-[26px]">利用ガイド</h1></div>
+			<div className="m-8 gap-4 text-center ">
+				<div className="flex flex-col mb-3 md:flex-row gap-6">
+					{/* 利用案内 */}
+					<div className="flex-1 bg-white p-3 rounded-lg">
+						<div><h2 className="text-left ml-8 font-black text-lg">利用案内</h2></div>
+						<div className="m-8 p-3 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 bg-white md:grid-cols-2">
+							<Box
+								src="/images/home01.jpg"
+								title="利用案内ページ"
+								subtitle="INSTRUCTION"
+								description="アクセス/PC・機器貸出方法"
+								link="./introduce"
+							/>
+							<Box
+								src="/images/floor06.jpg"
+								title="貸出機器一覧"
+								subtitle="FACILITIES"
+								description="AIM Commonsの設備"
+								link="https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?pli=1&gid=0#gid=0"
+							/>
+						</div>
+					</div>
+
+					{/* ワークショップ */}
+					<div className="flex-1 bg-white p-3 rounded-lg">
+						<div><h2 className="text-left ml-8 font-black text-lg">ワークショップ</h2></div>
+						<div className="m-8 p-3 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 bg-white md:grid-cols-2">
+							<Box
+								src="/images/aoyama.jpg"
+								title="青山キャンパス"
+								subtitle="AOYAMA"
+								description="青山キャンパスで実施のワークショップ"
+								link="https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443"
+							/>
+							<Box
+								src="/images/sagamihara.jpg"
+								title="相模原キャンパス"
+								subtitle="SAGAMIHARA"
+								description="相模原キャンパスで実施のワークショップ"
+								link="https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<div className="bg-white p-3 rounded-lg">
+					<div><h2 className="text-left ml-8 font-black text-lg">情報発信</h2></div>
+					<div className="m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-5">
+						<Box
+							src="/images/news_icon.svg"
+							title="お知らせ"
+							subtitle="NEWS"
+							description="最新の情報をお届けします"
+							link = "./info"
+						/>
+						<Box
+							src="/images/youtube_icon.svg"
+							title="YouTube"
+							subtitle="YouTube"
+							description="公式YouTubeで情報発信をしています"
+							link = "./movies"
+						/>
+						<Box
+							src="/images/blog_icon.svg"
+							title="技術ブログ"
+							subtitle="BLOG"
+							description="スタッフによる技術に対するブログです"
+							link = "./blog"
+						/>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	);

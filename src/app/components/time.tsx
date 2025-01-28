@@ -19,7 +19,7 @@ const Time = ({ title, notes, subtitle, locations }: Props) => {
 			<div className="mb-4 border-b text-center">
 				<Title maintitle={title} subtitle={subtitle} notes={notes} />
 			</div>
-			<div className="space-y-4">
+			<div className="space-y-4 ">
 				{locations.map((location) => (
 					<div key={location.id} className="flex justify-between text-lg">
 						<span className="text-gray-900">{location.name}</span>

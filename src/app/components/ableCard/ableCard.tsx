@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FontAwesomeIcon, type FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
 	title: string;
@@ -7,28 +9,31 @@ type Props = {
 		name: string;
 		link: string;
 	}[];
-	srcUrl: string;
+	icon: FontAwesomeIconProps["icon"];
 };
 
 export default function AbleCard({
 	title,
 	description,
 	linkArray,
-	srcUrl,
+	icon
 }: Props) {
 	return (
 		<div className="flex h-[430px] flex-col justify-around rounded-md bg-white p-6">
 			<h3 className="text-center font-bold text-[26px]">{title}</h3>
-			<img src={srcUrl} alt="" className="mx-auto" />
+			<div className="flex justify-center">
+				<FontAwesomeIcon icon={icon} className="size-[120px]" />
+			</div>
 			<p className="text-sm">{description}</p>
 			<div className="space-y-2">
 				{linkArray.map((link) => (
-					<div
-						className="rounded-md border border-black px-3 py-2"
+					<Link href={link.link}
+						className="flex items-center gap-2 rounded-md border border-black px-3 py-2"
 						key={link.name}
 					>
-						<Link href={link.link}>{link.name}</Link>
-					</div>
+						<FontAwesomeIcon icon={faChevronRight} className="size-3" />
+						{link.name}
+					</Link>
 				))}
 			</div>
 		</div>

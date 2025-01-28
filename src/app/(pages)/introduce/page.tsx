@@ -20,7 +20,6 @@ const moviePage = async () => {
 					設備について詳しくご紹介します
 				</div>
 			</div>
-
 			<div className="min-h-screen bg-[#F0EBDC]">
 				<SwitchCampus />
 			</div>
