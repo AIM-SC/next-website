@@ -3,7 +3,7 @@ import Link from "next/link";
 const footer = () => {
 	return (
 		<div>
-			<div className="mt-6 flex justify-center gap-3 font-bold text-base">
+			<div className="mt-6 flex flex-col items-center justify-center gap-3 font-bold sm:flex-row">
 				<Link href="https://www.aoyama.ac.jp/" target="_blank" rel="noreferrer">
 					青山学院大学公式サイト
 					<span className="material-symbols-outlined mb-1 ml-1 align-middle">
