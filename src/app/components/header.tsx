@@ -6,6 +6,8 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/libs/utils";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AlignJustify } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,11 +57,10 @@ export default function Header() {
 											"https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?gid=0#gid=0"
 										}
 										target="_blank"
+										className="flex items-center gap-1"
 									>
 										貸出機器一覧
-										<span className="material-symbols-outlined mb-1 ml-1 align-middle">
-											link
-										</span>
+										<FontAwesomeIcon icon={faLink} className="size-5"/>
 									</Link>
 								</li>
 							</ul>
@@ -77,11 +78,10 @@ export default function Header() {
 											"https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443"
 										}
 										target="_blank"
+										className="flex items-center gap-1"
 									>
 										ワークショップ(青山キャンパス)
-										<span className="material-symbols-outlined mb-1 ml-1 align-middle">
-											link
-										</span>
+										<FontAwesomeIcon icon={faLink} className="size-5"/>
 									</Link>
 								</li>
 								<li className={cn("px-5 py-3")}>
@@ -90,11 +90,10 @@ export default function Header() {
 											"https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28"
 										}
 										target="_blank"
+										className="flex items-center gap-1"
 									>
 										ワークショップ (相模原キャンパス)
-										<span className="material-symbols-outlined mb-1 ml-1 align-middle">
-											link
-										</span>
+										<FontAwesomeIcon icon={faLink} className="size-5"/>
 									</Link>
 								</li>
 							</ul>
