@@ -10,15 +10,6 @@ import { AlignJustify } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const MenuList = [
-	{ label: "利用案内", value: "instruction" },
-	{ label: "お知らせ", value: "info" },
-	{ label: "技術ブログ", value: "blog" },
-	{ label: "施設紹介", value: "introduce" },
-	{ label: "動画配信", value: "movies" },
-	{ label: "業務紹介", value: "job-intro" },
-];
-
 export default function Header() {
 	return (
 		<header className="h-[100px] border-b">
@@ -40,13 +31,24 @@ export default function Header() {
 							</Button>
 						</SheetTrigger>
 						<SheetContent>
-							<SheetHeader className="mb-[10px] h-[80px] border-b" />
+							<Link href="/" className="inline-block w-fit">
+								<Image
+									src="/images/nav_logo.svg"
+									width={200}
+									height={100}
+									className="block"
+									alt="ロゴ"
+								/>
+							</Link>
+							<SheetHeader className="mb-[10px] h-[20px] border-b" />
+
+							<p className="my-3 font-bold text-stone-400">
+								AIM Commonsを初めて使う方へ
+							</p>
 							<ul>
-								{MenuList.map((item) => (
-									<li key={item.value} className={cn("px-5 py-3")}>
-										<Link href={`/${item.value}`}>{item.label}</Link>
-									</li>
-								))}
+								<li className={cn("px-5 py-3")}>
+									<Link href={"/introduce"}>利用案内</Link>
+								</li>
 								<li className={cn("px-5 py-3")}>
 									<Link
 										href={
@@ -55,6 +57,31 @@ export default function Header() {
 										target="_blank"
 									>
 										貸出機器一覧
+										<span className="material-symbols-outlined mb-1 ml-1 align-middle">
+											link
+										</span>
+									</Link>
+								</li>
+							</ul>
+							<SheetHeader className="mb-[10px] h-[20px] border-b" />
+							<p className="my-3 font-bold text-stone-400">
+								AIM Commonsを使いこなしたい方へ
+							</p>
+							<p className="my-2 ml-2 font-bold text-stone-400">
+								ワークショップ
+							</p>
+							<ul className="mb-1">
+								<li className={cn("px-5 py-3")}>
+									<Link
+										href={
+											"https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443"
+										}
+										target="_blank"
+									>
+										ワークショップ(青山キャンパス)
+										<span className="material-symbols-outlined mb-1 ml-1 align-middle">
+											link
+										</span>
 									</Link>
 								</li>
 								<li className={cn("px-5 py-3")}>
@@ -64,16 +91,34 @@ export default function Header() {
 										}
 										target="_blank"
 									>
-										ワークショップ
+										ワークショップ (相模原キャンパス)
+										<span className="material-symbols-outlined mb-1 ml-1 align-middle">
+											link
+										</span>
 									</Link>
 								</li>
+							</ul>
+							<p className="my-2 ml-2 font-bold text-stone-400">
+								AIM Commonsからの情報発信
+							</p>
+							<ul>
 								<li className={cn("px-5 py-3")}>
-									<Link
-										href={"https://www.aim.aoyama.ac.jp/customer_support/"}
-										target="_blank"
-									>
-										お問い合わせ
-									</Link>
+									<Link href={"/info"}>お知らせ</Link>
+								</li>
+								<li className={cn("px-5 py-3")}>
+									<Link href={"/blog"}>技術ブログ</Link>
+								</li>
+								<li className={cn("px-5 py-3")}>
+									<Link href={"/movies"}>YouTube動画</Link>
+								</li>
+							</ul>
+							<SheetHeader className="mb-[10px] h-[20px] border-b" />
+							<p className="my-3 font-bold text-stone-400">
+								もっとAIM Commonsに関わりたい方へ
+							</p>
+							<ul>
+								<li className={cn("px-5 py-3")}>
+									<Link href={"/recruit"}>学生スタッフ採用</Link>
 								</li>
 							</ul>
 						</SheetContent>

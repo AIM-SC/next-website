@@ -2,6 +2,26 @@ import { notFound } from "next/navigation";
 import Article from "@/app/components/article";
 import { getBlogDetail, getBlogList } from "@/libs/microcms";
 
+export async function generateMetadata({
+	params: { postId },
+}: {
+	params: { postId: string };
+}) {
+	const article = await getBlogDetail(postId);
+
+	if (!article) {
+		return {
+			title: "技術ブログ",
+			description: "AIM Commonsスタッフからの発信です",
+		};
+	}
+
+	return {
+		title: `${article.title}`,
+		description: article.body,
+	};
+}
+
 export async function generateStaticParams() {
 	const { contents } = await getBlogList();
 

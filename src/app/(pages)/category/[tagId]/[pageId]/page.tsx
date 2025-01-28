@@ -4,6 +4,33 @@ import { LIMIT } from "@/libs/constants";
 import { getCategoryArticleList, getTagList } from "@/libs/microcms";
 import Tag from "@/app/components/tag";
 
+export async function generateMetadata({
+	params: { tagId },
+}: {
+	params: { tagId: string };
+}) {
+	const tagListResponse = await getTagList();
+
+	if (!tagListResponse) {
+		return {
+			title: "技術ブログ",
+			description: "AIM Commonsスタッフからの発信です",
+		};
+	}
+
+	const currentTag = tagListResponse.contents.find(
+		(tag: { path: string }) => tag.path === tagId,
+	);
+
+	if (currentTag) {
+		const tagName = currentTag.title;
+		return {
+			title: tagName,
+			description: `${tagName}に関連する記事一覧です`,
+		};
+	}
+}
+
 export async function generateStaticParams() {
 	const tagListResponse = await getTagList().catch((err) => {
 		console.error("Error fetching tag list:", err);
