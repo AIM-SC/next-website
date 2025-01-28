@@ -42,12 +42,12 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 					<AccordionTrigger>利用方法</AccordionTrigger>
 					<AccordionContent>
 						{url ? (
-							<div className="text-base flex">
+							<div className="flex text-base">
 								利用方法は
 								<Link
 									target="_blank"
 									href={url}
-									className="text-blue-500 hover:opacity-70 flex items-center gap-1"
+									className="flex items-center gap-1 text-blue-500 hover:opacity-70"
 								>
 									こちら
 									<FontAwesomeIcon icon={faLink} className="size-5 text-black" />
