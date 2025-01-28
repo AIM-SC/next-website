@@ -19,7 +19,9 @@ const moviePage = async () => {
 	const xmlFileUrl =
 		"https://www.youtube.com/feeds/videos.xml?channel_id=UCPvxIswjXQ1VU2H3WyBss8w";
 
-	const response = await fetch(xmlFileUrl);
+	const response = await fetch(xmlFileUrl, {
+		cache: "no-store"
+	});
 	const xmlText = await response.text();
 	const parser = new XMLParser();
 	const jsonObj = parser.parse(xmlText);
