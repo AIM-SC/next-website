@@ -20,7 +20,7 @@ const Information = ({ title, notes, subtitle, content }: Props) => {
 					<Link href={`/info/article/${item.id}`}>
 					<div className="flex flex-col justify-between transition-opacity hover:opacity-50 md:flex-row">
 						<span className="">{item.time}</span>
-						<span className="text-gray-800 truncate max-w-[400px]">{item.name}</span>
+						<span className="max-w-[400px] truncate text-gray-800">{item.name}</span>
 					</div>
 					</Link>
 					<hr className="my-2 border-0 border-gray-400 border-t border-dashed" />
