@@ -1,38 +1,32 @@
 import Title from "./title";
 import Link from "next/link";
-import Image from "next/image";
+import {
+	FontAwesomeIcon,
+	type FontAwesomeIconProps,
+} from "@fortawesome/react-fontawesome";
 
 type Props = {
-  src: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  link: string;
+	icon: FontAwesomeIconProps["icon"];
+	title: string;
+	subtitle: string;
+	description: string;
+	link: string;
 };
 
-const Box = ({ src, title, subtitle, description, link }: Props) => {
-	const isIcon = src.endsWith(".svg");
-  
+const Box = ({ icon, title, subtitle, description, link }: Props) => {
 	return (
-	  <div className="w-full rounded-md bg-white shadow-lg">
-		  <Link href={link} className="flex flex-col items-center p-4">
-			  <Image
-				  src={src}
-				  alt="AIMの説明画像"
-				  className={`mb-4 rounded-md ${isIcon ? "mx-auto h-10 w-10" : ""}`}  
-				  width={isIcon ? 200 : 400} 
-				  height={isIcon ? 200 : 300}
-				  layout={isIcon ? "intrinsic" : "responsive"}
-				  objectFit={isIcon ? "contain" : "cover"}
-			  />
-			  <div className="text-center">
-				  <Title maintitle={title} subtitle={subtitle} />
-				  <p>{description}</p>
-			  </div>
-		  </Link>
-	  </div>
+		<div className="w-full rounded-md bg-white shadow-lg transition-opacity hover:shadow-xl">
+			<Link href={link} className="items-center p-4">
+				<div className="flex justify-center">
+					<FontAwesomeIcon icon={icon} className="size-[100px]" />
+				</div>
+				<div className="text-center">
+					<Title maintitle={title} subtitle={subtitle} />
+					<p>{description}</p>
+				</div>
+			</Link>
+		</div>
 	);
-  };
-  
+};
 
 export default Box;
