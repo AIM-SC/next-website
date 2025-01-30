@@ -232,9 +232,7 @@ export default function SwitchCampus() {
 				{selectedCampus === "sagamihara" && (
 					<div>
 						<div className="pt-5 text-center">
-							<h2 className="font-bold text-xl" id="jumpToSagami">
-								アクセスマップ
-							</h2>
+							<h2 className="font-bold text-xl">アクセスマップ</h2>
 							<p className="text-[#8C8C8C]">相模原：B棟 4階</p>
 						</div>
 						<div className="mb-5">

@@ -50,7 +50,10 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 									className="flex items-center gap-1 text-blue-500 hover:opacity-70"
 								>
 									こちら
-									<FontAwesomeIcon icon={faLink} className="size-5 text-black" />
+									<FontAwesomeIcon
+										icon={faLink}
+										className="size-5 text-black"
+									/>
 								</Link>
 								をご確認ください。
 							</div>
