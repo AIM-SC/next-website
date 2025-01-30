@@ -13,6 +13,7 @@ type Props = {
 		link: string;
 	}[];
 	icon: FontAwesomeIconProps["icon"];
+	icon: FontAwesomeIconProps["icon"];
 };
 
 export default function AbleCard({
@@ -24,6 +25,9 @@ export default function AbleCard({
 	return (
 		<div className="flex h-[430px] flex-col justify-around rounded-md bg-white p-6">
 			<h3 className="text-center font-bold text-[26px]">{title}</h3>
+			<div className="flex justify-center">
+				<FontAwesomeIcon icon={icon} className="size-[120px]" />
+			</div>
 			<div className="flex justify-center">
 				<FontAwesomeIcon icon={icon} className="size-[120px]" />
 			</div>

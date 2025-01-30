@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 	},
 };
 
-const udp = BIZ_UDPGothic({ subsets: ["latin"], weight: ["400", "700"] });
+const udp = BIZ_UDPGothic({ subsets: ["latin"], weight: ["400","700"] });
 
 export default function RootLayout({
 	children,
@@ -61,7 +61,9 @@ export default function RootLayout({
 			<head>
 				<GoogleAnalytics gaId={gaId} />
 			</head>
-			<body className={udp.className}>
+			<body
+				className={udp.className}
+			>
 				<link
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=link"

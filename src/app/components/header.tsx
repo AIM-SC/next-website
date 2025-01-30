@@ -13,7 +13,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
+
 	return (
+
 		<header className="h-[100px] border-b">
 			<div className="container mx-auto flex h-full items-center justify-between px-[15px]">
 				<Link href="/">
