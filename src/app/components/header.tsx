@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AlignJustify } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Header() {
 
@@ -111,10 +110,10 @@ export default function Header() {
 									<a href={"/info"}>お知らせ</a>
 								</li>
 								<li className={cn("px-5 py-3")}>
-									<a href={"/blog"}>技術ブログ</a>
+									<a href={"/movies"}>YouTube動画</a>
 								</li>
 								<li className={cn("px-5 py-3")}>
-									<a href={"/movies"}>YouTube動画</a>
+									<a href={"/blog"}>ブログ</a>
 								</li>
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
@@ -122,31 +121,13 @@ export default function Header() {
 								もっとAIM Commonsに関わりたい方へ
 							</p>
 							<ul>
-								<li className={cn("px-5 py-3")} >
+								<li className={cn("px-5 py-3")}>
 									<a href={"/recruit"}>学生スタッフ採用</a>
 								</li>
 							</ul>
 						</SheetContent>
 					</Sheet>
 				</div>
-
-				{/*lg以上でのメニュー*/}
-				{/* <ul className="hidden items-center lg:flex">
-                    {MenuList.map((item, i) => (
-                        <li key={item.value} className={
-                            cn(
-                                "border-r",
-                                "border-dashed",
-                                "px-5 py-3",
-                                "border-black",
-                                i === 0 && "border-l"
-                            )}>
-                            <Link href={`/${item.value}`}>
-                                {item.label}
-                            </Link>
-                        </li>
-                    ))}
-                </ul> */}
 			</div>
 		</header>
 	);

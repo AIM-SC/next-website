@@ -43,19 +43,21 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 					<AccordionContent>
 						{url ? (
 							<div className="flex text-base">
-								利用方法は
 								<Link
 									target="_blank"
 									href={url}
 									className="flex items-center gap-1 text-blue-500 hover:opacity-70"
 								>
 									こちら
-									<FontAwesomeIcon icon={faLink} className="size-5 text-black" />
+									<FontAwesomeIcon
+										icon={faLink}
+										className="size-5 text-black"
+									/>
 								</Link>
 								をご確認ください。
 							</div>
 						) : (
-							<div className="text-base">利用に申請は必要ありません。</div>
+							<div className="text-base">申請不要でご利用いただけます。</div>
 						)}
 					</AccordionContent>
 				</AccordionItem>

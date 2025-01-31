@@ -33,33 +33,18 @@ const ClientSwiper = () => (
 		scrollbar={{ draggable: true }}
 	>
 		<SwiperSlide>
-			<div style={{ position: "relative", width: "100%", height: "90%" }}>
-				<Image
-					src="/images/main01.jpg"
-					alt="Slide 1"
-					width={1920}
-					height={1080}
-				/>
+			<div className="relative aspect-[18/9] w-full">
+				<Image src="/images/floor07.jpg" alt="Slide-1" fill />
 			</div>
 		</SwiperSlide>
 		<SwiperSlide>
-			<div style={{ position: "relative", width: "100%", height: "90%" }}>
-				<Image
-					src="/images/main02.jpg"
-					alt="Slide 2"
-					width={1920}
-					height={1080}
-				/>
+			<div className="relative aspect-[18/9] w-full">
+				<Image src="/images/floor01.jpg" alt="Slide-1" fill />
 			</div>
 		</SwiperSlide>
 		<SwiperSlide>
-			<div style={{ position: "relative", width: "100%", height: "90%" }}>
-				<Image
-					src="/images/main03.jpg"
-					alt="Slide 3"
-					width={1920}
-					height={1080}
-				/>
+			<div className="relative aspect-[18/9] w-full">
+				<Image src="/images/pc_rental.jpg" alt="Slide-1" fill />
 			</div>
 		</SwiperSlide>
 	</StyledSwiper>

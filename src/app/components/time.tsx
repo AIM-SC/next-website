@@ -15,11 +15,11 @@ type Props = {
 
 const Time = ({ title, notes, subtitle, locations }: Props) => {
 	return (
-		<div className="mb-4 rounded-lg bg-white p-6">
+		<div className="mb-4 h-[510px] rounded-lg bg-white p-6">
 			<div className="mb-4 border-b text-center">
 				<Title maintitle={title} subtitle={subtitle} notes={notes} />
 			</div>
-			<div className="space-y-4">
+			<div className="space-y-4 ">
 				{locations.map((location) => (
 					<div key={location.id} className="flex justify-between text-lg">
 						<span className="text-gray-900">{location.name}</span>
