@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "YouTube",
+	title: "YouTube動画",
 	description: "AIM Commonsが作成している配信動画の一覧です",
 };
 

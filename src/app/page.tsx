@@ -3,7 +3,6 @@ import { getInfoList } from "@/libs/microcms";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import ClientSwiper from "./components/swiper";
-import Title from "./components/title";
 import Time from "./components/time";
 import Information from "./components/infromation";
 import Box from "./components/box";
@@ -55,17 +54,16 @@ const TopPage = async () => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="about_main w-full md:w-1/2">
-					<Title
-						maintitle="AIM Commons(ラーニングコモンズ)とは？"
-						subtitle="ABOUT US"
-					/>
-					<div className="about_sub">
-						<p>
-							AIM
-							Commonsは、青山キャンパス18号館と相模原キャンパスB棟に設置された学習スペースです。平日の授業実施日は開室しており、青学生は誰でも利用できます。グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
-						</p>
+				<div className="ml-4 w-full md:w-1/2">
+					<div className="font-bold text-[26px]">
+						<h1 className="mb-2">AIM Commons</h1>
+						<h1 className="mb-1">（ラーニングコモンズ）とは？</h1>
+						<div className="my-2 text-[#d9ae4c] text-sm">ABOUT US</div>
 					</div>
+					<p className="leading-loose">
+						AIM
+						Commonsは、青山キャンパス18号館と相模原キャンパスB棟に設置された学習スペースです。平日の授業実施日は開室しており、青学生は誰でも利用できます。グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
+					</p>
 				</div>
 			</div>
 

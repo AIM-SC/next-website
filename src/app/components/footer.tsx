@@ -34,6 +34,23 @@ const footer = () => {
 					<FontAwesomeIcon icon={faLink} className="size-5" />
 				</Link>
 			</div>
+			<div className="text-center text-xs">
+				<div className="mt-4">
+					本ウェブサイトはAIM
+					Commons学生スタッフが作成しました（太田・窪山・櫻井・西堀）。
+				</div>
+				<div className="mt-1">
+					万が一掲載内容に相違があった場合は、
+					<Link
+						href="https://www.aim.aoyama.ac.jp/"
+						target="_blank"
+						className="text-blue-500 hover:opacity-70"
+					>
+						情報メディアセンター
+					</Link>
+					の案内を優先してください。
+				</div>
+			</div>
 			<div className="my-5 text-center text-gray-500 text-sm">
 				&copy; 2025 AIM Commons
 			</div>

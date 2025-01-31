@@ -174,11 +174,7 @@ export default function SwitchCampus() {
 		{
 			image: "/images/rule05.png",
 			text: "睡眠目的での利用はご遠慮ください",
-		},
-		{
-			image: "/images/rule06.png",
-			text: "各座席に決められた定員数を守ってください",
-		},
+		}
 	];
 
 	return (

@@ -43,7 +43,6 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 					<AccordionContent>
 						{url ? (
 							<div className="flex text-base">
-								利用方法は
 								<Link
 									target="_blank"
 									href={url}
@@ -58,7 +57,7 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 								をご確認ください。
 							</div>
 						) : (
-							<div className="text-base">利用に申請は必要ありません。</div>
+							<div className="text-base">申請不要でご利用いただけます。</div>
 						)}
 					</AccordionContent>
 				</AccordionItem>

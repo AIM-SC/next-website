@@ -11,7 +11,7 @@ export async function generateMetadata({
 
 	if (!article) {
 		return {
-			title: "技術ブログ",
+			title: "ブログ",
 			description: "AIM Commonsスタッフからの発信です",
 		};
 	}

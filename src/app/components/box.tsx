@@ -15,7 +15,7 @@ type Props = {
 
 const Box = ({ icon, title, subtitle, description, link }: Props) => {
 	return (
-		<div className="w-full rounded-md bg-white shadow-lg transition-opacity hover:shadow-xl">
+		<div className="w-full rounded-md bg-white shadow-md transition-opacity hover:shadow-lg">
 			<Link href={link} className="items-center p-4">
 				<div className="flex justify-center">
 					<FontAwesomeIcon icon={icon} className="size-[100px]" />
