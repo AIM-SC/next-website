@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
 	longVideoIds: string[];
@@ -43,7 +45,10 @@ export default function SwitchMovieType({
 						onChange={handleFilterChange}
 						className="hidden"
 					/>
-					<span className="mr-2">&gt;</span> 動画
+					<div className="flex items-center">
+						<FontAwesomeIcon icon={faChevronRight} className="mr-4 size-3" />
+						<span>動画</span>
+					</div>
 				</label>
 				<label
 					className={`cursor-pointer rounded-lg border-2 px-10 py-6 ${
@@ -60,7 +65,10 @@ export default function SwitchMovieType({
 						onChange={handleFilterChange}
 						className="hidden"
 					/>
-					<span className="mr-2">&gt;</span> ショート
+					<div className="flex items-center">
+						<FontAwesomeIcon icon={faChevronRight} className="mr-4 size-3" />
+						<span>ショート</span>
+					</div>
 				</label>
 			</div>
 

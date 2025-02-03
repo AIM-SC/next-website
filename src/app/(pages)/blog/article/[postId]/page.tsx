@@ -11,7 +11,7 @@ export async function generateMetadata({
 
 	if (!article) {
 		return {
-			title: "技術ブログ",
+			title: "業務ブログ",
 			description: "AIM Commonsスタッフからの発信です",
 		};
 	}
@@ -53,7 +53,7 @@ export default async function StaticDetailPage({
 					BLOG
 				</div>
 				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
-					ブログ
+					業務ブログ
 				</div>
 			</div>
 			<Article content={article} />

@@ -3,12 +3,18 @@ import { getInfoList } from "@/libs/microcms";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import ClientSwiper from "./components/swiper";
-import Title from "./components/title";
 import Time from "./components/time";
 import Information from "./components/infromation";
 import Box from "./components/box";
 import AbleCard from "./components/ableCard/ableCard";
-import { faBookOpenReader, faChalkboardTeacher, faLaptop } from "@fortawesome/free-solid-svg-icons";
+import {
+	faBookOpenReader,
+	faChalkboardTeacher,
+	faLaptop,
+	faEnvelopeOpenText,
+	faVideo,
+	faNewspaper,
+} from "@fortawesome/free-solid-svg-icons";
 
 const TopPage = async () => {
 	// お知らせデータの取得
@@ -31,7 +37,9 @@ const TopPage = async () => {
 	return (
 		<div className="bg-[#F0EBDC]">
 			{/* Swiperセクション */}
-			<ClientSwiper />
+			<div className="mx-auto w-[90%]">
+				<ClientSwiper />
+			</div>
 
 			{/* Aboutセクション */}
 			<div className="m-8 my-8 flex flex-col items-center justify-center gap-4 rounded bg-white p-8 md:flex-row">
@@ -46,57 +54,80 @@ const TopPage = async () => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="about_main w-full md:w-1/2">
-					<Title
-						maintitle="AIM Commons(ラーニングコモンズ)とは？"
-						subtitle="ABOUT US"
-					/>
-					<div className="about_sub">
-						<p>
-							交流しながら学習できる共同学習スペースです。学習目的に限り、開室時間内は誰でも自由に利用することができます。PCや撮影機器、ブースの貸出も行っています。グループワークに適した机・椅子やホワイトボードなど、学生同士の学びも促進するための設備があり、教職員スタッフやAIM
-							Commons学生スタッフが授業時間外の学生の学びをサポートします。
-						</p>
+				<div className="ml-4 w-full md:w-1/2">
+					<div className="font-bold text-[26px]">
+						<h1 className="mb-2">AIM Commons</h1>
+						<h1 className="mb-1">（ラーニングコモンズ）とは？</h1>
+						<div className="my-2 text-[#d9ae4c] text-sm">ABOUT US</div>
 					</div>
+					<p className="leading-loose">
+						AIM
+						Commonsは、青山キャンパス18号館と相模原キャンパスB棟に設置された学習スペースです。平日の授業実施日は開室しており、青学生は誰でも利用できます。グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
+					</p>
 				</div>
 			</div>
 
-			<div className="m-8 grid grid-cols-1 gap-3 md:grid-cols-3">
+			<h1 className="text-center font-bold text-[26px]">
+				AIM Commonsでできること
+			</h1>
+			<div className="m-8 grid grid-cols-1 gap-3 lg:grid-cols-3">
 				<AbleCard
 					icon={faBookOpenReader}
 					title="学習スペースの利用"
 					description="グループワークに適した机・椅子やホワイトボード・大画面モニターなどを、その場で利用できます。"
-					linkArray={[{ name: "詳細はこちら", link: "/" }]}
+					linkArray={[
+						{ name: "アクセス", link: "/introduce#jumpToMap" },
+						{ name: "施設紹介", link: "/introduce#jumpToIntroduce" },
+					]}
 				/>
 				<AbleCard
 					icon={faLaptop}
-					title="機器レンタル"
+					title="機器貸出"
 					description="ノートPCをはじめ、カメラや充電器、動画編集ブースなどを借りることができます。"
 					linkArray={[
-						{ name: "機器貸出の詳細", link: "/" },
-						{ name: "貸出機器の一覧", link: "/" },
+						{
+							name: "機器貸出の詳細",
+							link: "https://www.aim.aoyama.ac.jp/rental/production/",
+						},
+						{
+							name: "貸出機器の一覧",
+							link: "https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?pli=1&gid=0#gid=0",
+						},
 					]}
 				/>
 				<AbleCard
 					icon={faChalkboardTeacher}
-					title="WorkShopへの参加"
+					title="ワークショップへの参加"
 					description="学生スタッフが開講するワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
 					linkArray={[
-						{ name: "青山はこちら", link: "/" },
-						{ name: "相模原はこちら", link: "/" },
+						{
+							name: "青山はこちら",
+							link: "https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443",
+						},
+						{
+							name: "相模原はこちら",
+							link: "https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28",
+						},
 					]}
 				/>
 			</div>
 
-			<div className="m-8 grid grid-cols-1 gap-8 sm:grid-cols-[4fr_6fr] md:grid-cols-[4fr_6fr]">
+			<h1 className="text-center font-bold text-[26px]">インフォメーション</h1>
+			<div className="m-8 grid gap-12 xl:grid-cols-[4fr_6fr]">
 				{/* 開室時間の表示 */}
 				<Time
 					title="開室時間"
 					notes="※授業実施日のみ"
 					subtitle="OPENING HOURS"
 					locations={[
-						{ id: "aoyama", name: "青山", time: "9:00 - 21:00" },
+						{ id: "aoyama", name: "青山", time: "9:30 - 17:00" },
+						{ id: "aoyama-open", name: "青山受付時間", time: "10:00 - 16:45" },
 						{ id: "sagamihara", name: "相模原", time: "9:00 - 20:00" },
-						{ id: "reception", name: "受付時間", time: "9:45 - 16:30" },
+						{
+							id: "sagamihara-open",
+							name: "相模原受付時間",
+							time: "9:45 - 16:45",
+						},
 					]}
 				/>
 
@@ -109,44 +140,33 @@ const TopPage = async () => {
 				/>
 			</div>
 
-			{/* 追加情報を表示するボックス */}
-			<div className="m-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
-				<Box
-					src="/images/home01.jpg"
-					title="利用案内"
-					subtitle="INSTRUCTION"
-					description="アクセス/PC・機器貸出方法"
-				/>
-				<Box
-					src="/images/floor06.jpg"
-					title="施設紹介"
-					subtitle="FACILITIES"
-					description="AIM Commonsの設備"
-				/>
-				<Box
-					src="/images/home03.jpg"
-					title="施設紹介"
-					subtitle="FACILITIES"
-					description="AIM Commonsの設備"
-				/>
-				<Box
-					src="/images/home01.jpg"
-					title="技術ブログ"
-					subtitle="BLOG"
-					description="技術的な投稿"
-				/>
-				<Box
-					src="/images/floor06.jpg"
-					title="新しい設備"
-					subtitle="NEW FACILITIES"
-					description="新しく導入された設備"
-				/>
-				<Box
-					src="/images/kizai.jpg"
-					title="機器貸し出し"
-					subtitle="FACILITIES"
-					description="機器の貸し出し"
-				/>
+			<div className="m-8 gap-4 text-center ">
+				<h1 className="font-bold text-[26px]">情報発信</h1>
+				<div className="m-8 rounded-lg bg-white p-3">
+					<div className="m-8 grid grid-cols-3 items-center gap-4 sm:grid-cols-1 md:grid-cols-3">
+						<Box
+							icon={faEnvelopeOpenText}
+							title="お知らせ"
+							subtitle="NEWS"
+							description="AIM Commonsから利用者へのお知らせです"
+							link="./info"
+						/>
+						<Box
+							icon={faVideo}
+							title="YouTube動画"
+							subtitle="MOVIES"
+							description="YouTubeで情報発信をしています"
+							link="./movies"
+						/>
+						<Box
+							icon={faNewspaper}
+							title="業務ブログ"
+							subtitle="BLOG"
+							description="学生スタッフがITスキルに役立つ記事を投稿しています"
+							link="./blog"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

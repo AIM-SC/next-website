@@ -16,11 +16,13 @@ const moviePage = async () => {
 				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
 					施設紹介
 				</div>
-				<div className="text-center font-bold text-gray-600 text-sm md:text-lg">
+				<div
+					className="text-center font-bold text-gray-600 text-sm md:text-lg"
+					id="jumpToMap"
+				>
 					設備について詳しくご紹介します
 				</div>
 			</div>
-
 			<div className="min-h-screen bg-[#F0EBDC]">
 				<SwitchCampus />
 			</div>

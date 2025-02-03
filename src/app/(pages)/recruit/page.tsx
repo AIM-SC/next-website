@@ -179,7 +179,7 @@ const jobIntroductionPage = () => {
 										href="/blog"
 										className="text-[#d9ae4c] underline hover:opacity-70"
 									>
-										技術ブログ
+										業務ブログ
 									</Link>
 									で詳しく紹介しています。
 								</div>

@@ -13,7 +13,7 @@ export async function generateMetadata({
 
 	if (!tagListResponse) {
 		return {
-			title: "技術ブログ",
+			title: "業務ブログ",
 			description: "AIM Commonsスタッフからの発信です",
 		};
 	}

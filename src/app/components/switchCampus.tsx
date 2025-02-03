@@ -3,6 +3,8 @@ import { useState } from "react";
 import IntroCard from "@/app/components/introCard";
 import Image from "next/image";
 import Rule from "@/app/components/rule";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function SwitchCampus() {
 	const [selectedCampus, setSelectedCampus] = useState("sagamihara");
@@ -173,10 +175,6 @@ export default function SwitchCampus() {
 			image: "/images/rule05.png",
 			text: "睡眠目的での利用はご遠慮ください",
 		},
-		{
-			image: "/images/rule06.png",
-			text: "各座席に決められた定員数を守ってください",
-		},
 	];
 
 	return (
@@ -197,8 +195,11 @@ export default function SwitchCampus() {
 						onChange={handleCampusChange}
 						className="hidden"
 					/>
-					<span className="mr-2">&gt;</span> 青山
-					<span className="hidden sm:inline">キャンパス</span>
+					<div className="flex items-center">
+						<FontAwesomeIcon icon={faChevronRight} className="mr-4 size-3" />
+						<span>青山</span>
+						<span className="hidden sm:inline">キャンパス</span>
+					</div>
 				</label>
 				<label
 					className={`cursor-pointer rounded-lg border-2 px-5 py-6 sm:px-10 ${
@@ -215,8 +216,11 @@ export default function SwitchCampus() {
 						onChange={handleCampusChange}
 						className="hidden"
 					/>
-					<span className="mr-2">&gt;</span> 相模原
-					<span className="hidden sm:inline">キャンパス</span>
+					<div className="flex items-center">
+						<FontAwesomeIcon icon={faChevronRight} className="mr-4 size-3" />
+						<span>相模原</span>
+						<span className="hidden sm:inline">キャンパス</span>
+					</div>
 				</label>
 			</div>
 
@@ -245,7 +249,9 @@ export default function SwitchCampus() {
 							className="mx-auto h-[70%] w-[70%] items-center"
 						/>
 						<div className="text-center">
-							<h2 className="my-5 font-bold text-xl">開室時間</h2>
+							<h2 className="my-5 font-bold text-xl" id="jumpToIntroduce">
+								開室時間
+							</h2>
 							<p className="text-3xl text-[#d9ae4c]">9:00-20:00</p>
 						</div>
 
