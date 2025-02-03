@@ -28,7 +28,7 @@ export default function AbleCard({
 				<FontAwesomeIcon icon={icon} className="size-[120px]" />
 			</div>
 			<p className="text-sm">{description}</p>
-			<div className="space-y-2 scroll-smooth">
+			<div className="space-y-2">
 				{linkArray.map((link) => (
 					<Link
 						href={link.link}
