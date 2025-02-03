@@ -113,7 +113,7 @@ export default function Header() {
 									<a href={"/movies"}>YouTube動画</a>
 								</li>
 								<li className={cn("px-5 py-3")}>
-									<a href={"/blog"}>ブログ</a>
+									<a href={"/blog"}>業務ブログ</a>
 								</li>
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />

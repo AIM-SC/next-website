@@ -160,7 +160,7 @@ const TopPage = async () => {
 						/>
 						<Box
 							icon={faNewspaper}
-							title="ブログ"
+							title="業務ブログ"
 							subtitle="BLOG"
 							description="学生スタッフがITスキルに役立つ記事を投稿しています"
 							link="./blog"

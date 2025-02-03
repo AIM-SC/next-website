@@ -6,7 +6,7 @@ import Tag from "@/app/components/tag";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "ブログ",
+	title: "業務ブログ",
 	description: "AIM Commonsスタッフからの発信です",
 };
 
