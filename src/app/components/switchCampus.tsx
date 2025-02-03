@@ -174,7 +174,7 @@ export default function SwitchCampus() {
 		{
 			image: "/images/rule05.png",
 			text: "睡眠目的での利用はご遠慮ください",
-		}
+		},
 	];
 
 	return (
