@@ -1,9 +1,9 @@
-import { notFound } from "next/navigation";
 import Articlelist from "@/app/components/articlelist";
 import { LIMIT } from "@/libs/constants";
 import { getBlogList, getTagList } from "@/libs/microcms";
 import Tag from "@/app/components/tag";
 import type { Metadata } from "next";
+import Heading from "@/app/components/heading";
 
 export const metadata: Metadata = {
 	title: "業務ブログ",
@@ -29,46 +29,47 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 	const currentPage = Number.parseInt(params.pageId, 10);
 
 	const initialQueries = { limit: LIMIT, fields: "id" };
-	const articlesListResponse = await getBlogList(initialQueries).catch(() =>
-		notFound(),
-	);
+	const articlesListResponse = await getBlogList(initialQueries);
 	const { totalCount } = articlesListResponse;
 
 	const maxPage = Math.ceil(totalCount / LIMIT);
-
-	if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
-		return notFound();
-	}
 
 	const articlesListQueries = {
 		limit: LIMIT,
 		offset: (currentPage - 1) * LIMIT,
 	};
 
-	const blogPageResponse = await getBlogList(articlesListQueries).catch(() =>
-		notFound(),
-	);
-	const tagListResponse = await getTagList().catch(() => notFound());
+	const blogPageResponse = await getBlogList(articlesListQueries);
+	const tagContents = await getTagList();
 	const { contents } = blogPageResponse;
-	const tagContents = tagListResponse.contents;
 
-	if (!contents) {
-		return <h1>No contents</h1>;
+	if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
+		return (
+			<div className="py-[75px] font-bold text-[20px] text-black leading-10">
+				<Heading engTitle="BLOG" jpTitle="業務ブログ" />
+				<h1 className="mb-2 font-bold text-xl md:text-2xl">
+					記事が見つかりません
+				</h1>
+				<p className="text-sm md:text-base">
+					現在、このページに記事はありません。
+				</p>
+				<hr className="mt-8 border-[#d9ae4c] border-[1px]" />
+				<div className="mt-2 ml-2">タグから探す</div>
+				<div className="mt-2 ml-4">
+					<Tag tags={tagContents} variant="card" />
+				</div>
+			</div>
+		);
 	}
 
 	return (
 		<div className="py-[75px] font-bold text-[20px] text-black leading-10">
-			<div className="mb-[4vh] flex flex-col gap-2 px-[13%] md:gap-4">
-				<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
-					BLOG
-				</div>
-				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
-					ブログ
-				</div>
-				<div className="text-center font-bold text-gray-600 text-sm md:text-lg">
-					AIM Commonsスタッフからの発信
-				</div>
-			</div>
+			<Heading
+				engTitle="BLOGS"
+				jpTitle="業務ブログ"
+				abst="AIM Commonsスタッフからの発信"
+			/>
+
 			<Articlelist
 				contents={contents}
 				basePath="blog"

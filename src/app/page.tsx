@@ -25,7 +25,7 @@ const TopPage = async () => {
 	const informationResponse = await getInfoList(informationQueries).catch(() =>
 		notFound(),
 	);
-	console.log(informationResponse);
+	// console.log(informationResponse);
 	const informationContent = informationResponse.contents.map((item) => {
 		return {
 			name: item.title,
@@ -37,13 +37,13 @@ const TopPage = async () => {
 	return (
 		<div className="bg-[#F0EBDC]">
 			{/* Swiperセクション */}
-			<div className="mx-auto w-[90%]">
+			<div className="mx-auto w-full">
 				<ClientSwiper />
 			</div>
 
 			{/* Aboutセクション */}
-			<div className="m-8 my-8 flex flex-col items-center justify-center gap-4 rounded bg-white p-8 md:flex-row">
-				<div className="w-full md:w-1/2">
+			<div className="my-8 items-center justify-center gap-4 rounded bg-white p-8 lg:flex">
+				<div className="w-full lg:w-1/2">
 					<Image
 						src="/images/about.png"
 						alt="AIMの説明画像"
@@ -54,10 +54,13 @@ const TopPage = async () => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="ml-4 w-full md:w-1/2">
-					<div className="font-bold text-[26px]">
-						<h1 className="mb-2">AIM Commons</h1>
-						<h1 className="mb-1">（ラーニングコモンズ）とは？</h1>
+				<div className="w-full lg:ml-4 lg:w-1/2">
+					<div className="font-bold text-lg md:text-[26px]">
+						<h1 className="mb-2 leading-7 md:leading-9">
+							AIM Commons
+							<br />
+							（ラーニングコモンズ）とは？
+						</h1>
 						<div className="my-2 text-[#d9ae4c] text-sm">ABOUT US</div>
 					</div>
 					<p className="leading-loose">
@@ -67,17 +70,21 @@ const TopPage = async () => {
 				</div>
 			</div>
 
-			<h1 className="text-center font-bold text-[26px]">
+			<h1 className="mt-12 mb-8 text-center font-bold text-xl md:text-[26px]">
 				AIM Commonsでできること
 			</h1>
-			<div className="m-8 grid grid-cols-1 gap-3 lg:grid-cols-3">
+			<div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
 				<AbleCard
 					icon={faBookOpenReader}
 					title="学習スペースの利用"
 					description="グループワークに適した机・椅子やホワイトボード・大画面モニターなどを、その場で利用できます。"
 					linkArray={[
-						{ name: "アクセス", link: "/introduce#jumpToMap" },
-						{ name: "施設紹介", link: "/introduce#jumpToIntroduce" },
+						{ name: "アクセス", link: "/introduce#jumpToMap", foreign: false },
+						{
+							name: "施設紹介",
+							link: "/introduce#jumpToIntroduce",
+							foreign: false,
+						},
 					]}
 				/>
 				<AbleCard
@@ -88,10 +95,12 @@ const TopPage = async () => {
 						{
 							name: "機器貸出の詳細",
 							link: "https://www.aim.aoyama.ac.jp/rental/production/",
+							foreign: true,
 						},
 						{
 							name: "貸出機器の一覧",
 							link: "https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?pli=1&gid=0#gid=0",
+							foreign: true,
 						},
 					]}
 				/>
@@ -103,17 +112,21 @@ const TopPage = async () => {
 						{
 							name: "青山はこちら",
 							link: "https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443",
+							foreign: true,
 						},
 						{
 							name: "相模原はこちら",
 							link: "https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28",
+							foreign: true,
 						},
 					]}
 				/>
 			</div>
 
-			<h1 className="text-center font-bold text-[26px]">インフォメーション</h1>
-			<div className="m-8 grid gap-12 xl:grid-cols-[4fr_6fr]">
+			<h1 className="mt-12 mb-8 text-center font-bold text-xl md:text-[26px]">
+				インフォメーション
+			</h1>
+			<div className="grid gap-4 lg:gap-8 xl:grid-cols-[4fr_6fr]">
 				{/* 開室時間の表示 */}
 				<Time
 					title="開室時間"
@@ -140,10 +153,12 @@ const TopPage = async () => {
 				/>
 			</div>
 
-			<div className="m-8 gap-4 text-center ">
-				<h1 className="font-bold text-[26px]">情報発信</h1>
-				<div className="m-8 rounded-lg bg-white p-3">
-					<div className="m-8 grid grid-cols-3 items-center gap-4 sm:grid-cols-1 md:grid-cols-3">
+			<div className="gap-4 text-center ">
+				<h1 className="mt-12 mb-8 font-bold text-xl md:text-[26px]">
+					情報発信
+				</h1>
+				<div className="rounded-lg bg-white p-6">
+					<div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
 						<Box
 							icon={faEnvelopeOpenText}
 							title="お知らせ"
@@ -161,7 +176,7 @@ const TopPage = async () => {
 						<Box
 							icon={faNewspaper}
 							title="業務ブログ"
-							subtitle="BLOG"
+							subtitle="BLOGS"
 							description="学生スタッフがITスキルに役立つ記事を投稿しています"
 							link="./blog"
 						/>

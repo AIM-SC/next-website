@@ -10,7 +10,7 @@ type Props = {
 
 const Information = ({ title, notes, subtitle, content }: Props) => {
 	return (
-		<div className="mb-4 rounded-lg bg-white p-6">
+		<div className="rounded-lg bg-white p-6">
 			<div className="mb-4 border-b text-center">
 				<Title maintitle={title} subtitle={subtitle} notes={notes} />
 			</div>
