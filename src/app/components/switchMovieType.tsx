@@ -72,16 +72,16 @@ export default function SwitchMovieType({
 				</label>
 			</div>
 
-			<div className="mx-[3%] rounded-md bg-white">
+			<div className="rounded-md bg-white p-12 xl:p-16">
 				<div
-					className={`grid gap-4 ${
+					className={`grid gap-12 xl:gap-16 ${
 						filterType === "longMovie"
-							? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-2"
-							: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+							? "grid-cols-1 lg:grid-cols-2"
+							: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
 					}`}
 				>
 					{filteredVideos.map((videoId) => (
-						<div key={`video-${videoId}`} className="mx-[8%] my-[10%] flex">
+						<div key={`video-${videoId}`} className="flex">
 							<iframe
 								className={`w-full ${
 									filterType === "longMovie" ? "aspect-video" : "aspect-[9/16]"

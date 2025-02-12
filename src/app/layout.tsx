@@ -61,13 +61,13 @@ export default function RootLayout({
 			<head>
 				<GoogleAnalytics gaId={gaId} />
 			</head>
-			<body className={udp.className}>
+			<body className={`${udp.className} flex min-h-screen flex-col`}>
 				<link
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=link"
 				/>
 				<Header />
-				<div className="bg-[#F0EBDC]">
+				<div className="flex-grow bg-[#F0EBDC]">
 					<div className="mx-[5vw] max-w-full pb-[30px]">
 						<div
 							id="side_line"

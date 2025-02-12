@@ -20,7 +20,7 @@ type Props = {
 
 const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 	return (
-		<div className="mx-[8%] my-[8%] flex flex-col items-start bg-white p-4">
+		<div className="flex flex-col items-start bg-white">
 			<div className="relative mb-4 aspect-[16/9] w-full">
 				<Image
 					src={image}

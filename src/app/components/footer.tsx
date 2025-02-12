@@ -36,11 +36,15 @@ const footer = () => {
 			</div>
 			<div className="text-center text-xs">
 				<div className="mt-4">
-					本ウェブサイトはAIM
-					Commons学生スタッフが作成しました（太田・窪山・櫻井・西堀）。
+					<span>
+						本ウェブサイトはAIMCommons学生スタッフが
+						<br className="md:hidden" />
+						作成しました（太田・櫻井・西堀・ほか一名）。
+					</span>
 				</div>
-				<div className="mt-1">
+				<div className="mt-2">
 					万が一掲載内容に相違があった場合は、
+					<br className="md:hidden" />
 					<Link
 						href="https://www.aim.aoyama.ac.jp/"
 						target="_blank"

@@ -3,6 +3,7 @@ import SwitchMovieType from "../../components/switchMovieType";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Heading from "@/app/components/heading";
 
 export const metadata: Metadata = {
 	title: "YouTube動画",
@@ -46,17 +47,11 @@ const moviePage = async () => {
 
 	return (
 		<div className="py-[75px] text-[20px] text-black leading-10">
-			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
-				<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
-					MOVIES
-				</div>
-				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
-					YouTube動画
-				</div>
-				<div className="text-center font-bold text-gray-600 text-sm md:text-lg">
-					AIM Commons配信動画一覧
-				</div>
-			</div>
+			<Heading
+				engTitle="MOVIES"
+				jpTitle="YouTube動画"
+				abst="AIM Commons配信動画一覧"
+			/>
 			<div className="mx-auto mb-[6vh]">
 				<SwitchMovieType
 					longVideoIds={longVideoIds}

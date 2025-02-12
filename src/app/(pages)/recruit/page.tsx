@@ -1,3 +1,4 @@
+import Heading from "@/app/components/heading";
 import JobIntroduction from "@/app/components/jobIntroduction";
 import Title from "@/app/components/title";
 import Image from "next/image";
@@ -6,18 +7,13 @@ import Link from "next/link";
 const jobIntroductionPage = () => {
 	return (
 		<div className="py-[75px] font-bold text-[20px] text-black leading-10">
-			<div className="mb-[3%] flex flex-col gap-4 px-[13%]">
-				<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
-					RECRUIT
-				</div>
-				<div className="text-center font-semibold text-2xl text-black md:text-4xl">
-					学生スタッフ採用
-				</div>
-				<div className="text-center font-bold text-gray-600 text-sm md:text-lg">
-					AIM Commonsで働く学生スタッフの業務を紹介します
-				</div>
-			</div>
-			<div className="mx-[3%] my-8 flex flex-col items-center justify-center gap-12 rounded bg-white p-12 md:flex-row lg:gap-16 lg:p-16">
+			<Heading
+				engTitle="RECRUIT"
+				jpTitle="学生スタッフ採用"
+				abst="AIM Commonsで働く学生スタッフの業務を紹介します"
+			/>
+
+			<div className="my-8 flex flex-col items-center justify-center gap-12 rounded bg-white p-12 md:flex-row lg:gap-16 lg:p-16">
 				<div className="w-full md:w-1/2">
 					<Image
 						src="/images/about.png"
@@ -37,10 +33,10 @@ const jobIntroductionPage = () => {
 					<div className="flex flex-col gap-4 text-base">
 						<p>
 							AIM
-							Commonsでは、学生スタッフを定期的に募集・採用しています。受付・貸出業務をはじめとし、ワークショップの講師や情報技術業務、広報活動などのさまざまな業務を行っています。同じく情報メディアセンターの管轄である、「IT-A」とは異なる業務です。
+							Commonsでは、学生スタッフを定期的に募集・採用しています。受付・貸出業務をはじめとし、ワークショップの講師や情報技術業務、広報活動などのさまざまな業務を行っています。同じく情報メディアセンターの管轄である「IT-A」とは異なる業務です。
 						</p>
 						<ul>
-							<li>募集対象: 青山学院大学生および大学院生</li>
+							<li>募集対象: 青山学院大学の学部生および大学院生</li>
 							<li>募集時期: 前期・後期 各1回</li>
 							<li>選考方法: 書類選考後に面接を実施</li>
 						</ul>
@@ -57,7 +53,7 @@ const jobIntroductionPage = () => {
 					</div>
 				</div>
 			</div>
-			<div className="mx-[3%] rounded-md bg-white pt-[3%]">
+			<div className="rounded-md bg-white pt-[3%]">
 				<div>
 					<h3 className="mb-1 text-center text-2xl">業務紹介</h3>
 					<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">

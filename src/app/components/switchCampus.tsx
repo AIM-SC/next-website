@@ -224,7 +224,7 @@ export default function SwitchCampus() {
 				</label>
 			</div>
 
-			<div className="mx-[3%] rounded-md bg-white">
+			<div className="rounded-md bg-white">
 				{selectedCampus === "sagamihara" && (
 					<div>
 						<div className="pt-5 text-center">
@@ -255,7 +255,7 @@ export default function SwitchCampus() {
 							<p className="text-3xl text-[#d9ae4c]">9:00-20:00</p>
 						</div>
 
-						<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+						<div className="grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
 							{introCards.map((card) => (
 								<IntroCard
 									key={card.title}
@@ -271,9 +271,9 @@ export default function SwitchCampus() {
 						</div>
 
 						<h2 className="pt-5 text-center font-bold text-xl">
-							利用者が気持ちよく使うためのお願い
+							利用にあたってのお願い
 						</h2>
-						<div className="m-8 grid grid-cols-2 gap-4 text-center sm:grid-cols-3 md:grid-cols-3">
+						<div className="grid grid-cols-1 gap-8 p-8 text-center md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
 							{rules.map((rule) => (
 								<Rule
 									key={rule.text} // 各要素に一意のキーを設定
