@@ -79,11 +79,11 @@ const TopPage = async () => {
 					title="学習スペースの利用"
 					description="グループワークに適した机・椅子やホワイトボード・大画面モニターなどを、その場で利用できます。"
 					linkArray={[
-						{ name: "アクセス", link: "/introduce#jumpToMap", foreign: false },
+						{ name: "アクセス", link: "/introduce#jumpToMap", external: false },
 						{
 							name: "施設紹介",
 							link: "/introduce#jumpToIntroduce",
-							foreign: false,
+							external: false,
 						},
 					]}
 				/>
@@ -95,12 +95,12 @@ const TopPage = async () => {
 						{
 							name: "機器貸出の詳細",
 							link: "https://www.aim.aoyama.ac.jp/rental/production/",
-							foreign: true,
+							external: true,
 						},
 						{
 							name: "貸出機器の一覧",
 							link: "https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?pli=1&gid=0#gid=0",
-							foreign: true,
+							external: true,
 						},
 					]}
 				/>
@@ -112,12 +112,12 @@ const TopPage = async () => {
 						{
 							name: "青山はこちら",
 							link: "https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443",
-							foreign: true,
+							external: true,
 						},
 						{
 							name: "相模原はこちら",
 							link: "https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28",
-							foreign: true,
+							external: true,
 						},
 					]}
 				/>

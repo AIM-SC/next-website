@@ -11,7 +11,7 @@ type Props = {
 	linkArray: {
 		name: string;
 		link: string;
-		foreign: boolean;
+		external: boolean;
 	}[];
 	icon: FontAwesomeIconProps["icon"];
 };
@@ -39,7 +39,7 @@ export default function AbleCard({
 					>
 						<FontAwesomeIcon icon={faChevronRight} className="size-3" />
 						{link.name}
-						{link.foreign && (
+						{link.external && (
 							<FontAwesomeIcon icon={faLink} className="size-5" />
 						)}
 					</Link>
