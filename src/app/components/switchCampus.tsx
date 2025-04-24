@@ -1,18 +1,9 @@
 "use client";
-import { useState } from "react";
 import IntroCard from "@/app/components/introCard";
-import Image from "next/image";
 import Rule from "@/app/components/rule";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 export default function SwitchCampus() {
-	const [selectedCampus, setSelectedCampus] = useState("sagamihara");
-
-	const handleCampusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setSelectedCampus(event.target.value);
-	};
-
 	const introCards = [
 		{
 			image: "/images/floor01.jpg",
@@ -179,134 +170,65 @@ export default function SwitchCampus() {
 
 	return (
 		<div className="w-full bg-[#F0EBDC]">
-			<div className="my-8 flex justify-center space-x-6 ">
-				<label
-					className={`cursor-pointer rounded-lg border-2 px-5 py-6 sm:px-10 ${
-						selectedCampus === "aoyama"
-							? "border-black bg-white font-bold text-sm sm:text-xl"
-							: "border-black bg-white text-sm sm:text-xl"
-					}`}
-				>
-					<input
-						type="radio"
-						name="campus"
-						value="aoyama"
-						checked={selectedCampus === "aoyama"}
-						onChange={handleCampusChange}
-						className="hidden"
-					/>
-					<div className="flex items-center">
-						<FontAwesomeIcon icon={faChevronRight} className="mr-4 size-3" />
-						<span>青山</span>
-						<span className="hidden sm:inline">キャンパス</span>
-					</div>
-				</label>
-				<label
-					className={`cursor-pointer rounded-lg border-2 px-5 py-6 sm:px-10 ${
-						selectedCampus === "sagamihara"
-							? "border-black bg-white font-bold text-sm sm:text-xl"
-							: "border-black bg-white text-sm sm:text-xl"
-					}`}
-				>
-					<input
-						type="radio"
-						name="campus"
-						value="sagamihara"
-						checked={selectedCampus === "sagamihara"}
-						onChange={handleCampusChange}
-						className="hidden"
-					/>
-					<div className="flex items-center">
-						<FontAwesomeIcon icon={faChevronRight} className="mr-4 size-3" />
-						<span>相模原</span>
-						<span className="hidden sm:inline">キャンパス</span>
-					</div>
-				</label>
-			</div>
-
 			<div className="rounded-md bg-white">
-				{selectedCampus === "sagamihara" && (
-					<div>
-						<div className="pt-5 text-center">
-							<h2 className="font-bold text-xl">アクセスマップ</h2>
-							<p className="text-[#8C8C8C]">相模原：B棟 4階</p>
-						</div>
-						<div className="mb-5">
-							<Image
-								src="/images/go02.jpg"
-								alt={"map"}
-								width={1120}
-								height={840}
-								className="mx-auto"
-							/>
-						</div>
-						<h2 className="text-center font-bold text-xl">室内案内図</h2>
+				<div>
+					<div className="pt-5 text-center">
+						<h2 className="font-bold text-xl">アクセスマップ</h2>
+						<p className="text-[#8C8C8C]">相模原：B棟 4階</p>
+					</div>
+					<div className="mb-5">
 						<Image
-							src="/images/floor00.png"
+							src="/images/go02.jpg"
 							alt={"map"}
 							width={1120}
 							height={840}
-							className="mx-auto h-[70%] w-[70%] items-center"
+							className="mx-auto"
 						/>
-						<div className="text-center">
-							<h2 className="my-5 font-bold text-xl" id="jumpToIntroduce">
-								開室時間
-							</h2>
-							<p className="text-3xl text-[#d9ae4c]">9:00-20:00</p>
-						</div>
-
-						<div className="grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
-							{introCards.map((card) => (
-								<IntroCard
-									key={card.title}
-									image={card.image}
-									title={card.title}
-									url={card.url}
-									time={card.time}
-									text={card.text}
-									// accordionTextがある場合のみ渡す
-									accordionText={card.accordionText && card.accordionText}
-								/>
-							))}
-						</div>
-
-						<h2 className="pt-5 text-center font-bold text-xl">
-							利用にあたってのお願い
-						</h2>
-						<div className="grid grid-cols-1 gap-8 p-8 text-center md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
-							{rules.map((rule) => (
-								<Rule
-									key={rule.text} // 各要素に一意のキーを設定
-									image={rule.image}
-									text={rule.text}
-									note={rule.note} // noteがない場合はundefinedが渡されます
-								/>
-							))}
-						</div>
 					</div>
-				)}
-				{selectedCampus === "aoyama" && (
-					<>
-						<div className="pt-5 text-center">
-							<h2 className="font-bold text-xl">アクセスマップ</h2>
-							<p className="text-[#8C8C8C]">青山：18号館　地下1階・1階</p>
-						</div>
-						<Image
-							src="/images/aoyama-lc-map-1F.jpg"
-							alt={"map"}
-							width={1920}
-							height={2710}
-							className="mx-auto my-3 h-[50%] w-[50%]"
-						/>
-						<Image
-							src="/images/aoyama-lc-map-B1.jpg"
-							alt={"map"}
-							width={1920}
-							height={2710}
-							className="mx-auto h-[50%] w-[50%]"
-						/>
-					</>
-				)}
+					<h2 className="text-center font-bold text-xl">室内案内図</h2>
+					<Image
+						src="/images/floor00.png"
+						alt={"map"}
+						width={1120}
+						height={840}
+						className="mx-auto h-[70%] w-[70%] items-center"
+					/>
+					<div className="text-center">
+						<h2 className="my-5 font-bold text-xl" id="jumpToIntroduce">
+							開室時間
+						</h2>
+						<p className="text-3xl text-[#d9ae4c]">9:00-20:00</p>
+					</div>
+
+					<div className="grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
+						{introCards.map((card) => (
+							<IntroCard
+								key={card.title}
+								image={card.image}
+								title={card.title}
+								url={card.url}
+								time={card.time}
+								text={card.text}
+								// accordionTextがある場合のみ渡す
+								accordionText={card.accordionText && card.accordionText}
+							/>
+						))}
+					</div>
+
+					<h2 className="pt-5 text-center font-bold text-xl">
+						利用にあたってのお願い
+					</h2>
+					<div className="grid grid-cols-1 gap-8 p-8 text-center md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
+						{rules.map((rule) => (
+							<Rule
+								key={rule.text} // 各要素に一意のキーを設定
+								image={rule.image}
+								text={rule.text}
+								note={rule.note} // noteがない場合はundefinedが渡されます
+							/>
+						))}
+					</div>
+				</div>
 			</div>
 		</div>
 	);

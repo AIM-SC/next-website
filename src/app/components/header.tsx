@@ -76,19 +76,6 @@ export default function Header() {
 								<li className={cn("px-5 py-3")}>
 									<a
 										href={
-											"https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443"
-										}
-										target="_blank"
-										rel="noreferrer"
-										className="flex items-center gap-1"
-									>
-										ワークショップ(青山キャンパス)
-										<FontAwesomeIcon icon={faLink} className="size-5" />
-									</a>
-								</li>
-								<li className={cn("px-5 py-3")}>
-									<a
-										href={
 											"https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28"
 										}
 										target="_blank"

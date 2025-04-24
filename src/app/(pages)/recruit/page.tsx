@@ -182,15 +182,6 @@ const jobIntroductionPage = () => {
 							</div>
 						}
 					/>{" "}
-					<JobIntroduction
-						image="/images/job-systemDevelop.png"
-						title="コンシェルジュ業務(青山)"
-						text={
-							<div className="indent-4">
-								<div>ダミーテキスト</div>
-							</div>
-						}
-					/>
 				</div>
 			</div>
 		</div>
