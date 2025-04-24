@@ -15,7 +15,7 @@ type Props = {
 
 const Time = ({ title, notes, subtitle, locations }: Props) => {
 	return (
-		<div className=" h-[510px] rounded-lg bg-white p-6">
+		<div className="rounded-lg bg-white p-6">
 			<div className="mb-4 border-b text-center">
 				<Title maintitle={title} subtitle={subtitle} notes={notes} />
 			</div>
