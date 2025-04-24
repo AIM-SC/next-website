@@ -11,7 +11,7 @@
 		"prepare": "husky"
 	},
 	"lint-staged": {
-		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+		"src/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
 			"biome check --files-ignore-unknown=true",
 			"biome check --write --no-errors-on-unmatched",
 			"biome check --write --organize-imports-enabled=false --no-errors-on-unmatched",

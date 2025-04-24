@@ -1,20 +1,21 @@
-import Image from "next/image";
 import { getInfoList } from "@/libs/microcms";
-import { notFound } from "next/navigation";
-import { format } from "date-fns";
-import ClientSwiper from "./components/swiper";
-import Time from "./components/time";
-import Information from "./components/infromation";
-import Box from "./components/box";
-import AbleCard from "./components/ableCard/ableCard";
 import {
 	faBookOpenReader,
 	faChalkboardTeacher,
-	faLaptop,
 	faEnvelopeOpenText,
-	faVideo,
+	faLaptop,
 	faNewspaper,
+	faVideo,
 } from "@fortawesome/free-solid-svg-icons";
+import { format } from "date-fns";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+
+import AbleCard from "./components/ableCard/ableCard";
+import Box from "./components/box";
+import Information from "./components/infromation";
+import ClientSwiper from "./components/swiper";
+import Time from "./components/time";
 
 const TopPage = async () => {
 	// お知らせデータの取得
@@ -65,7 +66,7 @@ const TopPage = async () => {
 					</div>
 					<p className="leading-loose">
 						AIM
-						Commonsは、青山キャンパス18号館と相模原キャンパスB棟に設置された学習スペースです。平日の授業実施日は開室しており、青学生は誰でも利用できます。グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
+						Commons相模原は、相模原キャンパスB棟に設置された学習スペースです。平日の授業実施日は開室しており、青学生は誰でも利用できます。グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
 					</p>
 				</div>
 			</div>
@@ -110,11 +111,6 @@ const TopPage = async () => {
 					description="学生スタッフが開講するワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
 					linkArray={[
 						{
-							name: "青山はこちら",
-							link: "https://aimcommons.notion.site/3512196d259c42f1848120df30cc5443",
-							external: true,
-						},
-						{
 							name: "相模原はこちら",
 							link: "https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28",
 							external: true,
@@ -133,12 +129,10 @@ const TopPage = async () => {
 					notes="※授業実施日のみ"
 					subtitle="OPENING HOURS"
 					locations={[
-						{ id: "aoyama", name: "青山", time: "9:30 - 17:00" },
-						{ id: "aoyama-open", name: "青山受付時間", time: "10:00 - 16:45" },
-						{ id: "sagamihara", name: "相模原", time: "9:00 - 20:00" },
+						{ id: "sagamihara", name: "開室時間", time: "9:00 - 20:00" },
 						{
 							id: "sagamihara-open",
-							name: "相模原受付時間",
+							name: "受付時間",
 							time: "9:45 - 16:45",
 						},
 					]}
