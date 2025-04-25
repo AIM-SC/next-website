@@ -1,4 +1,3 @@
-import { getInfoList } from "@/libs/microcms";
 import {
 	faBookOpenReader,
 	faChalkboardTeacher,
@@ -10,17 +9,21 @@ import {
 import { format } from "date-fns";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+
+import { getInfoList } from "@/libs/microcms";
 
 import AbleCard from "./components/ableCard/ableCard";
 import Box from "./components/box";
 import Information from "./components/infromation";
 import ClientSwiper from "./components/swiper";
 import Time from "./components/time";
+import UserDisplay from "./components/userDisplay/userDisplay";
 
 const TopPage = async () => {
 	// お知らせデータの取得
 	const informationQueries = {
-		limit: 5,
+		limit: 6,
 		fields: "title,publishedAt,updatedAt,id",
 	};
 	const informationResponse = await getInfoList(informationQueries).catch(() =>
@@ -124,7 +127,7 @@ const TopPage = async () => {
 			</h1>
 			<div className="grid gap-4 lg:grid-cols-[4fr_6fr] xl:grid-cols-[4fr_6fr]">
 				{/* 開室時間の表示 */}
-				<div>
+				<div className="mb-4 border-b text-center">
 					<Time
 						title="開室時間"
 						notes="※授業実施日のみ"
@@ -143,6 +146,17 @@ const TopPage = async () => {
 							},
 						]}
 					/>
+					<div className="mt-2">
+						<Suspense
+							fallback={
+								<div className="flex justify-center" aria-label="読み込み中">
+									<div className="h-10 w-10 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
+								</div>
+							}
+						>
+							<UserDisplay />
+						</Suspense>
+					</div>
 				</div>
 				<div>
 					{/* お知らせの表示 */}
