@@ -41,6 +41,7 @@ export default async function StaticDetailPage({
 	params: { postId: string };
 }) {
 	const article = await getBlogDetail(postId);
+	console.log(article)
 
 	if (!article) {
 		console.error("Post not found:", postId);
