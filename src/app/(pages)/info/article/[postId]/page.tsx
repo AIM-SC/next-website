@@ -26,14 +26,14 @@ export async function generateMetadata({
 	}
 
 	const metadata: Metadata = {
-		title: `${blog.title} | AIMCommons`,
+		title: `${blog.title} | AIM Commons`,
 		description: `${blog.title}に関する記事です`,
 		openGraph: {
-			title: `${blog.title} | AIMCommons`,
+			title: `${blog.title} | AIM Commons`,
 			description: `${blog.title}に関する記事です`,
 			type: "article",
 			url: `https://localhost:3000/info/${params.postId}`,
-			siteName: "AIMCommons",
+			siteName: "AIM Commons",
 			images: {
 				url: "https://localhost:3000/images/logo_commons.jpeg",
 				width: 1200,
@@ -43,9 +43,9 @@ export async function generateMetadata({
 		},
 		twitter: {
 			card: "summary_large_image",
-			title: `${blog.title} | AIMCommons`,
+			title: `${blog.title} | AIM Commons`,
 			description: `${blog.title}に関する記事です`,
-			site: "@AIMCommons",
+			site: "@AIM Commons",
 			images: {
 				url: "https://localhost:3000/images/logo_commons.jpeg",
 				width: 1200,
