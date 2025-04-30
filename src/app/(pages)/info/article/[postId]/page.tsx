@@ -2,25 +2,67 @@ import { notFound } from "next/navigation";
 import { getInfoDetail, getInfoList } from "../../../../../libs/microcms";
 import Article from "@/app/components/article";
 import Heading from "@/app/components/heading";
+import type { Metadata } from "next";
+import { draftMode } from "next/headers";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export async function generateMetadata({
-	params: { postId },
+	params,
+	searchParams,
 }: {
 	params: { postId: string };
-}) {
-	const article = await getInfoDetail(postId);
+	searchParams: { draftKey?: string };
+}): Promise<Metadata> {
+	console.log("Generating metadata for:", params);
 
-	if (!article) {
+	const blog = await getInfoDetail(params.postId);
+
+	if (!blog) {
 		return {
-			title: "お知らせ",
-			description: "AIM Commonsからのお知らせ一覧です",
+			title: "記事が見つかりません",
+			description: "お探しの記事は存在しないか、削除された可能性があります。",
 		};
 	}
 
-	return {
-		title: `${article.title}`,
-		description: article.body,
+	const metadata: Metadata = {
+		title: `${blog.title} | AIM Commons`,
+		description: `${blog.title}に関する記事です`,
+		openGraph: {
+			title: `${blog.title} | AIM Commons`,
+			description: `${blog.title}に関する記事です`,
+			type: "article",
+			url: `https://localhost:3000/info/${params.postId}`,
+			siteName: "AIM Commons",
+			images: {
+				url: "https://localhost:3000/images/logo_commons.jpeg",
+				width: 1200,
+				height: 630,
+				alt: blog.title,
+			},
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: `${blog.title} | AIM Commons`,
+			description: `${blog.title}に関する記事です`,
+			site: "@AIM Commons",
+			images: {
+				url: "https://localhost:3000/images/logo_commons.jpeg",
+				width: 1200,
+				height: 630,
+				alt: blog.title,
+			},
+		},
 	};
+
+	if (searchParams.draftKey) {
+		metadata.robots = {
+			index: false,
+		};
+	}
+
+	console.log("Generated metadata:", metadata);
+	return metadata;
 }
 
 export async function generateStaticParams() {
@@ -37,10 +79,17 @@ export async function generateStaticParams() {
 
 export default async function StaticDetailPage({
 	params: { postId },
+	searchParams,
 }: {
 	params: { postId: string };
+	searchParams: { draftKey?: string };
 }) {
-	const article = await getInfoDetail(postId);
+	const { isEnabled } = draftMode();
+	const queries = searchParams.draftKey
+		? { draftKey: searchParams.draftKey }
+		: {};
+	const article = await getInfoDetail(postId, queries);
+	console.log(article);
 
 	if (!article) {
 		console.error("Post not found:", postId);
@@ -48,9 +97,21 @@ export default async function StaticDetailPage({
 	}
 
 	return (
-		<div className="py-[75px] text-[20px] text-black leading-10">
-			<Heading engTitle="NEWS" jpTitle="お知らせ" />
-			<Article content={article} />
-		</div>
+		<>
+			{(isEnabled || searchParams.draftKey) && (
+				<>
+					<div className="text-lg">
+						プレビューモード中 - これは下書きのプレビューです
+					</div>
+					<Link href="/api/disable_draft?redirect=/info/1">
+						<Button>プレビューモードを解除</Button>
+					</Link>
+				</>
+			)}
+			<div className="py-[75px] text-[20px] text-black leading-10">
+				<Heading engTitle="BLOGS" jpTitle="業務ブログ" />
+				<Article content={article} />
+			</div>
+		</>
 	);
 }
