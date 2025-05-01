@@ -10,7 +10,6 @@ import {
 import { format } from "date-fns";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
 import AbleCard from "./components/ableCard/ableCard";
 import Box from "./components/box";
 import Information from "./components/infromation";
