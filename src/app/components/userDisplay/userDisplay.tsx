@@ -31,7 +31,7 @@ export default async function UserDisplay() {
 	let total: number | "---";
 	let note: string | undefined;
 
-	if (hour >= 10 && hour < 24) {
+	if (hour >= 10 && hour < 17) {
 		const url =
 			"https://script.google.com/macros/s/AKfycbzANLahldgD9yJ2Rf2xxN1sHUNtgXAeBEmjkQBPVQSdSs5gRQaY0CuPUwE5CeDSxrYH-Q/exec?limit=1";
 		const res = await fetch(url, { cache: "no-store" });
