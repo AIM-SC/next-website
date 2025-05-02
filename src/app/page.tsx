@@ -10,15 +10,15 @@ import { format } from "date-fns";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-
 import { getInfoList } from "@/libs/microcms";
-
 import AbleCard from "./components/ableCard/ableCard";
 import Box from "./components/box";
 import Information from "./components/infromation";
 import ClientSwiper from "./components/swiper";
 import Time from "./components/time";
 import UserDisplay from "./components/userDisplay/userDisplay";
+import UserDisplayLoading from "./components/userDisplay/userDisplayLoading";
+
 
 const TopPage = async () => {
 	// お知らせデータの取得
@@ -147,13 +147,7 @@ const TopPage = async () => {
 						]}
 					/>
 					<div className="mt-2">
-						<Suspense
-							fallback={
-								<div className="flex justify-center" aria-label="読み込み中">
-									<div className="h-10 w-10 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
-								</div>
-							}
-						>
+						<Suspense fallback={<UserDisplayLoading />}>
 							<UserDisplay />
 						</Suspense>
 					</div>
