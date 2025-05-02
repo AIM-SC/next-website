@@ -47,7 +47,7 @@ export default async function UserDisplay() {
 	}
 
 	return (
-		<UserCountLayout note={note ? `${note}集計` : undefined}>
+		<UserCountLayout note={note ?? `${note}集計`}>
 			<FontAwesomeIcon icon={faUserGroup} className="size-5" />
 			<div className="mb-3 items-center justify-center">
 				<span className="font-bold text-4xl">
