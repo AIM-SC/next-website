@@ -123,7 +123,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/job-PR.png"
+						image="/images/commercial.png"
 						title="広報活動"
 						text={
 							<div className="indent-4">
@@ -139,7 +139,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/movieEdior.png"
+						image="/images/job-video.jpeg"
 						title="動画制作"
 						text={
 							<div className="indent-4">
@@ -162,7 +162,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/job-systemDevelop.png"
+						image="/images/job-system.png"
 						title="システム開発(相模原)"
 						text={
 							<div className="indent-4">

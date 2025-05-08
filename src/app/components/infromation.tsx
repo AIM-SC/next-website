@@ -24,7 +24,7 @@ const Information = ({ title, notes, subtitle, content }: Props) => {
 					return (
 						<div key={item.name}>
 							<a href={`/info/article/${item.id}`}>
-								<div className="flex flex-col gap-7 transition-opacity hover:opacity-50 md:flex-row">
+								<div className="flex flex-col gap-2 text-left transition-opacity hover:opacity-50 md:flex-row">
 									<span className="">{item.time}</span>
 									<span className="text-gray-800">{truncatedText}</span>
 								</div>
