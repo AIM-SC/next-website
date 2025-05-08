@@ -10,23 +10,20 @@ type Props = {
 
 const Information = ({ title, notes, subtitle, content }: Props) => {
 	return (
-		<div className="rounded-lg bg-white p-6">
+		<div className="h-full rounded-lg bg-white p-6">
 			<div className="mb-4 border-b text-center">
 				<Title maintitle={title} subtitle={subtitle} notes={notes} />
 			</div>
-			<div className="flex flex-col space-y-2 text-center">
+			<div className="flex flex-col space-y-4">
 				{content.map((item) => {
-					const { name } = item;
-
-					const truncatedText =
-						name.length > 30 ? `${name.slice(0, 30)}…` : name;
-
 					return (
 						<div key={item.name}>
 							<a href={`/info/article/${item.id}`}>
 								<div className="flex flex-col gap-2 text-left transition-opacity hover:opacity-50 md:flex-row">
 									<span className="">{item.time}</span>
-									<span className="text-gray-800">{truncatedText}</span>
+									<span className="line-clamp-1 text-gray-800">
+										{item.name}
+									</span>
 								</div>
 							</a>
 
@@ -34,7 +31,10 @@ const Information = ({ title, notes, subtitle, content }: Props) => {
 						</div>
 					);
 				})}
-				<Link href="/info" className="transition-opacity hover:opacity-50">
+				<Link
+					href="/info"
+					className="text-center transition-opacity hover:opacity-50"
+				>
 					一覧を見る
 				</Link>
 			</div>

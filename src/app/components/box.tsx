@@ -9,7 +9,7 @@ type Props = {
 	icon: FontAwesomeIconProps["icon"];
 	title: string;
 	subtitle: string;
-	description: string;
+	description: React.ReactNode;
 	link: string;
 };
 
@@ -20,9 +20,9 @@ const Box = ({ icon, title, subtitle, description, link }: Props) => {
 				<div className="flex justify-center">
 					<FontAwesomeIcon icon={icon} className="size-[100px]" />
 				</div>
-				<div className="text-center">
+				<div className="px-2 text-center">
 					<Title maintitle={title} subtitle={subtitle} />
-					<p>{description}</p>
+					<p className="whitespace-pre-line">{description}</p>
 				</div>
 			</Link>
 		</div>
