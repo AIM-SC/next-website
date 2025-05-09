@@ -133,17 +133,9 @@ const TopPage = async () => {
 						notes="※授業実施日のみ"
 						subtitle="OPENING HOURS"
 						locations={[
-							{ id: "sagamihara", name: "開室時間", time: "9:00 - 20:00" },
-							{
-								id: "sagamihara-open",
-								name: "受付時間",
-								time: "9:45 - 16:45",
-							},
-							{
-								id: "sagamihara-open",
-								name: "PC貸出時間",
-								time: "9:45 - 16:30",
-							},
+							{ id: "sagamihara-hours", name: "開室時間", time: "9:00 - 20:00" },
+							{ id: "sagamihara-reception", name: "受付時間", time: "9:45 - 16:45" },
+							{ id: "sagamihara-pc-rental", name: "PC貸出時間", time: "9:45 - 16:30" },
 						]}
 					/>
 					<div className="mt-2">
