@@ -32,7 +32,7 @@ export default function Header() {
 								<AlignJustify />
 							</Button>
 						</SheetTrigger>
-						<SheetContent>
+						<SheetContent className="max-h-screen overflow-y-auto pb-10">
 							<a href="/" className="inline-block w-fit">
 								<Image
 									src="/images/nav_logo.svg"
@@ -44,14 +44,14 @@ export default function Header() {
 							</a>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
 
-							<p className="my-3 font-bold text-stone-400">
+							<p className="my-3 font-bold text-[0.7em] text-sm text-stone-400 sm:text-base ">
 								AIM Commonsを初めて使う方へ
 							</p>
 							<ul>
-								<li className={cn("px-5 py-3")}>
+								<li className={cn("px-5 py-3 text-[0.7em] sm:text-base")}>
 									<a href={"/introduce"}>利用案内</a>
 								</li>
-								<li className={cn("px-5 py-3")}>
+								<li className={cn("px-5 py-3 text-[0.7em] sm:text-base")}>
 									<a
 										href={
 											"https://docs.google.com/spreadsheets/d/1pGRuvjajI833WFWqME8QbjGkraUQzgZ-Fp241Tbu7I8/edit?gid=0#gid=0"
@@ -61,19 +61,19 @@ export default function Header() {
 										className="flex items-center gap-1"
 									>
 										貸出機器一覧
-										<FontAwesomeIcon icon={faLink} className="size-5" />
+										<FontAwesomeIcon icon={faLink} className="size-3 md:size-5" />
 									</a>
 								</li>
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
-							<p className="my-3 font-bold text-stone-400">
+							<p className="my-3 font-bold text-[0.7em] text-stone-400 sm:text-base">
 								AIM Commonsを使いこなしたい方へ
 							</p>
-							<p className="my-2 ml-2 font-bold text-stone-400">
+							<p className="my-2 ml-2 font-bold text-[0.7em] text-stone-400 sm:text-base">
 								ワークショップ
 							</p>
 							<ul className="mb-1">
-								<li className={cn("px-5 py-3")}>
+								<li className={cn("px-5 py-3 text-[0.7em] sm:text-base")}>
 									<a
 										href={
 											"https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28"
@@ -83,30 +83,31 @@ export default function Header() {
 										className="flex items-center gap-1"
 									>
 										ワークショップ (相模原キャンパス)
-										<FontAwesomeIcon icon={faLink} className="size-5" />
+										<FontAwesomeIcon icon={faLink} className="size-3 md:size-5" />
 									</a>
 								</li>
 							</ul>
-							<p className="my-2 ml-2 font-bold text-stone-400">
+							<p className="my-2 ml-2 font-bold text-[0.7em] text-stone-400 sm:text-base">
 								AIM Commonsからの情報発信
 							</p>
 							<ul>
-								<li className={cn("px-5 py-3")}>
+								<li className={cn("px-5 py-3 text-[0.7em] sm:text-base")}>
 									<a href={"/info"}>お知らせ</a>
 								</li>
-								<li className={cn("px-5 py-3")}>
+								<li className={cn("px-5 py-3 text-[0.7em] sm:text-base")}>
 									<a href={"/movies"}>YouTube動画</a>
 								</li>
-								<li className={cn("px-5 py-3")}>
+								<li className={cn("px-5 py-3 text-[0.7em] sm:text-base")}>
 									<a href={"/blog"}>業務ブログ</a>
 								</li>
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
-							<p className="my-3 font-bold text-stone-400">
+							{/* biome-ignore lint/nursery/useSortedClasses: <explanation> */}
+<p className="my-3 font-bold text-stone-400 text-[0.7em] sm:text-base">
 								もっとAIM Commonsに関わりたい方へ
 							</p>
 							<ul>
-								<li className={cn("px-5 py-3")}>
+								<li className={cn("px-5 py-3 text-[0.7em] sm:text-base")}>
 									<a href={"/recruit"}>学生スタッフ採用</a>
 								</li>
 							</ul>
