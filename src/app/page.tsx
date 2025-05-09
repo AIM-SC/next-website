@@ -45,21 +45,21 @@ const TopPage = async () => {
 			</div>
 
 			{/* Aboutセクション */}
-   <div className="my-8 items-center justify-center gap-4 rounded bg-white p-12  lg:p-16 pb-[4%] flex flex-col-reverse xl:flex-row">
-		<div className="w-full xl:w-1/2">
-		  <Image
-			src="/images/about.png"
-			alt="AIMの説明画像"
-			className="mb-4 h-auto w-full rounded-md"
-			width={500}
-			height={300}
-			layout="responsive"
-			objectFit="cover"
-		  />
-		</div>
-		<div className="w-full xl:ml-4 xl:w-1/2">
-		  <div className="font-bold text-lg md:text-[26px]">
-			<h1 className="mb-2 leading-7 md:leading-9">
+			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded bg-white p-12 pb-[4%] lg:p-16 xl:flex-row">
+				<div className="w-full xl:w-1/2">
+					<Image
+						src="/images/about.png"
+						alt="AIMの説明画像"
+						className="mb-4 h-auto w-full rounded-md"
+						width={500}
+						height={300}
+						layout="responsive"
+						objectFit="cover"
+					/>
+				</div>
+				<div className="w-full xl:ml-4 xl:w-1/2">
+					<div className="font-bold text-lg md:text-[26px]">
+						<h1 className="mb-2 leading-7 md:leading-9">
 							AIM Commons
 							<br />
 							（ラーニングコモンズ）とは？
