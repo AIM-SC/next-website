@@ -2,11 +2,12 @@
 
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules"; // Autoplayを追加
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/autoplay"; // Autoplay用のCSSも追加（必要な場合）
 import Image from "next/image";
 
 const StyledSwiper = styled(Swiper)`
@@ -25,8 +26,9 @@ const StyledSwiper = styled(Swiper)`
 
 const ClientSwiper = () => (
 	<StyledSwiper
-		modules={[Navigation, Pagination, A11y]}
+		modules={[Navigation, Pagination, A11y, Autoplay]} // Autoplayをモジュールに追加
 		loop={true}
+		autoplay={{ delay: 3000 }}
 		spaceBetween={20}
 		slidesPerView={1}
 		pagination={{ clickable: true }}
