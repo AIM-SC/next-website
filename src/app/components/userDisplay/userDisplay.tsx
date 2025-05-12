@@ -30,6 +30,7 @@ export default async function UserDisplay() {
 
 	let total: number | "---";
 	let note: string | undefined;
+    let congestion = "";
 
 	if (hour >= 10 && hour < 17) {
 		const url =
@@ -41,11 +42,23 @@ export default async function UserDisplay() {
 			(sum, v) => sum + v,
 			0,
 		);
+		
+		if (typeof(total) === "number"){
+			if (total >= 20) {
+				congestion = "混雑"
+			} else if(total >= 15) {
+				congestion = "やや混雑"
+			} else if (total >= 10) {
+				congestion = "やや閑散"
+			} else if (total < 10) {
+				congestion = "閑散"
+			}
+		}
 		note = format(new Date(data[0].createdAt), "MM/dd HH:mm");
 	} else {
 		total = "---";
 	}
-
+    
 	return (
 		<UserCountLayout note={note ? `${note}集計` : ""}>
 			<FontAwesomeIcon icon={faUserGroup} className="size-5" />
@@ -54,6 +67,7 @@ export default async function UserDisplay() {
 					{total === undefined ? "—" : total}
 				</span>
 				<span className="text-lg">人</span>
+				<span className="ml-3">{congestion}</span>
 			</div>
 		</UserCountLayout>
 	);
