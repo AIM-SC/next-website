@@ -1,4 +1,4 @@
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ const footer = () => {
 					className="flex items-center gap-1"
 				>
 					青山学院大学公式サイト
-					<FontAwesomeIcon icon={faLink} className="size-5" />
+					<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="size-5" />
 				</Link>
 				<Link
 					href="https://www.aim.aoyama.ac.jp/faq/"
@@ -22,7 +22,7 @@ const footer = () => {
 					className="flex items-center gap-1"
 				>
 					よくある質問
-					<FontAwesomeIcon icon={faLink} className="size-5" />
+					<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="size-5" />
 				</Link>
 				<Link
 					href="https://www.aim.aoyama.ac.jp/customer_support/"
@@ -31,7 +31,7 @@ const footer = () => {
 					className="flex items-center gap-1"
 				>
 					お問い合わせ
-					<FontAwesomeIcon icon={faLink} className="size-5" />
+					<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="size-5" />
 				</Link>
 			</div>
 			<div className="text-center text-xs">

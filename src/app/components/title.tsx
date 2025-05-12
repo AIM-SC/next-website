@@ -9,7 +9,7 @@ const Title = ({ maintitle, subtitle, notes }: Props) => {
 		<div className="w-full rounded-md bg-white">
 			<div className="p-3">
 				<div
-					className={`flex items-end justify-center ${notes ? "space-x-4" : ""}`}
+					className={`flex items-center justify-center ${notes ? "space-x-4" : ""}`}
 				>
 					<h2 className="font-bold text-lg">{maintitle}</h2>
 					{notes && <p className="text-gray-400 text-sm">{notes}</p>}

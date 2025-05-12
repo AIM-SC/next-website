@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Heading from "@/app/components/heading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata: Metadata = {
 	title: "YouTube動画",
@@ -64,8 +66,10 @@ const moviePage = async () => {
 					href="https://www.youtube.com/channel/UCPvxIswjXQ1VU2H3WyBss8w"
 					target="_blank"
 					rel="noreferrer"
+					className="flex items-center gap-1"
 				>
 					すべての動画を見るにはこちら
+					<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 				</Link>
 			</Button>
 		</div>
