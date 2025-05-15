@@ -119,9 +119,9 @@ export default function Article({ content }: { content: ArticleType }) {
 		<div className="container mx-auto min-h-[60vh] rounded-xl bg-white py-[8%]">
 			<div className="mx-[8%]">
 				<h1 className="mb-4 font-bold text-2xl lg:text-3xl">{content.title}</h1>
-				<div className="mb-2 flex justify-between">
+				<div className="mb-2 block justify-between md:flex">
 					<Tag tags={content.tags} variant="article" />
-					<h2 className="text-right font-semibold text-gray-600">
+					<h2 className="text-right font-semibold text-gray-600 text-lg md:text-lg">
 						{format(content.publishedAt || content.updatedAt, "yyyy.MM.dd")}
 					</h2>
 				</div>

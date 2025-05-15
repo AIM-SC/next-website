@@ -107,7 +107,7 @@ const jobIntroductionPage = () => {
 								<div>
 									AIM
 									Commonsでは、機材やソフトウェアを体験できるワークショップを毎日実施中！
-									現在ではAdobeの画像・動画編集ソフトや、一眼レフカメラなどをテーマに、学生スタッフが講師として活躍します。
+									現在ではAdobeの画像・動画編集ソフトや、一眼レフカメラなどをテーマに、学生スタッフが講師として活躍しています。
 									講師になるためのフォローアップも充実しているので、自分のスキルも高めるチャンスです！
 								</div>
 								<div>
@@ -167,7 +167,7 @@ const jobIntroductionPage = () => {
 					/>
 					<JobIntroduction
 						image="/images/job-system.png"
-						title="システム開発(相模原)"
+						title="システム開発"
 						text={
 							<div className="indent-4 font-normal">
 								<div>
