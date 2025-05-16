@@ -26,7 +26,7 @@ export default function AbleCard({
 	icon,
 }: Props) {
 	return (
-		<div className="flex h-[430px] flex-col justify-around rounded-md bg-white p-6">
+		<div className="flex h-[430px] flex-col justify-around rounded-lg bg-white p-6">
 			<h3 className="text-center font-bold text-[26px]">{title}</h3>
 			<div className="flex justify-center">
 				<FontAwesomeIcon icon={icon} className="size-[120px]" />
@@ -45,7 +45,7 @@ export default function AbleCard({
 						{link.external && (
 							<FontAwesomeIcon
 								icon={faArrowUpRightFromSquare}
-								className="size-5"
+								className="size-4"
 							/>
 						)}
 					</Link>

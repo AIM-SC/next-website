@@ -17,7 +17,7 @@ export function UserCountLayout({ children, note }: Props) {
 				/>
 			</div>
 			<div className="h-12">
-				<CardContent className="flex items-center justify-center gap-3 pb-0">
+				<CardContent className="flex items-center justify-center gap-3 p-0">
 					{children}
 				</CardContent>
 			</div>

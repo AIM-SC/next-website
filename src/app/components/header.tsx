@@ -63,7 +63,7 @@ export default function Header() {
                     貸出機器一覧
                     <FontAwesomeIcon
                       icon={faArrowUpRightFromSquare}
-                      className="size-5"
+                      className="size-3 md:size-4"
                     />
                   </a>
                 </li>
@@ -88,7 +88,7 @@ export default function Header() {
                     ワークショップ (相模原キャンパス)
                     <FontAwesomeIcon
                       icon={faArrowUpRightFromSquare}
-                      className="size-5"
+                      className="size-3 md:size-4"
                     />
                   </a>
                 </li>

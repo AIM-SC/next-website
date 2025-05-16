@@ -51,7 +51,7 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 									こちら
 									<FontAwesomeIcon
 										icon={faArrowUpRightFromSquare}
-										className="size-5 text-black"
+										className="size-4 text-black"
 									/>
 								</Link>
 								をご確認ください。
