@@ -61,7 +61,10 @@ export default function Header() {
 										className="flex items-center gap-1"
 									>
 										貸出機器一覧
-										<FontAwesomeIcon icon={faLink} className="size-3 md:size-5" />
+										<FontAwesomeIcon
+											icon={faLink}
+											className="size-3 md:size-5"
+										/>
 									</a>
 								</li>
 							</ul>
@@ -83,7 +86,10 @@ export default function Header() {
 										className="flex items-center gap-1"
 									>
 										ワークショップ (相模原キャンパス)
-										<FontAwesomeIcon icon={faLink} className="size-3 md:size-5" />
+										<FontAwesomeIcon
+											icon={faLink}
+											className="size-3 md:size-5"
+										/>
 									</a>
 								</li>
 							</ul>
@@ -103,7 +109,7 @@ export default function Header() {
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
 							{/* biome-ignore lint/nursery/useSortedClasses: <explanation> */}
-<p className="my-3 font-bold text-stone-400 text-[0.7em] sm:text-base">
+							<p className="my-3 font-bold text-stone-400 text-[0.7em] sm:text-base">
 								もっとAIM Commonsに関わりたい方へ
 							</p>
 							<ul>
