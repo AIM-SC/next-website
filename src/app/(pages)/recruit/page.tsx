@@ -2,6 +2,12 @@ import Heading from "@/app/components/heading";
 import JobIntroduction from "@/app/components/jobIntroduction";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "学生スタッフ採用",
+	description: "AIM Commonsの採用情報を紹介します",
+};
 
 const jobIntroductionPage = () => {
 	return (
