@@ -9,20 +9,20 @@ type Props = {
 	icon: FontAwesomeIconProps["icon"];
 	title: string;
 	subtitle: string;
-	description: string;
+	description: React.ReactNode;
 	link: string;
 };
 
 const Box = ({ icon, title, subtitle, description, link }: Props) => {
 	return (
-		<div className="w-full rounded-md bg-white p-4 shadow-md transition-opacity hover:shadow-lg">
+		<div className="w-full rounded-lg bg-white shadow-md transition-opacity hover:shadow-lg">
 			<Link href={link} className="items-center p-4">
 				<div className="flex justify-center">
 					<FontAwesomeIcon icon={icon} className="size-[100px]" />
 				</div>
-				<div className="text-center">
+				<div className="px-2 text-center">
 					<Title maintitle={title} subtitle={subtitle} />
-					<p>{description}</p>
+					<p className="whitespace-pre-line">{description}</p>
 				</div>
 			</Link>
 		</div>

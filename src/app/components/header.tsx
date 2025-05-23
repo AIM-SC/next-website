@@ -6,7 +6,7 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/libs/utils";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AlignJustify } from "lucide-react";
 import Image from "next/image";
@@ -62,8 +62,8 @@ export default function Header() {
 									>
 										貸出機器一覧
 										<FontAwesomeIcon
-											icon={faLink}
-											className="size-3 md:size-5"
+											icon={faArrowUpRightFromSquare}
+											className="size-3 md:size-4"
 										/>
 									</a>
 								</li>
@@ -87,8 +87,8 @@ export default function Header() {
 									>
 										ワークショップ (相模原キャンパス)
 										<FontAwesomeIcon
-											icon={faLink}
-											className="size-3 md:size-5"
+											icon={faArrowUpRightFromSquare}
+											className="size-3 md:size-4"
 										/>
 									</a>
 								</li>

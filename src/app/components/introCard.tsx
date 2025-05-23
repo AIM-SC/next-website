@@ -7,7 +7,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
 	image: string;
@@ -50,8 +50,8 @@ const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 								>
 									こちら
 									<FontAwesomeIcon
-										icon={faLink}
-										className="size-5 text-black"
+										icon={faArrowUpRightFromSquare}
+										className="size-4 text-black"
 									/>
 								</Link>
 								をご確認ください。

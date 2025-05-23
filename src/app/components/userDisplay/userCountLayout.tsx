@@ -8,20 +8,24 @@ type Props = {
 
 export function UserCountLayout({ children, note }: Props) {
 	return (
-		<Card>
+		<Card className="border-0 p-6">
 			<div className="mb-3 border-b text-center">
 				<Title
 					maintitle="現在の利用者数"
-					subtitle="Current Users"
+					subtitle="CURRENT USERS"
 					notes={note}
 				/>
 			</div>
-			<CardContent className="flex items-center justify-center gap-3 pb-0">
-				{children}
-			</CardContent>
-			<CardFooter className="flex justify-center bg-muted/50 px-4 py-2">
+			<div className="h-12">
+				<CardContent className="flex items-center justify-center gap-3 p-0">
+					{children}
+				</CardContent>
+			</div>
+			<CardFooter className="flex justify-center rounded-lg bg-muted/50 px-4 py-2">
 				<p className="text-center text-xs">
-					開室日10:00〜16:30の間で、30分おきに更新されます
+					開室日10:00〜16:30の間で
+					<br className="sm:hidden lg:block xl:hidden" />
+					30分おきに更新されます
 				</p>
 			</CardFooter>
 		</Card>

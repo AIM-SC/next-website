@@ -3,22 +3,28 @@ import { getInfoDetail, getInfoList } from "../../../../../libs/microcms";
 import Article from "@/app/components/article";
 import Heading from "@/app/components/heading";
 import type { Metadata } from "next";
-import { draftMode } from "next/headers";
+import { draftMode, cookies } from "next/headers"; // cookiesをインポート
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export async function generateMetadata({
 	params,
-	searchParams,
 }: {
 	params: { postId: string };
-	searchParams: { draftKey?: string };
 }): Promise<Metadata> {
 	console.log("Generating metadata for:", params);
 
-	const blog = await getInfoDetail(params.postId);
+	const { isEnabled } = draftMode(); // draftModeが有効かどうかを確認
 
-	if (!blog) {
+	// ★追加: Cookieから実際のdraftKeyを読み込む
+	const actualDraftKey = cookies().get("microcms-draft-key")?.value;
+
+	const info = await getInfoDetail(params.postId, {
+		// draftModeが有効で、かつCookieにdraftKeyが存在する場合のみその値を渡す
+		draftKey: isEnabled && actualDraftKey ? actualDraftKey : undefined,
+	});
+
+	if (!info) {
 		return {
 			title: "記事が見つかりません",
 			description: "お探しの記事は存在しないか、削除された可能性があります。",
@@ -26,11 +32,11 @@ export async function generateMetadata({
 	}
 
 	const metadata: Metadata = {
-		title: `${blog.title} | AIM Commons`,
-		description: `${blog.title}に関する記事です`,
+		title: `${info.title} | AIM Commons`,
+		description: `${info.title}に関する記事です`,
 		openGraph: {
-			title: `${blog.title} | AIM Commons`,
-			description: `${blog.title}に関する記事です`,
+			title: `${info.title} | AIM Commons`,
+			description: `${info.title}に関する記事です`,
 			type: "article",
 			url: `https://localhost:3000/info/${params.postId}`,
 			siteName: "AIM Commons",
@@ -38,24 +44,24 @@ export async function generateMetadata({
 				url: "https://localhost:3000/images/logo_commons.jpeg",
 				width: 1200,
 				height: 630,
-				alt: blog.title,
+				alt: info.title,
 			},
 		},
 		twitter: {
 			card: "summary_large_image",
-			title: `${blog.title} | AIM Commons`,
-			description: `${blog.title}に関する記事です`,
+			title: `${info.title} | AIM Commons`,
+			description: `${info.title}に関する記事です`,
 			site: "@AIM Commons",
 			images: {
 				url: "https://localhost:3000/images/logo_commons.jpeg",
 				width: 1200,
 				height: 630,
-				alt: blog.title,
+				alt: info.title,
 			},
 		},
 	};
 
-	if (searchParams.draftKey) {
+	if (isEnabled) {
 		metadata.robots = {
 			index: false,
 		};
@@ -79,16 +85,18 @@ export async function generateStaticParams() {
 
 export default async function StaticDetailPage({
 	params: { postId },
-	searchParams,
 }: {
 	params: { postId: string };
-	searchParams: { draftKey?: string };
 }) {
-	const { isEnabled } = draftMode();
-	const queries = searchParams.draftKey
-		? { draftKey: searchParams.draftKey }
-		: {};
-	const article = await getInfoDetail(postId, queries);
+	const { isEnabled } = draftMode(); // draftModeが有効かどうかを確認
+
+	// ★追加: Cookieから実際のdraftKeyを読み込む
+	const actualDraftKey = cookies().get("microcms-draft-key")?.value;
+
+	// draftModeが有効で、かつCookieにdraftKeyが存在する場合のみその値を渡す
+	const article = await getInfoDetail(postId, {
+		draftKey: isEnabled && actualDraftKey ? actualDraftKey : undefined,
+	});
 	console.log(article);
 
 	if (!article) {
@@ -98,7 +106,7 @@ export default async function StaticDetailPage({
 
 	return (
 		<>
-			{(isEnabled || searchParams.draftKey) && (
+			{isEnabled && (
 				<>
 					<div className="text-lg">
 						プレビューモード中 - これは下書きのプレビューです
@@ -109,7 +117,7 @@ export default async function StaticDetailPage({
 				</>
 			)}
 			<div className="py-[75px] text-[20px] text-black leading-10">
-				<Heading engTitle="BLOGS" jpTitle="業務ブログ" />
+				<Heading engTitle="INFO" jpTitle="お知らせ" />
 				<Article content={article} />
 			</div>
 		</>

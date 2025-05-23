@@ -3,7 +3,10 @@ import {
 	FontAwesomeIcon,
 	type FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faLink } from "@fortawesome/free-solid-svg-icons";
+import {
+	faChevronRight,
+	faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
 	title: string;
@@ -23,7 +26,7 @@ export default function AbleCard({
 	icon,
 }: Props) {
 	return (
-		<div className="flex h-[430px] flex-col justify-around rounded-md bg-white p-6">
+		<div className="flex h-[430px] flex-col justify-around rounded-lg bg-white p-6">
 			<h3 className="text-center font-bold text-[26px]">{title}</h3>
 			<div className="flex justify-center">
 				<FontAwesomeIcon icon={icon} className="size-[120px]" />
@@ -40,7 +43,10 @@ export default function AbleCard({
 						<FontAwesomeIcon icon={faChevronRight} className="size-3" />
 						{link.name}
 						{link.external && (
-							<FontAwesomeIcon icon={faLink} className="size-5" />
+							<FontAwesomeIcon
+								icon={faArrowUpRightFromSquare}
+								className="size-4"
+							/>
 						)}
 					</Link>
 				))}

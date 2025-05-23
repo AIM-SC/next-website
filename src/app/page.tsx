@@ -45,8 +45,8 @@ const TopPage = async () => {
 			</div>
 
 			{/* Aboutセクション */}
-			<div className="my-8 items-center justify-center gap-4 rounded bg-white p-8 lg:flex">
-				<div className="w-full lg:w-1/2">
+			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-12 pb-[4%] lg:p-16 xl:flex-row">
+				<div className="w-full xl:w-1/2">
 					<Image
 						src="/images/about.png"
 						alt="AIMの説明画像"
@@ -57,7 +57,7 @@ const TopPage = async () => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="w-full lg:ml-4 lg:w-1/2">
+				<div className="w-full xl:ml-4 xl:w-1/2">
 					<div className="font-bold text-lg md:text-[26px]">
 						<h1 className="mb-2 leading-7 md:leading-9">
 							AIM Commons
@@ -124,9 +124,9 @@ const TopPage = async () => {
 			<h1 className="mt-12 mb-8 text-center font-bold text-xl md:text-[26px]">
 				インフォメーション
 			</h1>
-			<div className="grid gap-4 lg:grid-cols-[4fr_6fr] xl:grid-cols-[4fr_6fr]">
+			<div className="grid gap-8 lg:grid-cols-[4fr_6fr] xl:grid-cols-[4fr_6fr]">
 				{/* 開室時間の表示 */}
-				<div className="mb-4 border-b text-center">
+				<div className="text-center">
 					<Time
 						title="開室時間"
 						notes="※授業実施日のみ"
@@ -149,7 +149,7 @@ const TopPage = async () => {
 							},
 						]}
 					/>
-					<div className="mt-2">
+					<div className="mt-8">
 						<Suspense fallback={<UserDisplayLoading />}>
 							<UserDisplay />
 						</Suspense>
@@ -170,27 +170,45 @@ const TopPage = async () => {
 				<h1 className="mt-12 mb-8 font-bold text-xl md:text-[26px]">
 					情報発信
 				</h1>
-				<div className="rounded-lg bg-white p-6">
-					<div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
+				<div className="rounded-lg">
+					<div className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
 						<Box
 							icon={faEnvelopeOpenText}
 							title="お知らせ"
 							subtitle="NEWS"
-							description="AIM Commonsから利用者へのお知らせです"
+							description={
+								<>
+									AIM Commonsから
+									<br className="block sm:hidden md:block xl:hidden" />
+									利用者へのお知らせです
+								</>
+							}
 							link="./info"
 						/>
 						<Box
 							icon={faVideo}
 							title="YouTube動画"
 							subtitle="MOVIES"
-							description="YouTubeで情報発信をしています"
+							description={
+								<>
+									YouTubeで
+									<br className="block sm:hidden md:block xl:hidden" />
+									情報発信をしています
+								</>
+							}
 							link="./movies"
 						/>
 						<Box
 							icon={faNewspaper}
 							title="業務ブログ"
 							subtitle="BLOGS"
-							description="学生スタッフがITスキルに役立つ記事を投稿しています"
+							description={
+								<>
+									学生スタッフの業務に
+									<br className="block sm:hidden md:block xl:hidden" />
+									関する投稿をしています
+								</>
+							}
 							link="./blog"
 						/>
 					</div>

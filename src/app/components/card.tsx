@@ -24,7 +24,7 @@ export default function Card({ content }: { content: ArticleType }) {
 						"yyyy.MM.dd",
 					)}
 				</div>
-				<div>
+				<div className="line-clamp-1 h-[1.5rem]">
 					<Tag tags={content.tags} variant="card" />
 				</div>
 			</div>

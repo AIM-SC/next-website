@@ -1,22 +1,28 @@
 import { notFound } from "next/navigation";
+import { getBlogDetail, getBlogList } from "../../../../../libs/microcms";
 import Article from "@/app/components/article";
-import { getBlogDetail, getBlogList } from "@/libs/microcms";
 import Heading from "@/app/components/heading";
 import type { Metadata } from "next";
-import { draftMode } from "next/headers";
+import { draftMode, cookies } from "next/headers"; // cookiesをインポート
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export async function generateMetadata({
 	params,
-	searchParams,
 }: {
 	params: { postId: string };
-	searchParams: { draftKey?: string };
 }): Promise<Metadata> {
 	console.log("Generating metadata for:", params);
 
-	const blog = await getBlogDetail(params.postId);
+	const { isEnabled } = draftMode(); // draftModeが有効かどうかを確認
+
+	// ★追加: Cookieから実際のdraftKeyを読み込む
+	const actualDraftKey = cookies().get("microcms-draft-key")?.value;
+
+	const blog = await getBlogDetail(params.postId, {
+		// draftModeが有効で、かつCookieにdraftKeyが存在する場合のみその値を渡す
+		draftKey: isEnabled && actualDraftKey ? actualDraftKey : undefined,
+	});
 
 	if (!blog) {
 		return {
@@ -55,7 +61,7 @@ export async function generateMetadata({
 		},
 	};
 
-	if (searchParams.draftKey) {
+	if (isEnabled) {
 		metadata.robots = {
 			index: false,
 		};
@@ -79,16 +85,18 @@ export async function generateStaticParams() {
 
 export default async function StaticDetailPage({
 	params: { postId },
-	searchParams,
 }: {
 	params: { postId: string };
-	searchParams: { draftKey?: string };
 }) {
-	const { isEnabled } = draftMode();
-	const queries = searchParams.draftKey
-		? { draftKey: searchParams.draftKey }
-		: {};
-	const article = await getBlogDetail(postId, queries);
+	const { isEnabled } = draftMode(); // draftModeが有効かどうかを確認
+
+	// ★追加: Cookieから実際のdraftKeyを読み込む
+	const actualDraftKey = cookies().get("microcms-draft-key")?.value;
+
+	// draftModeが有効で、かつCookieにdraftKeyが存在する場合のみその値を渡す
+	const article = await getBlogDetail(postId, {
+		draftKey: isEnabled && actualDraftKey ? actualDraftKey : undefined,
+	});
 	console.log(article);
 
 	if (!article) {
@@ -98,7 +106,7 @@ export default async function StaticDetailPage({
 
 	return (
 		<>
-			{(isEnabled || searchParams.draftKey) && (
+			{isEnabled && (
 				<>
 					<div className="text-lg">
 						プレビューモード中 - これは下書きのプレビューです
@@ -109,7 +117,7 @@ export default async function StaticDetailPage({
 				</>
 			)}
 			<div className="py-[75px] text-[20px] text-black leading-10">
-				<Heading engTitle="BLOGS" jpTitle="業務ブログ" />
+				<Heading engTitle="INFO" jpTitle="お知らせ" />
 				<Article content={article} />
 			</div>
 		</>
