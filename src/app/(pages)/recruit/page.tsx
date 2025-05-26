@@ -72,127 +72,165 @@ const jobIntroductionPage = () => {
 						JOB INTRODUCE
 					</div>
 				</div>
-				<div className="grid grid-cols-1 gap-12 p-12 pb-[4%] lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3">
-					<JobIntroduction
-						image="/images/pc_rental.jpg"
-						title="PC貸出"
-						text={
-							<div className="indent-4 font-normal">
-								<div>
-									AIM
-									Commonsでは、学生がキャンパス内の自由な場所でPCを利用できるように、ノートPCを貸し出しています！
-									返却されたPCの内容物の確認や充電のチェックなども学生スタッフの役割です。
+				<div className="mx-auto my-8 px-20 font-normal text-base">
+					業務は大きく分けて「レギュラー業務」と「プロジェクト型業務」の２種類があります。
+					「レギュラー業務」は、全ての学生スタッフが担当する基本的な業務です。PCや各種機器の貸出、ワークショップ運営などを行い、利用者が快適に学習教育活動を進められるようサポートします。
+					「プロジェクト型業務」は、自分の関心や得意分野を活かして選択的に取り組む業務です。広報活動、動画制作、システム開発など、多彩な活動に挑戦できます。プロジェクトを通じて専門的な知識やスキルを高めるだけでなく、複数のプロジェクトを兼任して幅広く経験を積むことも可能です。プロジェクトは自身で企画して新しく作ることもできます。
+					自分の強みを発揮しながら、新たなスキルを身につけたい方の応募をお待ちしています！
+				</div>
+				<div className="flex flex-col gap-8 pb-16 text-center">
+					<div>レギュラー業務</div>
+					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
+						<JobIntroduction
+							image="/images/pc_rental.jpg"
+							title="PC貸出"
+							text={
+								<div className="indent-4 font-normal">
+									<div>
+										AIM
+										Commonsでは、学生がキャンパス内の自由な場所でPCを利用できるように、ノートPCを貸し出しています！
+										返却されたPCの内容物の確認や充電のチェックなども学生スタッフの役割です。
+									</div>
+									<div>
+										自動貸出ロッカーからの返却PCもみんなで協力してメンテナンスします。
+									</div>
 								</div>
-								<div>
-									自動貸出ロッカーからの返却PCもみんなで協力してメンテナンスします。
+							}
+						/>
+						<JobIntroduction
+							image="/images/IMG_0091.JPG"
+							title="機器貸出"
+							text={
+								<div className="indent-4 font-normal">
+									<div>
+										AIM
+										Commonsでは、学生・教員の発展的な学びを支援するため、4Kビデオカメラや動画編集設備などのちょっとワクワクする機材やスペースの貸出もしています！
+									</div>
+									<div>
+										これらの機器の使い方を習得したのち、利用者のニーズに合った機器を提案し、貸出対応を行います。
+										「こんなことがやりたい！」という学生のチャレンジを一緒に応援しましょう。
+									</div>
 								</div>
-							</div>
-						}
-					/>
-					<JobIntroduction
-						image="/images/IMG_0091.JPG"
-						title="機器貸出"
-						text={
-							<div className="indent-4 font-normal">
-								<div>
-									AIM
-									Commonsでは、学生・教員の発展的な学びを支援するため、4Kビデオカメラや動画編集設備などのちょっとワクワクする機材やスペースの貸出もしています！
+							}
+						/>
+						<JobIntroduction
+							image="/images/workshop01.jpg"
+							title="ワークショップ"
+							text={
+								<div className="indent-4 font-normal">
+									<div>
+										AIM
+										Commonsでは、機材やソフトウェアを体験できるワークショップを毎日実施中！
+										現在ではAdobeの画像・動画編集ソフトや、一眼レフカメラなどをテーマに、学生スタッフが講師として活躍しています。
+										講師になるためのフォローアップも充実しているので、自分のスキルも高めるチャンスです！
+									</div>
+									<div>
+										ワークショップの詳細は
+										<Link
+											href="https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28"
+											target="_blank"
+											className="text-[#d9ae4c] underline hover:opacity-70"
+										>
+											こちら
+										</Link>
+										から。
+									</div>
 								</div>
-								<div>
-									これらの機器の使い方を習得したのち、利用者のニーズに合った機器を提案し、貸出対応を行います。
-									「こんなことがやりたい！」という学生のチャレンジを一緒に応援しましょう。
+							}
+						/>
+					</div>
+					<div>プロジェクト型業務</div>
+					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
+						<JobIntroduction
+							image="/images/job-commercial.webp"
+							title="広報活動"
+							text={
+								<div className="indent-4 font-normal">
+									<div>
+										AIM
+										Commonsを多くの学生に知ってもらうため、ポスターや紹介パンフレット、プロムナードに設置される看板等を自分たちでデザイン・制作します！
+									</div>
+									<div>
+										完成物は、AIM
+										Commons周辺や食堂など、多くの学生が目にする場所に掲示されます。
+									</div>
 								</div>
-							</div>
-						}
-					/>
-					<JobIntroduction
-						image="/images/workshop01.jpg"
-						title="ワークショップ"
-						text={
-							<div className="indent-4 font-normal">
-								<div>
-									AIM
-									Commonsでは、機材やソフトウェアを体験できるワークショップを毎日実施中！
-									現在ではAdobeの画像・動画編集ソフトや、一眼レフカメラなどをテーマに、学生スタッフが講師として活躍しています。
-									講師になるためのフォローアップも充実しているので、自分のスキルも高めるチャンスです！
-								</div>
-								<div>
-									ワークショップの詳細は
-									<Link
-										href="https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28"
-										target="_blank"
-										className="text-[#d9ae4c] underline hover:opacity-70"
-									>
-										こちら
-									</Link>
-									から。
-								</div>
-							</div>
-						}
-					/>
-					<JobIntroduction
-						image="/images/commercial.png"
-						title="広報活動"
-						text={
-							<div className="indent-4 font-normal">
-								<div>
-									AIM
-									Commonsを多くの学生に知ってもらうため、ポスターや紹介パンフレット、プロムナードに設置される看板等を自分たちでデザイン・制作します！
-								</div>
-								<div>
-									完成物は、AIM
-									Commons周辺や食堂など、多くの学生が目にする場所に掲示されます。
-								</div>
-							</div>
-						}
-					/>
-					<JobIntroduction
-						image="/images/job-video.jpeg"
-						title="動画制作"
-						text={
-							<div className="indent-4 font-normal">
-								<div>
-									青山学院の学生に向けた、YouTube動画の制作を行います。動画編集だけにとどまらず、企画、ナレーター、出演者としても活躍する機会があります。
-									クリエイティビティを存分に発揮して、AIM
-									CommonsをPRしましょう！
-								</div>
+							}
+						/>
+						<JobIntroduction
+							image="/images/job-video.jpeg"
+							title="動画制作"
+							text={
+								<div className="indent-4 font-normal">
+									<div>
+										青山学院の学生に向けた、YouTube動画の制作を行います。動画編集だけにとどまらず、企画、ナレーター、出演者としても活躍する機会があります。
+										クリエイティビティを存分に発揮して、AIM
+										CommonsをPRしましょう！
+									</div>
 
-								<div>
-									YouTubeチャンネルは
-									<Link
-										href="https://www.youtube.com/channel/UCPvxIswjXQ1VU2H3WyBss8w"
-										target="_blank"
-										className="text-[#d9ae4c] underline hover:opacity-70"
-									>
-										こちら
-									</Link>
-									から。
+									<div>
+										YouTubeチャンネルは
+										<Link
+											href="https://www.youtube.com/channel/UCPvxIswjXQ1VU2H3WyBss8w"
+											target="_blank"
+											className="text-[#d9ae4c] underline hover:opacity-70"
+										>
+											こちら
+										</Link>
+										から。
+									</div>
 								</div>
-							</div>
-						}
-					/>
-					<JobIntroduction
-						image="/images/job-system.png"
-						title="システム開発"
-						text={
-							<div className="indent-4 font-normal">
-								<div>
-									業務で用いるシステムや当ウェブサイトの新規開発・保守を行います。WEB開発を中心に、最新の技術を積極的に取り入れています。
-									プログラミングはもちろん、チーム開発の経験を積みたいという人におすすめです！
+							}
+						/>
+						<JobIntroduction
+							image="/images/job-system.png"
+							title="システム開発"
+							text={
+								<div className="indent-4 font-normal">
+									<div>
+										業務で用いるシステムや当ウェブサイトの新規開発・保守を行います。WEB開発を中心に、最新の技術を積極的に取り入れています。
+										プログラミングはもちろん、チーム開発の経験を積みたいという人におすすめです！
+									</div>
+									<div>
+										開発時の工夫や具体的な取り組みについては、
+										<Link
+											href="/blog"
+											className="text-[#d9ae4c] underline hover:opacity-70"
+										>
+											業務ブログ
+										</Link>
+										で詳しく紹介しています。
+									</div>
 								</div>
-								<div>
-									開発時の工夫や具体的な取り組みについては、
-									<Link
-										href="/blog"
-										className="text-[#d9ae4c] underline hover:opacity-70"
-									>
-										業務ブログ
-									</Link>
-									で詳しく紹介しています。
+							}
+						/>
+					</div>
+					<div>管理スタッフ業務</div>
+					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
+						<JobIntroduction
+							className="xl:col-start-2"
+							image="/images/job-admin.webp"
+							title="管理業務"
+							text={
+								<div className="indent-4 font-normal">
+									<div>
+										業務で用いるシステムや当ウェブサイトの新規開発・保守を行います。WEB開発を中心に、最新の技術を積極的に取り入れています。
+										プログラミングはもちろん、チーム開発の経験を積みたいという人におすすめです！
+									</div>
+									<div>
+										開発時の工夫や具体的な取り組みについては、
+										<Link
+											href="/blog"
+											className="text-[#d9ae4c] underline hover:opacity-70"
+										>
+											業務ブログ
+										</Link>
+										で詳しく紹介しています。
+									</div>
 								</div>
-							</div>
-						}
-					/>{" "}
+							}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

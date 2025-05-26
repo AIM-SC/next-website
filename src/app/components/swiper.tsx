@@ -39,8 +39,9 @@ const ClientSwiper = () => (
 				<Image
 					src="/images/floor07.jpg"
 					alt="Slide-1"
-					fill
-					className="object-cover"
+					width={800}
+					height={450}
+					className="w-full"
 				/>
 			</div>
 		</SwiperSlide>
@@ -49,8 +50,9 @@ const ClientSwiper = () => (
 				<Image
 					src="/images/floor01.jpg"
 					alt="Slide-1"
-					fill
-					className="object-cover"
+					width={800}
+					height={450}
+					className="w-full"
 				/>
 			</div>
 		</SwiperSlide>
@@ -59,8 +61,9 @@ const ClientSwiper = () => (
 				<Image
 					src="/images/pc_rental.jpg"
 					alt="Slide-1"
-					fill
-					className="object-cover"
+					width={800}
+					height={450}
+					className="w-full"
 				/>
 			</div>
 		</SwiperSlide>
