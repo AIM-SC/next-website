@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCouch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 import { UserCountLayout } from "./userCountLayout";
 
 type apiResponse = {
@@ -28,6 +28,7 @@ type apiResponse = {
 export default async function UserDisplay() {
 	const now = new Date();
 	const hour = now.getHours();
+	const day = now.getDay();
 
 	let total: number | "---";
 	let note: string | undefined;
@@ -36,7 +37,7 @@ export default async function UserDisplay() {
 	let icon = 0;
 	let sofaCount = 0;
 
-	if (hour >= 10 && hour < 17) {
+	if (day >= 1 && day <= 5 && hour >= 10 && hour < 17) {
 		const url =
 			"https://script.google.com/macros/s/AKfycbzANLahldgD9yJ2Rf2xxN1sHUNtgXAeBEmjkQBPVQSdSs5gRQaY0CuPUwE5CeDSxrYH-Q/exec?limit=1";
 		const res = await fetch(url, { cache: "no-store" });
@@ -86,7 +87,11 @@ export default async function UserDisplay() {
 			sofaCongestion = "ソファ空きなし";
 		}
 
-		note = format(new Date(data[0].createdAt), "MM/dd HH:mm");
+		note = formatInTimeZone(
+			new Date(data[0].createdAt),
+			"Asia/Tokyo",
+			"MM/dd HH:mm",
+		);
 	} else {
 		total = "---";
 	}

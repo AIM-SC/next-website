@@ -13,7 +13,6 @@
 		"src/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
 			"biome format --write ./src",
 			"biome lint --write ./src"
-			
 		]
 	},
 	"dependencies": {
@@ -30,6 +29,7 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
+		"date-fns-tz": "^3.2.0",
 		"fast-xml-parser": "^4.5.0",
 		"highlight.js": "^11.11.1",
 		"html-react-parser": "^5.1.18",
