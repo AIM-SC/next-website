@@ -129,7 +129,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/lend02.jpg",
+			image: "/images/locker.jpg",
 			title: "PC貸出ロッカー",
 			url: "https://www.aim.aoyama.ac.jp/rental/note-pc/",
 			time: "利用：8:30-20:00",
