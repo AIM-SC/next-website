@@ -37,7 +37,7 @@ const ClientSwiper = () => (
 		<SwiperSlide>
 			<div className="relative aspect-[16/9] w-full md:aspect-[2/1] lg:aspect-[5/2]">
 				<Image
-					src="/images/floor07.jpg"
+					src="/images/introduce/floor07.jpg"
 					alt="Slide-1"
 					fill
 					className="object-cover"
@@ -47,7 +47,7 @@ const ClientSwiper = () => (
 		<SwiperSlide>
 			<div className="relative aspect-[16/9] w-full md:aspect-[2/1] lg:aspect-[5/2]">
 				<Image
-					src="/images/floor01.jpg"
+					src="/images/introduce/floor01.jpg"
 					alt="Slide-1"
 					fill
 					className="object-cover"
@@ -57,7 +57,7 @@ const ClientSwiper = () => (
 		<SwiperSlide>
 			<div className="relative aspect-[16/9] w-full md:aspect-[2/1] lg:aspect-[5/2]">
 				<Image
-					src="/images/pc_rental.jpg"
+					src="/images/general/pc_rental.jpg"
 					alt="Slide-1"
 					fill
 					className="object-cover"

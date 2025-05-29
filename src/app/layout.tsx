@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 			{
 				width: "200",
 				height: "100",
-				url: "https://commons.aim.aoyama.ac.jp/images/nav_logo.svg",
+				url: "https://commons.aim.aoyama.ac.jp/images/logo/nav_logo.svg",
 			},
 		],
 		locale: "jp",
