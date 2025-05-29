@@ -20,7 +20,7 @@ const jobIntroductionPage = () => {
 			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded bg-white p-12 pb-[4%] lg:p-16 xl:flex-row">
 				<div className="w-full xl:w-1/2">
 					<Image
-						src="/images/about.png"
+						src="/images/general/about.png"
 						alt="AIMの説明画像"
 						className="mb-4 h-auto w-full rounded-md"
 						width={500}
@@ -74,7 +74,7 @@ const jobIntroductionPage = () => {
 				</div>
 				<div className="grid grid-cols-1 gap-12 p-12 pb-[4%] lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3">
 					<JobIntroduction
-						image="/images/pc_rental.jpg"
+						image="/images/general/pc_rental.jpg"
 						title="PC貸出"
 						text={
 							<div className="indent-4 font-normal">
@@ -90,7 +90,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/equipment_rental.JPG"
+						image="/images/general/equipment_rental.JPG"
 						title="機器貸出"
 						text={
 							<div className="indent-4 font-normal">
@@ -106,7 +106,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/job-workshop.jpg"
+						image="/images/recruit/job-workshop.jpg"
 						title="ワークショップ"
 						text={
 							<div className="indent-4 font-normal">
@@ -131,7 +131,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/commercial.png"
+						image="/images/recruit/job-commercial.png"
 						title="広報活動"
 						text={
 							<div className="indent-4 font-normal">
@@ -147,7 +147,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/job-video.jpeg"
+						image="/images/recruit/job-video.png"
 						title="動画制作"
 						text={
 							<div className="indent-4 font-normal">
@@ -172,7 +172,7 @@ const jobIntroductionPage = () => {
 						}
 					/>
 					<JobIntroduction
-						image="/images/job-system.png"
+						image="/images/recruit/job-system.png"
 						title="システム開発"
 						text={
 							<div className="indent-4 font-normal">

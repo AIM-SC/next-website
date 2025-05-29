@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function SwitchCampus() {
 	const introCards = [
 		{
-			image: "/images/floor01.jpg",
+			image: "/images/introduce/floor01.jpg",
 			title: "PC貸出",
 			url: "https://www.aim.aoyama.ac.jp/rental/note-pc/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -25,7 +25,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/kizai.jpg",
+			image: "/images/general/equipment_rental.JPG",
 			title: "機器貸出",
 			url: "https://www.aim.aoyama.ac.jp/rental/production/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -44,7 +44,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/floor02.jpg",
+			image: "/images/introduce/floor02.jpg",
 			title: "静音ブース",
 			url: "https://www.aim.aoyama.ac.jp/rental/meetingpod/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -61,7 +61,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/floor03.jpg",
+			image: "/images/introduce/floor03.jpg",
 			title: "動画編集ブース",
 			url: "https://www.aim.aoyama.ac.jp/rental/production/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -72,7 +72,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/floor04.jpg",
+			image: "/images/introduce/floor04.jpg",
 			title: "ソファ",
 			time: "利用：9:00-20:00",
 			text: (
@@ -82,13 +82,13 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/floor05.jpg",
+			image: "/images/introduce/floor05.jpg",
 			title: "畳",
 			time: "利用：9:00-20:00",
 			text: <div>靴を脱いで、少人数で作業することができます。</div>,
 		},
 		{
-			image: "/images/floor06.jpg",
+			image: "/images/introduce/floor06.jpg",
 			title: "PC設備",
 			time: "利用：9:00-20:00",
 			text: <div>PCが設置してある席です。IT講習会の勉強もできます。</div>,
@@ -100,7 +100,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/floor07.jpg",
+			image: "/images/introduce/floor07.jpg",
 			title: "個人用作業スペース",
 			time: "利用：9:00-20:00",
 			text: (
@@ -110,7 +110,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/floor08.jpg",
+			image: "/images/introduce/floor08.jpg",
 			title: "フリースペース",
 			time: "利用：9:00-20:00",
 			text: (
@@ -120,7 +120,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/floor09.jpg",
+			image: "/images/introduce/floor09.jpg",
 			title: "プリンター",
 			url: "https://www.aim.aoyama.ac.jp/printstation/",
 			time: "利用：9:00-20:00",
@@ -129,7 +129,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/locker.jpg",
+			image: "/images/introduce/locker.jpg",
 			title: "PC貸出ロッカー",
 			url: "https://www.aim.aoyama.ac.jp/rental/note-pc/",
 			time: "利用：8:30-20:00",
@@ -178,7 +178,7 @@ export default function SwitchCampus() {
 					</div>
 					<div className="mb-5">
 						<Image
-							src="/images/go02.jpg"
+							src="/images/introduce/floor_map.jpg"
 							alt={"map"}
 							width={1120}
 							height={840}
@@ -187,7 +187,7 @@ export default function SwitchCampus() {
 					</div>
 					<h2 className="text-center font-bold text-xl">室内案内図</h2>
 					<Image
-						src="/images/floor00.png"
+						src="/images/introduce/floor00.png"
 						alt={"map"}
 						width={1120}
 						height={840}

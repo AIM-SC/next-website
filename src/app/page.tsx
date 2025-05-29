@@ -48,7 +48,7 @@ const TopPage = async () => {
 			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-12 pb-[4%] lg:p-16 xl:flex-row">
 				<div className="w-full xl:w-1/2">
 					<Image
-						src="/images/about.png"
+						src="/images/general/about.png"
 						alt="AIMの説明画像"
 						className="mb-4 h-auto w-full rounded-md"
 						width={500}

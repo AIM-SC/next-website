@@ -41,7 +41,7 @@ export async function generateMetadata({
 			url: `https://localhost:3000/blog/${params.postId}`,
 			siteName: "AIM Commons",
 			images: {
-				url: "https://localhost:3000/images/logo_commons.jpeg",
+				url: "https://localhost:3000/images/logo/logo_commons.jpeg",
 				width: 1200,
 				height: 630,
 				alt: blog.title,
@@ -53,7 +53,7 @@ export async function generateMetadata({
 			description: `${blog.title}に関する記事です`,
 			site: "@AIM Commons",
 			images: {
-				url: "https://localhost:3000/images/logo_commons.jpeg",
+				url: "https://localhost:3000/images/logo/logo_commons.jpeg",
 				width: 1200,
 				height: 630,
 				alt: blog.title,
