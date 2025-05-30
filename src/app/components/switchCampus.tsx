@@ -25,7 +25,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/general/equipment_rental.JPG",
+			image: "/images/general/equipment.jpg",
 			title: "機器貸出",
 			url: "https://www.aim.aoyama.ac.jp/rental/production/",
 			time: "受付：9:45-16:30（返却は16:45まで）",

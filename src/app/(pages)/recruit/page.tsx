@@ -96,7 +96,7 @@ const jobIntroductionPage = () => {
 							}
 						/>
 						<JobIntroduction
-							image="/images/general/equipment_rental.jpg"
+							image="/images/general/equipment.jpg"
 							title="機器貸出"
 							text={
 								<div className="indent-4 font-normal">
