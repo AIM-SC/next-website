@@ -36,7 +36,7 @@ const ClientSwiper = () => (
 	>
 		<SwiperSlide>
 			<Image
-				src="/images/floor07.jpg"
+				src="/images/introduce/floor07.jpg"
 				alt="Slide-1"
 				width={800}
 				height={450}
@@ -45,7 +45,7 @@ const ClientSwiper = () => (
 		</SwiperSlide>
 		<SwiperSlide>
 			<Image
-				src="/images/floor01.jpg"
+				src="/images/introduce/floor01.jpg"
 				alt="Slide-1"
 				width={800}
 				height={450}
@@ -54,7 +54,7 @@ const ClientSwiper = () => (
 		</SwiperSlide>
 		<SwiperSlide>
 			<Image
-				src="/images/pc_rental.jpg"
+				src="/images/general/pc_rental.jpg"
 				alt="Slide-1"
 				width={800}
 				height={450}

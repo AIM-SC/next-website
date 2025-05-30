@@ -20,7 +20,7 @@ const jobIntroductionPage = () => {
 			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded bg-white p-12 pb-[4%] lg:p-16 xl:flex-row">
 				<div className="w-full xl:w-1/2">
 					<Image
-						src="/images/about.png"
+						src="/images/general/about.png"
 						alt="AIMの説明画像"
 						className="mb-4 h-auto w-full rounded-md"
 						width={500}
@@ -72,56 +72,52 @@ const jobIntroductionPage = () => {
 						JOB INTRODUCE
 					</div>
 				</div>
-				<div className="mx-auto my-8 px-20 font-normal text-base">
-					業務は大きく分けて「レギュラー業務」と「プロジェクト型業務」の２種類があります。
-					「レギュラー業務」は、全ての学生スタッフが担当する基本的な業務です。PCや各種機器の貸出、ワークショップ運営などを行い、利用者が快適に学習教育活動を進められるようサポートします。
-					「プロジェクト型業務」は、自分の関心や得意分野を活かして選択的に取り組む業務です。広報活動、動画制作、システム開発など、多彩な活動に挑戦できます。プロジェクトを通じて専門的な知識やスキルを高めるだけでなく、複数のプロジェクトを兼任して幅広く経験を積むことも可能です。プロジェクトは自身で企画して新しく作ることもできます。
-					自分の強みを発揮しながら、新たなスキルを身につけたい方の応募をお待ちしています！
-				</div>
-				<div className="flex flex-col gap-8 pb-16 text-center">
-					<div>レギュラー業務</div>
+				<div className="my-8 flex flex-col gap-8 pb-16 text-center">
+					<div>
+						レギュラー業務
+						<p className="text-base text-gray-600">
+							全ての学生スタッフが担当する基本的な業務です
+						</p>
+					</div>
 					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
 						<JobIntroduction
-							image="/images/pc_rental.jpg"
+							image="/images/general/pc_rental.jpg"
 							title="PC貸出"
 							text={
 								<div className="indent-4 font-normal">
 									<div>
 										AIM
-										Commonsでは、学生がキャンパス内の自由な場所でPCを利用できるように、ノートPCを貸し出しています！
-										返却されたPCの内容物の確認や充電のチェックなども学生スタッフの役割です。
+										Commonsでは、学生がキャンパス内の自由な場所でPCを利用できるように、B422窓口と自動貸出ロッカーでノートPCの貸出を行っています。
 									</div>
 									<div>
-										自動貸出ロッカーからの返却PCもみんなで協力してメンテナンスします。
+										学生スタッフは、返却されたPCのメンテナンスや充電状況の確認を担当します。
 									</div>
 								</div>
 							}
 						/>
 						<JobIntroduction
-							image="/images/IMG_0091.JPG"
+							image="/images/general/equipment_rental.jpg"
 							title="機器貸出"
 							text={
 								<div className="indent-4 font-normal">
 									<div>
-										AIM
-										Commonsでは、学生・教員の発展的な学びを支援するため、4Kビデオカメラや動画編集設備などのちょっとワクワクする機材やスペースの貸出もしています！
+										学生・教員の学習教育活動を支援するために、4Kビデオカメラや動画編集設備等の機器や設備の貸出をB422のカウンターでしています。
 									</div>
 									<div>
-										これらの機器の使い方を習得したのち、利用者のニーズに合った機器を提案し、貸出対応を行います。
-										「こんなことがやりたい！」という学生のチャレンジを一緒に応援しましょう。
+										これらの使い方を習得して、利用者のニーズに沿った機器を提案・貸出を行います。
 									</div>
 								</div>
 							}
 						/>
 						<JobIntroduction
-							image="/images/workshop01.jpg"
+							image="/images/recruit/job-workshop.jpg"
 							title="ワークショップ"
 							text={
 								<div className="indent-4 font-normal">
 									<div>
-										AIM
-										Commonsでは、機材やソフトウェアを体験できるワークショップを毎日実施中！
-										現在ではAdobeの画像・動画編集ソフトや、一眼レフカメラなどをテーマに、学生スタッフが講師として活躍しています。
+										機材やソフトウェアを体験できるワークショップを毎日実施しています。現在はAdobeの画像・動画編集ソフトや、一眼レフカメラなどをテーマに、学生スタッフが講師として活躍しています。
+									</div>
+									<div>
 										講師になるためのフォローアップも充実しているので、自分のスキルも高めるチャンスです！
 									</div>
 									<div>
@@ -139,32 +135,38 @@ const jobIntroductionPage = () => {
 							}
 						/>
 					</div>
-					<div>プロジェクト型業務</div>
+					<div>
+						プロジェクト型業務
+						<p className="text-base text-gray-600">
+							自分の関心や得意分野を活かして選択的に取り組む業務です
+						</p>
+						<p className="text-base text-gray-600">
+							兼任・新規立ち上げも可能です
+						</p>
+					</div>
 					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
 						<JobIntroduction
-							image="/images/job-commercial.webp"
+							image="/images/recruit/job-commercial.webp"
 							title="広報活動"
 							text={
 								<div className="indent-4 font-normal">
 									<div>
-										AIM
-										Commonsを多くの学生に知ってもらうため、ポスターや紹介パンフレット、プロムナードに設置される看板等を自分たちでデザイン・制作します！
+										多くの学生にAIM
+										Commonsを知ってもらうため、ポスターや紹介パンフレット、プロムナードに設置される看板等を自分たちでデザイン・制作します。
 									</div>
 									<div>
-										完成物は、AIM
-										Commons周辺や食堂など、多くの学生が目にする場所に掲示されます。
+										完成物はB棟周辺周辺や食堂など、多くの学生が目にする場所に掲示されます。
 									</div>
 								</div>
 							}
 						/>
 						<JobIntroduction
-							image="/images/job-video.jpeg"
+							image="/images/recruit/job-video.png"
 							title="動画制作"
 							text={
 								<div className="indent-4 font-normal">
 									<div>
-										青山学院の学生に向けた、YouTube動画の制作を行います。動画編集だけにとどまらず、企画、ナレーター、出演者としても活躍する機会があります。
-										クリエイティビティを存分に発揮して、AIM
+										青山学院大学の学生に向けた、YouTube動画の制作を行います。動画編集だけにとどまらず、企画、ナレーター、出演者としても活躍する機会があります。アイデアを存分に発揮して、AIM
 										CommonsをPRしましょう！
 									</div>
 
@@ -183,12 +185,12 @@ const jobIntroductionPage = () => {
 							}
 						/>
 						<JobIntroduction
-							image="/images/job-system.png"
+							image="/images/recruit/job-system.png"
 							title="システム開発"
 							text={
 								<div className="indent-4 font-normal">
 									<div>
-										業務で用いるシステムや当ウェブサイトの新規開発・保守を行います。WEB開発を中心に、最新の技術を積極的に取り入れています。
+										業務で用いるシステムや当ウェブサイトの新規開発・保守を行います。WEB開発を中心に、モダンな技術を積極的に取り入れています。
 										プログラミングはもちろん、チーム開発の経験を積みたいという人におすすめです！
 									</div>
 									<div>
@@ -205,27 +207,33 @@ const jobIntroductionPage = () => {
 							}
 						/>
 					</div>
-					<div>管理スタッフ業務</div>
+					<div>
+						管理スタッフ業務
+						<p className="text-base text-gray-600">
+							スタッフをまとめる管理スタッフが行う業務です
+						</p>
+					</div>
 					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
 						<JobIntroduction
-							className="xl:col-start-2"
-							image="/images/job-admin.webp"
+							image="/images/recruit/job-admin.webp"
 							title="管理業務"
 							text={
 								<div className="indent-4 font-normal">
 									<div>
-										業務で用いるシステムや当ウェブサイトの新規開発・保守を行います。WEB開発を中心に、最新の技術を積極的に取り入れています。
-										プログラミングはもちろん、チーム開発の経験を積みたいという人におすすめです！
+										レギュラー業務およびプロジェクト型業務を取りまとめる中で、プロジェクトマネジメントを実践することができます。リーダーシップを発揮できる・興味がある方や、これまでにリーダーとしての経験をお持ちの方には、特に適した業務です。
 									</div>
+								</div>
+							}
+						/>
+						<JobIntroduction
+							image="/images/recruit/job-recruit.webp"
+							title="採用業務"
+							text={
+								<div className="indent-4 font-normal">
 									<div>
-										開発時の工夫や具体的な取り組みについては、
-										<Link
-											href="/blog"
-											className="text-[#d9ae4c] underline hover:opacity-70"
-										>
-											業務ブログ
-										</Link>
-										で詳しく紹介しています。
+										AIM Commonsで働く新たな仲間を見つける業務です。
+										教員や他の管理スタッフと協力しながら、書類選考と面接の両方で新人スタッフの選考に関わることができます。
+										普通のアルバイトではなかなかできない貴重な経験を積むことができます。
 									</div>
 								</div>
 							}

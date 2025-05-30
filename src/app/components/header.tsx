@@ -18,7 +18,7 @@ export default function Header() {
 			<div className="container mx-auto flex h-full items-center justify-between px-[15px]">
 				<Link href="/">
 					<Image
-						src="/images/nav_logo.svg"
+						src="/images/logo/nav_logo.svg"
 						width={200}
 						height={100}
 						alt="ロゴ"
@@ -35,7 +35,7 @@ export default function Header() {
 						<SheetContent className="max-h-screen overflow-y-auto pb-10">
 							<a href="/" className="inline-block w-fit">
 								<Image
-									src="/images/nav_logo.svg"
+									src="/images/logo/nav_logo.svg"
 									width={200}
 									height={100}
 									className="block"
