@@ -21,14 +21,13 @@ type Props = {
 const introCard = ({ image, title, time, text, url, accordionText }: Props) => {
 	return (
 		<div className="flex flex-col items-start bg-white">
-			<div className="relative mb-4 aspect-[16/9] w-full">
-				<Image
-					src={image}
-					alt={title}
-					fill
-					className="mb-4 rounded object-cover"
-				/>
-			</div>
+			<Image
+				src={image}
+				alt={title}
+				width={400}
+				height={300}
+				className="mb-4 aspect-[16/9] w-full rounded object-cover"
+			/>
 
 			<div className="mb-3 font-bold text-xl">{title}</div>
 

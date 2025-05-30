@@ -35,34 +35,31 @@ const ClientSwiper = () => (
 		scrollbar={{ draggable: true }}
 	>
 		<SwiperSlide>
-			<div className="relative aspect-[16/9] w-full md:aspect-[2/1] lg:aspect-[5/2]">
-				<Image
-					src="/images/introduce/floor07.jpg"
-					alt="Slide-1"
-					fill
-					className="object-cover"
-				/>
-			</div>
+			<Image
+				src="/images/introduce/floor07.jpg"
+				alt="Slide-1"
+				width={800}
+				height={450}
+				className="aspect-[16/9] w-full object-cover md:aspect-[2/1] lg:aspect-[5/2]"
+			/>
 		</SwiperSlide>
 		<SwiperSlide>
-			<div className="relative aspect-[16/9] w-full md:aspect-[2/1] lg:aspect-[5/2]">
-				<Image
-					src="/images/introduce/floor01.jpg"
-					alt="Slide-1"
-					fill
-					className="object-cover"
-				/>
-			</div>
+			<Image
+				src="/images/introduce/floor01.jpg"
+				alt="Slide-1"
+				width={800}
+				height={450}
+				className="aspect-[16/9] w-full object-cover md:aspect-[2/1] lg:aspect-[5/2]"
+			/>
 		</SwiperSlide>
 		<SwiperSlide>
-			<div className="relative aspect-[16/9] w-full md:aspect-[2/1] lg:aspect-[5/2]">
-				<Image
-					src="/images/general/pc_rental.jpg"
-					alt="Slide-1"
-					fill
-					className="object-cover"
-				/>
-			</div>
+			<Image
+				src="/images/general/pc_rental.jpg"
+				alt="Slide-1"
+				width={800}
+				height={450}
+				className="aspect-[16/9] w-full object-cover md:aspect-[2/1] lg:aspect-[5/2]"
+			/>
 		</SwiperSlide>
 	</StyledSwiper>
 );
