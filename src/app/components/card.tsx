@@ -14,7 +14,7 @@ export default function Card({ content }: { content: ArticleType }) {
 				height={200}
 			/>
 			<div className="pt-4">
-				<h1 className="mb-2 line-clamp-2 h-[3rem] font-semibold text-[1rem] leading-6 md:text-[1.3rem]">
+				<h1 className="mb-2 line-clamp-2 h-[3.2rem] font-semibold text-[1.05rem] leading-7 md:text-[1.2rem]">
 					{content.title}
 				</h1>
 				<div className="mb-2 font-semibold text-gray-600 text-sm">

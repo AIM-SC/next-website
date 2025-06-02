@@ -15,9 +15,15 @@ const jobIntroductionPage = () => {
 			<Heading
 				engTitle="RECRUIT"
 				jpTitle="学生スタッフ採用"
-				abst="AIM Commonsで働く学生スタッフの業務を紹介します"
+				abst={
+					<>
+						AIM Commonsで働く
+						<br className="sm:hidden" />
+						学生スタッフの業務を紹介します
+					</>
+				}
 			/>
-			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded bg-white p-12 pb-[4%] lg:p-16 xl:flex-row">
+			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-8 pb-[4%] lg:p-12 xl:flex-row">
 				<div className="w-full xl:w-1/2">
 					<Image
 						src="/images/general/about.png"
@@ -32,7 +38,9 @@ const jobIntroductionPage = () => {
 				<div className="w-full xl:ml-4 xl:w-1/2">
 					<div className="font-bold text-lg md:text-[26px]">
 						<h1 className="mb-2 leading-7 md:leading-9">
-							AIM Commonsの学生スタッフとは？
+							AIM Commonsの
+							<br className="sm:hidden" />
+							学生スタッフとは？
 						</h1>
 						<div className="my-2 text-[#d9ae4c] text-sm">STUDENT STAFF</div>
 					</div>
@@ -65,26 +73,28 @@ const jobIntroductionPage = () => {
 					</div>
 				</div>
 			</div>
-			<div className="rounded-md bg-white pt-[3%]">
+			<div className="rounded-lg bg-white py-8 lg:py-12 xl:py-16">
 				<div>
 					<h3 className="mb-1 text-center text-2xl">業務紹介</h3>
 					<div className="text-center font-bold text-[#d9ae4c] text-sm md:text-base">
 						JOB INTRODUCE
 					</div>
 				</div>
-				<div className="my-8 flex flex-col gap-8 pb-16 text-center">
+				<div className="my-8 flex flex-col gap-8 text-center">
 					<div>
 						レギュラー業務
 						<p className="text-base text-gray-600">
-							全ての学生スタッフが担当する基本的な業務です
+							全ての学生スタッフが
+							<br className="sm:hidden" />
+							担当する基本的な業務です
 						</p>
 					</div>
-					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
+					<div className="!py-0 grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3 xl:gap-[3%]">
 						<JobIntroduction
 							image="/images/general/pc_rental.jpg"
 							title="PC貸出"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										AIM
 										Commonsでは、学生がキャンパス内の自由な場所でPCを利用できるように、B422窓口と自動貸出ロッカーでノートPCの貸出を行っています。
@@ -99,7 +109,7 @@ const jobIntroductionPage = () => {
 							image="/images/general/equipment.jpg"
 							title="機器貸出"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										学生・教員の学習教育活動を支援するために、4Kビデオカメラや動画編集設備等の機器や設備の貸出をB422のカウンターでしています。
 									</div>
@@ -113,7 +123,7 @@ const jobIntroductionPage = () => {
 							image="/images/recruit/job-workshop.jpg"
 							title="ワークショップ"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										機材やソフトウェアを体験できるワークショップを毎日実施しています。現在はAdobeの画像・動画編集ソフトや、一眼レフカメラなどをテーマに、学生スタッフが講師として活躍しています。
 									</div>
@@ -138,18 +148,20 @@ const jobIntroductionPage = () => {
 					<div>
 						プロジェクト型業務
 						<p className="text-base text-gray-600">
-							自分の関心や得意分野を活かして選択的に取り組む業務です
+							自分の関心や得意分野を活かして
+							<br className="sm:hidden" />
+							選択的に取り組む業務です
 						</p>
 						<p className="text-base text-gray-600">
 							兼任・新規立ち上げも可能です
 						</p>
 					</div>
-					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
+					<div className="!py-0 grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3 xl:gap-[3%]">
 						<JobIntroduction
 							image="/images/recruit/job-commercial.webp"
 							title="広報活動"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										多くの学生にAIM
 										Commonsを知ってもらうため、ポスターや紹介パンフレット、プロムナードに設置される看板等を自分たちでデザイン・制作します。
@@ -164,7 +176,7 @@ const jobIntroductionPage = () => {
 							image="/images/recruit/job-video.png"
 							title="動画制作"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										青山学院大学の学生に向けた、YouTube動画の制作を行います。動画編集だけにとどまらず、企画、ナレーター、出演者としても活躍する機会があります。アイデアを存分に発揮して、AIM
 										CommonsをPRしましょう！
@@ -188,7 +200,7 @@ const jobIntroductionPage = () => {
 							image="/images/recruit/job-system.png"
 							title="システム開発"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										業務で用いるシステムや当ウェブサイトの新規開発・保守を行います。WEB開発を中心に、モダンな技術を積極的に取り入れています。
 										プログラミングはもちろん、チーム開発の経験を積みたいという人におすすめです！
@@ -210,15 +222,17 @@ const jobIntroductionPage = () => {
 					<div>
 						管理スタッフ業務
 						<p className="text-base text-gray-600">
-							スタッフをまとめる管理スタッフが行う業務です
+							学生スタッフをまとめる
+							<br className="sm:hidden" />
+							管理スタッフが行う業務です
 						</p>
 					</div>
-					<div className="!py-0 grid grid-cols-1 gap-12 p-12 lg:grid-cols-2 lg:gap-16 lg:p-16 xl:grid-cols-3 xl:gap-[3%]">
+					<div className="!py-0 grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3 xl:gap-[3%]">
 						<JobIntroduction
 							image="/images/recruit/job-admin.webp"
 							title="管理業務"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										レギュラー業務およびプロジェクト型業務を取りまとめる中で、プロジェクトマネジメントを実践することができます。リーダーシップを発揮できる・興味がある方や、これまでにリーダーとしての経験をお持ちの方には、特に適した業務です。
 									</div>
@@ -229,7 +243,7 @@ const jobIntroductionPage = () => {
 							image="/images/recruit/job-recruit.webp"
 							title="採用業務"
 							text={
-								<div className="indent-4 font-normal">
+								<div className="font-normal">
 									<div>
 										AIM Commonsで働く新たな仲間を見つける業務です。
 										教員や他の管理スタッフと協力しながら、書類選考と面接の両方で新人スタッフの選考に関わることができます。

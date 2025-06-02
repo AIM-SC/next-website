@@ -19,8 +19,8 @@ export default function Articlelist({
 	tagId,
 }: ArticlelistProps) {
 	return (
-		<div className="container mx-auto rounded-xl bg-white p-8 shadow-md">
-			<div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+		<div className="container mx-auto rounded-lg bg-white p-8">
+			<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
 				{contents.map((content) => {
 					let href = `/${basePath}/article/${content.id}`;
 
@@ -29,7 +29,7 @@ export default function Articlelist({
 					}
 
 					return (
-						<Link key={content.id} href={href} className="block">
+						<Link key={content.id} href={href} className="mx-auto block w-fit">
 							<Card content={content} />
 						</Link>
 					);

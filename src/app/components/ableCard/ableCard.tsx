@@ -9,8 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
-	title: string;
-	description: string;
+	title: string | React.ReactNode;
+	description: string | React.ReactNode;
 	linkArray: {
 		name: string;
 		link: string;

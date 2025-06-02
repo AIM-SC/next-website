@@ -72,7 +72,7 @@ export default function SwitchMovieType({
 				</label>
 			</div>
 
-			<div className="rounded-md bg-white p-12 xl:p-16">
+			<div className="rounded-lg bg-white p-12 xl:p-16">
 				<div
 					className={`grid gap-12 xl:gap-16 ${
 						filterType === "longMovie"
