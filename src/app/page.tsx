@@ -45,7 +45,7 @@ const TopPage = async () => {
 			</div>
 
 			{/* Aboutセクション */}
-			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-12 pb-[4%] lg:p-16 xl:flex-row">
+			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-8 pb-[4%] lg:p-12 xl:flex-row">
 				<div className="w-full xl:w-1/2">
 					<Image
 						src="/images/general/about.png"
@@ -68,7 +68,15 @@ const TopPage = async () => {
 					</div>
 					<p className="leading-loose">
 						AIM
-						Commons相模原は、相模原キャンパスB棟に設置された学習スペースです。平日の授業実施日は開室しており、青学生は誰でも利用できます。グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
+						Commons相模原は、相模原キャンパスB棟に設置された学習スペースです。
+						<br />
+						平日の授業実施日は開室しており、青学生は誰でも利用できます。
+						<br />
+						グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。
+						<br />
+						学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。
+						<br />
+						一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
 					</p>
 				</div>
 			</div>
@@ -109,8 +117,20 @@ const TopPage = async () => {
 				/>
 				<AbleCard
 					icon={faChalkboardTeacher}
-					title="ワークショップへの参加"
-					description="学生スタッフが開講するワークショップに参加できます。動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。"
+					title={
+						<>
+							ワークショップへの
+							<br className="hidden lg:block xl:hidden" />
+							参加
+						</>
+					}
+					description={
+						<>
+							学生スタッフが開講するワークショップに参加できます。
+							<br />
+							動画・画像編集ソフトやカメラの使い方の基礎を学ぶことができます。
+						</>
+					}
 					linkArray={[
 						{
 							name: "相模原はこちら",

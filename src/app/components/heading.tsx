@@ -1,7 +1,7 @@
 type Props = {
 	engTitle: string;
 	jpTitle: string | React.ReactNode;
-	abst?: string;
+	abst?: string | React.ReactNode;
 };
 
 export default function Heading({ engTitle, jpTitle, abst }: Props) {
