@@ -145,25 +145,25 @@ export default function SwitchCampus() {
 
 	const rules = [
 		{
-			image: "/images/rule01.png",
+			image: "/images/introduce/rule01.png",
 			text: "学習目的での利用をお願いします",
 		},
 		{
-			image: "/images/rule02.png",
+			image: "/images/introduce/rule02.png",
 			text: "食事はできません",
 			note: "（蓋が閉まる＆直立する飲み物は持ち込めます。コンビニコーヒーのように、紙カップに簡単なフタが付いただけの容器は禁止です。）",
 		},
 		{
-			image: "/images/rule03.png",
+			image: "/images/introduce/rule03.png",
 			text: "荷物を置いての長時間退出はご遠慮ください",
 		},
 		{
-			image: "/images/rule04.png",
+			image: "/images/introduce/rule04.png",
 			text: "他の人の学習の妨げになる音出しはご遠慮ください",
 			note: "(ゲーム、大きな声での会話モニターを使用した動画鑑賞など)",
 		},
 		{
-			image: "/images/rule05.png",
+			image: "/images/introduce/rule05.png",
 			text: "睡眠目的での利用はご遠慮ください",
 		},
 	];

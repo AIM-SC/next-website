@@ -18,7 +18,7 @@ export default function Tag({
 			{tags.length > 0 ? (
 				tags.map((tag) => (
 					<Link href={`/category/${tag.path}/1`} key={tag.title} legacyBehavior>
-						<span className={tagClass}>{tag.title}</span>
+						<div className={tagClass}>{tag.title}</div>
 					</Link>
 				))
 			) : (
