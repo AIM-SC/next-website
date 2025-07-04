@@ -21,7 +21,7 @@ export function UserCountLayout({ children, note }: Props) {
 					{children}
 				</CardContent>
 			</div>
-			<CardFooter className="flex justify-center rounded-lg bg-muted/50 px-4 py-2">
+			<CardFooter className="flex justify-center px-4 py-2">
 				<p className="text-center text-xs">
 					開室日10:00〜16:30の間で
 					<br className="sm:hidden lg:block xl:hidden" />
