@@ -39,7 +39,7 @@ const footer = () => {
 					<span>
 						本ウェブサイトはAIM Commons学生スタッフが
 						<br className="md:hidden" />
-						作成しました（太田・櫻井・西堀・ほか一名）。
+						作成しました（太田・櫻井・西堀・ほか匿名希望一名）。
 					</span>
 				</div>
 				<div className="mt-2">
@@ -52,7 +52,7 @@ const footer = () => {
 					>
 						情報メディアセンター
 					</Link>
-					の案内を優先してください。
+					の案内が優先されます。
 				</div>
 			</div>
 			<div className="my-5 text-center text-gray-500 text-sm">
