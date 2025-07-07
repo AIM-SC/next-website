@@ -138,9 +138,9 @@ const TopPage = async () => {
 			<h1 className="mt-12 mb-8 text-center font-bold text-xl md:text-[26px]">
 				インフォメーション
 			</h1>
-			<div className="grid gap-8 lg:grid-cols-[4fr_6fr] xl:grid-cols-[4fr_6fr]">
+			<div className="grid gap-4 lg:grid-cols-[4fr_6fr] lg:gap-8 xl:grid-cols-[4fr_6fr]">
 				{/* 開室時間の表示 */}
-				<div className="text-center">
+				<div className="grid grid-cols-1 gap-4 text-center lg:gap-8">
 					<Time
 						title="開室時間"
 						notes="※授業実施日のみ"
@@ -163,7 +163,7 @@ const TopPage = async () => {
 							},
 						]}
 					/>
-					<div className="mt-8">
+					<div className="">
 						<Suspense fallback={<UserDisplayLoading />}>
 							<UserDisplay />
 						</Suspense>
@@ -185,7 +185,7 @@ const TopPage = async () => {
 					情報発信
 				</h1>
 				<div className="rounded-lg">
-					<div className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
+					<div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3 lg:gap-8">
 						<Box
 							icon={faEnvelopeOpenText}
 							title="お知らせ"

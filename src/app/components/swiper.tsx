@@ -32,7 +32,7 @@ const ClientSwiper = () => (
 		spaceBetween={20}
 		slidesPerView={1}
 		pagination={{ clickable: true }}
-		scrollbar={{ draggable: true }}
+		scrollbar={false}
 	>
 		<SwiperSlide>
 			<Image
