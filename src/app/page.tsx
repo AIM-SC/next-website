@@ -117,13 +117,7 @@ const TopPage = async () => {
 				/>
 				<AbleCard
 					icon={faChalkboardTeacher}
-					title={
-						<>
-							ワークショップへの
-							<br className="hidden lg:block xl:hidden" />
-							参加
-						</>
-					}
+					title={<>ワークショップへの参加</>}
 					description={
 						<>
 							学生スタッフが開講するワークショップに参加できます。
@@ -133,7 +127,7 @@ const TopPage = async () => {
 					}
 					linkArray={[
 						{
-							name: "相模原はこちら",
+							name: "ワークショップの詳細",
 							link: "https://ima-sc.notion.site/7fd23df752674abb95261bdc54b3de28",
 							external: true,
 						},
@@ -178,9 +172,9 @@ const TopPage = async () => {
 				<div>
 					{/* お知らせの表示 */}
 					<Information
-						title="お知らせ"
+						title="最新のお知らせ"
 						notes=""
-						subtitle="INFORMATION"
+						subtitle="LATEST NEWS"
 						content={informationContent}
 					/>
 				</div>

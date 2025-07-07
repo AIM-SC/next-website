@@ -26,13 +26,15 @@ export default function AbleCard({
 	icon,
 }: Props) {
 	return (
-		<div className="flex h-[430px] flex-col justify-around rounded-lg bg-white p-6">
-			<h3 className="text-center font-bold text-[26px]">{title}</h3>
+		<div className="flex h-[430px] flex-col gap-6 rounded-lg bg-white p-6">
+			<h3 className="text-center font-bold text-[22px] xl:text-[24px]">
+				{title}
+			</h3>
 			<div className="flex justify-center">
 				<FontAwesomeIcon icon={icon} className="size-[120px]" />
 			</div>
-			<p className="text-sm">{description}</p>
-			<div className="space-y-2">
+			<p className="mx-auto h-fit w-fit text-sm">{description}</p>
+			<div className="mt-auto space-y-2">
 				{linkArray.map((link) => (
 					<Link
 						href={link.link}
