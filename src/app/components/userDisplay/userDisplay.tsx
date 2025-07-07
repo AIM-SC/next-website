@@ -110,11 +110,11 @@ export default async function UserDisplay() {
 		} else {
 			console.log("今日じゃない");
 			total = "---";
-			note = "営業時間外";
+			note = "集計時間外";
 		}
 	} else {
 		total = "---";
-		note = "営業時間外";
+		note = "集計時間外";
 	}
 
 	return (
