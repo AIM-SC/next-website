@@ -72,22 +72,22 @@ export default async function UserDisplay() {
 			note = formatInTimeZone(
 				new Date(data[0].createdAt),
 				timeZone,
-				"MM/dd HH:mm集計",
+				"M/d H:mm",
 			);
 			if (total >= 20) {
-				congestion = "混雑しています";
+				congestion = "多数";
 				icon = 4;
 			} else if (total >= 15) {
-				congestion = "やや混雑しています";
+				congestion = "やや多数";
 				icon = 3;
 			} else if (total >= 10) {
-				congestion = "やや空いています";
+				congestion = "やや少数";
 				icon = 2;
 			} else if (total >= 1) {
-				congestion = "空いています";
+				congestion = "少数";
 				icon = 1;
 			} else if (total === 0) {
-				congestion = "空いています";
+				congestion = "少数";
 				icon = 0;
 			}
 			if (data[0].contents.countList.sofa_backleft !== 0) {
@@ -103,9 +103,9 @@ export default async function UserDisplay() {
 				sofaCount += 1;
 			}
 			if (sofaCount !== 4) {
-				sofaCongestion = "ソファ空きあり";
+				sofaCongestion = "空きあり";
 			} else {
-				sofaCongestion = "ソファ空きなし";
+				sofaCongestion = "空きなし";
 			}
 		} else {
 			console.log("今日じゃない");
@@ -184,8 +184,8 @@ export default async function UserDisplay() {
 				)}
 
 				<div className="text-left">
-					<p>{congestion}</p>
-					<p>{sofaCongestion}</p>
+					<p>利用者{congestion}</p>
+					<p>ソファ{sofaCongestion}</p>
 				</div>
 			</div>
 		</UserCountLayout>

@@ -70,7 +70,9 @@ export default function Header() {
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
 							<p className="my-3 font-bold text-sm text-stone-400 sm:text-base">
-								AIM Commonsを使いこなしたい方へ
+								AIM Commonsを
+								<br className="sm:hidden" />
+								使いこなしたい方へ
 							</p>
 							<p className="my-2 ml-2 font-bold text-sm text-stone-400 sm:text-base">
 								ワークショップ
@@ -110,7 +112,9 @@ export default function Header() {
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
 							{/* biome-ignore lint/nursery/useSortedClasses: <explanation> */}
 							<p className="my-3 font-bold text-stone-400 text-sm sm:text-base">
-								もっとAIM Commonsに関わりたい方へ
+								もっとAIM Commonsに
+								<br className="sm:hidden" />
+								関わりたい方へ
 							</p>
 							<ul>
 								<li className={cn("px-5 py-3 text-sm sm:text-base")}>
