@@ -32,10 +32,10 @@ export async function generateMetadata({
 	}
 
 	const metadata: Metadata = {
-		title: `${info.title} | AIM Commons`,
+		title: `${info.title}`,
 		description: `${info.title}に関する記事です`,
 		openGraph: {
-			title: `${info.title} | AIM Commons`,
+			title: `${info.title}`,
 			description: `${info.title}に関する記事です`,
 			type: "article",
 			url: `https://commons.aim.aoyama.ac.jp/info/${params.postId}`,
@@ -49,7 +49,7 @@ export async function generateMetadata({
 		},
 		twitter: {
 			card: "summary_large_image",
-			title: `${info.title} | AIM Commons`,
+			title: `${info.title}`,
 			description: `${info.title}に関する記事です`,
 			site: "@AIM Commons",
 			images: {
