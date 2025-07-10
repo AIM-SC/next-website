@@ -7,7 +7,7 @@ import Heading from "@/app/components/heading";
 
 export const metadata: Metadata = {
 	title: "お知らせ",
-	description: "AIM Commonsからのお知らせ一覧です",
+	description: "AIM Commons 相模原からのお知らせ一覧です",
 };
 
 export async function generateStaticParams() {
@@ -67,7 +67,7 @@ export default async function Info({ params }: { params: { pageId: string } }) {
 			<Heading
 				engTitle="NEWS"
 				jpTitle="お知らせ"
-				abst="AIM Commonsからのお知らせ一覧"
+				abst={<>AIM Commons 相模原からの<span className="inline-block">お知らせ一覧</span></>}
 			/>
 			<Articlelist
 				contents={contents}

@@ -127,66 +127,67 @@ export default async function UserDisplay() {
 			</div>
 			<div className="flex items-center gap-2">
 				{total !== "---" && (
-					<div className="flex flex-col gap-2">
-						<div className="flex gap-1">
-							<FontAwesomeIcon
-								icon={faUser}
-								className={`size-4 ${
-									icon > 0 ? "text-black" : "text-gray-400"
-								}`}
-							/>
-							<FontAwesomeIcon
-								icon={faUser}
-								className={`size-4 ${
-									icon > 1 ? "text-black" : "text-gray-400"
-								}`}
-							/>
-							<FontAwesomeIcon
-								icon={faUser}
-								className={`size-4 ${
-									icon > 2 ? "text-black" : "text-gray-400"
-								}`}
-							/>
-							<FontAwesomeIcon
-								icon={faUser}
-								className={`size-4 ${
-									icon > 3 ? "text-black" : "text-gray-400"
-								}`}
-							/>
+					<>
+						<div className="flex flex-col gap-2">
+							<div className="flex gap-1">
+								<FontAwesomeIcon
+									icon={faUser}
+									className={`size-4 ${
+										icon > 0 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+								<FontAwesomeIcon
+									icon={faUser}
+									className={`size-4 ${
+										icon > 1 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+								<FontAwesomeIcon
+									icon={faUser}
+									className={`size-4 ${
+										icon > 2 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+								<FontAwesomeIcon
+									icon={faUser}
+									className={`size-4 ${
+										icon > 3 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+							</div>
+							<div className="flex gap-1">
+								<FontAwesomeIcon
+									icon={faCouch}
+									className={`size-4 ${
+										sofaCount > 0 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+								<FontAwesomeIcon
+									icon={faCouch}
+									className={`size-4 ${
+										sofaCount > 1 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+								<FontAwesomeIcon
+									icon={faCouch}
+									className={`size-4 ${
+										sofaCount > 2 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+								<FontAwesomeIcon
+									icon={faCouch}
+									className={`size-4 ${
+										sofaCount > 3 ? "text-black" : "text-gray-400"
+									}`}
+								/>
+							</div>
 						</div>
-						<div className="flex gap-1">
-							<FontAwesomeIcon
-								icon={faCouch}
-								className={`size-4 ${
-									sofaCount > 0 ? "text-black" : "text-gray-400"
-								}`}
-							/>
-							<FontAwesomeIcon
-								icon={faCouch}
-								className={`size-4 ${
-									sofaCount > 1 ? "text-black" : "text-gray-400"
-								}`}
-							/>
-							<FontAwesomeIcon
-								icon={faCouch}
-								className={`size-4 ${
-									sofaCount > 2 ? "text-black" : "text-gray-400"
-								}`}
-							/>
-							<FontAwesomeIcon
-								icon={faCouch}
-								className={`size-4 ${
-									sofaCount > 3 ? "text-black" : "text-gray-400"
-								}`}
-							/>
+						<div className="text-left">
+							<p>利用者{congestion}</p>
+							<p>ソファ{sofaCongestion}</p>
 						</div>
-					</div>
+					</>
 				)}
-
-				<div className="text-left">
-					<p>利用者{congestion}</p>
-					<p>ソファ{sofaCongestion}</p>
-				</div>
 			</div>
 		</UserCountLayout>
 	);

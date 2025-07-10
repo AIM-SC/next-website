@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "施設紹介",
-	description: "AIM Commonsの施設について詳しくご紹介します",
+	description: "AIM Commons 相模原の施設について詳しくご紹介します",
 };
 
 const moviePage = async () => {

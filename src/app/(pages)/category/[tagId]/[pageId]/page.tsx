@@ -15,7 +15,7 @@ export async function generateMetadata({
 	if (!tagListResponse) {
 		return {
 			title: "業務ブログ",
-			description: "AIM Commonsスタッフからの発信です",
+			description: "AIM Commons 相模原スタッフからの発信です",
 		};
 	}
 

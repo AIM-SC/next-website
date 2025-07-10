@@ -24,8 +24,8 @@ export function UserCountLayout({ children, note }: Props) {
 			<CardFooter className="flex justify-center px-4 py-2">
 				<p className="text-center text-xs">
 					開室日10:00〜16:30の間で
-					<br className="sm:hidden lg:block xl:hidden" />
-					30分おきに更新されます
+					<span className="inline-block">30分おきに更新されます</span>
+					
 				</p>
 			</CardFooter>
 		</Card>

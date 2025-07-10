@@ -60,15 +60,15 @@ const TopPage = async () => {
 				<div className="w-full xl:ml-4 xl:w-1/2">
 					<div className="font-bold text-lg md:text-[26px]">
 						<h1 className="mb-2 leading-7 md:leading-9">
-							AIM Commons
+							AIM Commons 相模原
 							<br />
 							（ラーニングコモンズ）とは？
 						</h1>
 						<div className="my-2 text-[#d9ae4c] text-sm">ABOUT US</div>
 					</div>
 					<p className="leading-loose">
-						AIM
-						Commons相模原は、相模原キャンパスB棟に設置された学習スペースです。
+						AIM Commons
+						相模原は、相模原キャンパスB棟に設置された学習スペースです。
 						<br />
 						平日の授業実施日は開室しており、青学生は誰でも利用できます。
 						<br />
@@ -82,7 +82,7 @@ const TopPage = async () => {
 			</div>
 
 			<h1 className="mt-12 mb-8 text-center font-bold text-xl md:text-[26px]">
-				AIM Commonsでできること
+				AIM Commons 相模原で<span className="inline-block">できること</span>
 			</h1>
 			<div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
 				<AbleCard
@@ -192,7 +192,7 @@ const TopPage = async () => {
 							subtitle="NEWS"
 							description={
 								<>
-									AIM Commonsから
+									新情報やイベントなどの
 									<br className="block sm:hidden md:block xl:hidden" />
 									利用者へのお知らせです
 								</>
