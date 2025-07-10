@@ -13,7 +13,7 @@ type Props = {
 	image: string;
 	title: string;
 	url?: string;
-	time: string;
+	time: string | React.ReactNode;
 	text: React.ReactNode;
 	accordionText?: React.ReactNode;
 };

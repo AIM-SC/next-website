@@ -9,7 +9,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata: Metadata = {
 	title: "YouTube動画",
-	description: "AIM Commonsが作成している配信動画の一覧です",
+	description: "AIM Commons 相模原が作成している配信動画の一覧です",
 };
 
 type VideoId = string;
@@ -52,7 +52,7 @@ const moviePage = async () => {
 			<Heading
 				engTitle="MOVIES"
 				jpTitle="YouTube動画"
-				abst="AIM Commons配信動画一覧"
+				abst="AIM Commons 相模原配信動画一覧"
 			/>
 			<div className="mx-auto mb-[6vh]">
 				<SwitchMovieType

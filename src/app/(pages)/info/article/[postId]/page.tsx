@@ -39,7 +39,7 @@ export async function generateMetadata({
 			description: `${info.title}に関する記事です`,
 			type: "article",
 			url: `https://commons.aim.aoyama.ac.jp/info/${params.postId}`,
-			siteName: "AIM Commons",
+			siteName: "AIM Commons 相模原",
 			images: {
 				url: "https://commons.aim.aoyama.ac.jp/images/logo/logo_commons.jpeg",
 				width: 1200,
@@ -51,7 +51,7 @@ export async function generateMetadata({
 			card: "summary_large_image",
 			title: `${info.title}`,
 			description: `${info.title}に関する記事です`,
-			site: "@AIM Commons",
+			site: "@AIM Commons 相模原",
 			images: {
 				url: "https://commons.aim.aoyama.ac.jp/images/logo/logo_commons.jpeg",
 				width: 1200,

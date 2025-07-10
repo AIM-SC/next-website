@@ -36,15 +36,12 @@ const footer = () => {
 			</div>
 			<div className="text-center text-xs">
 				<div className="mt-4">
-					<span>
-						本ウェブサイトはAIM Commons学生スタッフが
-						<br className="md:hidden" />
-						作成しました（太田・櫻井・西堀・ほか匿名希望一名）。
-					</span>
+						本ウェブサイトはAIM Commons 相模原学生スタッフが<span className="inline-block">作成しました（太田・櫻井・西堀・ほか匿名希望1名）</span>
 				</div>
 				<div className="mt-2">
 					万が一掲載内容に相違があった場合は、
-					<br className="md:hidden" />
+					<span className="inline-block">
+
 					<Link
 						href="https://www.aim.aoyama.ac.jp/"
 						target="_blank"
@@ -53,10 +50,11 @@ const footer = () => {
 						情報メディアセンター
 					</Link>
 					の案内が優先されます。
+					</span>
 				</div>
 			</div>
 			<div className="my-5 text-center text-gray-500 text-sm">
-				&copy; 2025 AIM Commons
+				&copy; 2025 AIM Commons 相模原
 			</div>
 		</div>
 	);

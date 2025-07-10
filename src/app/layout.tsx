@@ -7,17 +7,17 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
 	title: {
-		template: "%s | AIM Commons",
-		default: "AIM Commons | 青山学院大学情報メディアセンター",
+		template: "%s | AIM Commons 相模原",
+		default: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
 	},
 	description:
-		"AIM Commonsとは、青山学院大学情報メデイアセンターに属している、ITに特化した学習用の施設及びそれに付帯するサービスの総称です。",
+		"AIM Commons 相模原とは、青山学院大学情報メデイアセンターに属している、ITに特化した学習用の施設及びそれに付帯するサービスの総称です。",
 	keywords: [
 		"青山学院大学",
 		"青学",
 		"ラーニングコモンズ",
 		"ラーコモ",
-		"AIM Commons",
+		"AIM Commons 相模原",
 		"パソコン",
 		"勉強スペース",
 		"学習室",
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
 		"技術",
 	],
 	openGraph: {
-		title: "AIM Commons | 青山学院大学情報メディアセンター",
+		title: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
 		description:
-			"AIM Commonsとは、青山学院大学情報メデイアセンターに属している、ITに特化した学習用の施設及びそれに付帯するサービスの総称です。",
+			"AIM Commons 相模原とは、青山学院大学情報メデイアセンターに属している、ITに特化した学習用の施設及びそれに付帯するサービスの総称です。",
 		url: "https://commons.aim.aoyama.ac.jp",
-		siteName: "AIM Commons | 青山学院大学情報メディアセンター",
+		siteName: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
 		images: [
 			{
 				width: "200",
@@ -74,10 +74,10 @@ export default function RootLayout({
 							className="writing-mode-vertical-rl fixed font-semibold text-xs tracking-wide"
 						>
 							<div className="left_side fixed top-[280px] left-[7px] ml-1 hidden [writing-mode:vertical-rl] lg:block">
-								<p>AIM COMMONS</p>
+								<p>AIM Commons Sagamihara</p>
 							</div>
 							<div className="right_side fixed top-[280px] right-[7px] mr-1 hidden [writing-mode:vertical-rl] lg:block">
-								<p>AIM COMMONS</p>
+								<p>AIM Commons Sagamihara</p>
 							</div>
 						</div>
 						{children}

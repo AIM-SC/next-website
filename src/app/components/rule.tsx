@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type Props = {
 	image: string;
-	text: string;
+	text: string | React.ReactNode;
 	note?: string;
 };
 

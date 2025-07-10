@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "学生スタッフ採用",
-	description: "AIM Commonsの採用情報を紹介します",
+	description: "AIM Commons 相模原の採用情報を紹介します",
 };
 
 const jobIntroductionPage = () => {
@@ -15,13 +15,7 @@ const jobIntroductionPage = () => {
 			<Heading
 				engTitle="RECRUIT"
 				jpTitle="学生スタッフ採用"
-				abst={
-					<>
-						AIM Commonsで働く
-						<br className="sm:hidden" />
-						学生スタッフの業務を紹介します
-					</>
-				}
+				abst={<>AIM Commons 相模原で働く<span className="inline-block">学生スタッフの業務を紹介します</span></>}
 			/>
 			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-8 pb-[4%] lg:p-12 xl:flex-row">
 				<div className="w-full xl:w-1/2">
@@ -38,9 +32,7 @@ const jobIntroductionPage = () => {
 				<div className="w-full xl:ml-4 xl:w-1/2">
 					<div className="font-bold text-lg md:text-[26px]">
 						<h1 className="mb-2 leading-7 md:leading-9">
-							AIM Commonsの
-							<br className="sm:hidden" />
-							学生スタッフとは？
+							AIM Commons 相模原の<span className="inline-block">学生スタッフとは？</span>
 						</h1>
 						<div className="my-2 text-[#d9ae4c] text-sm">STUDENT STAFF</div>
 					</div>
@@ -51,7 +43,8 @@ const jobIntroductionPage = () => {
 							<br />
 							受付・貸出業務をはじめ、ワークショップの講師、情報技術業務、広報活動などの様々なことに学生ならではの視点でチャレンジできるのが魅力です。
 							<br />
-							「IT-A」とはまた違った AIM Commons ならではの仕事がたくさん！
+							「IT-A」とはまた違った AIM Commons 相模原
+							ならではの仕事がたくさん！
 						</p>
 						<ul className="ml-4 list-disc">
 							<li>募集対象: 青山学院大学の学部生・大学院生</li>
@@ -84,9 +77,7 @@ const jobIntroductionPage = () => {
 					<div>
 						レギュラー業務
 						<p className="text-base text-gray-600">
-							全ての学生スタッフが
-							<br className="sm:hidden" />
-							担当する基本的な業務です
+							全ての学生スタッフが担当する<span className="inline-block">基本的な業務です</span>
 						</p>
 					</div>
 					<div className="!py-0 grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3 xl:gap-[3%]">
@@ -139,9 +130,7 @@ const jobIntroductionPage = () => {
 					<div>
 						プロジェクト型業務
 						<p className="text-base text-gray-600">
-							自分の関心や得意分野を活かして
-							<br className="sm:hidden" />
-							選択的に取り組む業務です
+							自分の関心や得意分野を活かして<span className="inline-block">選択的に取り組む業務です</span>
 						</p>
 						<p className="text-base text-gray-600">
 							兼任・新規立ち上げも可能です
@@ -177,7 +166,9 @@ const jobIntroductionPage = () => {
 									<p>
 										学生スタッフは、動画編集だけにとどまらず、企画、ナレーター、出演者としても活躍しています。
 									</p>
-									<p>アイデアを存分に発揮して、AIM CommonsをPRしましょう！</p>
+									<p>
+										アイデアを存分に発揮して、AIM Commons 相模原をPRしましょう！
+									</p>
 								</div>
 							}
 						/>
@@ -202,9 +193,7 @@ const jobIntroductionPage = () => {
 					<div>
 						管理スタッフ業務
 						<p className="text-base text-gray-600">
-							学生スタッフをまとめる
-							<br className="sm:hidden" />
-							管理スタッフが行う業務です
+							学生スタッフをまとめる<span className="inline-block">管理スタッフが行う業務です</span>
 						</p>
 					</div>
 					<div className="!py-0 grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3 xl:gap-[3%]">
@@ -227,7 +216,7 @@ const jobIntroductionPage = () => {
 							title="採用業務"
 							text={
 								<div className="font-normal">
-									<p>AIM Commonsで働く新たな仲間を見つける業務です。</p>
+									<p>AIM Commons 相模原で働く新たな仲間を見つける業務です。</p>
 									<p>
 										教員や他の管理スタッフと協力しながら、新人スタッフの選考に関わることができます。
 									</p>
