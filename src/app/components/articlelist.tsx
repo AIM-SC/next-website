@@ -19,8 +19,8 @@ export default function Articlelist({
 	tagId,
 }: ArticlelistProps) {
 	return (
-		<div className="container mx-auto rounded-lg bg-white p-8">
-			<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+		<div className="mx-auto rounded-lg bg-white 2lg:p-8 p-8 3xl:px-[4%] xs:px-[20%] md:p-8 lg:px-[8%]">
+			<div className="grid 2lg:grid-cols-3 grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
 				{contents.map((content) => {
 					let href = `/${basePath}/article/${content.id}`;
 

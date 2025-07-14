@@ -117,7 +117,7 @@ export default async function StaticDetailPage({
 				</>
 			)}
 			<div className="py-[75px] text-[20px] text-black leading-10">
-				<Heading engTitle="INFO" jpTitle="お知らせ" />
+				<Heading engTitle="BLOG" jpTitle="業務ブログ" />
 				<Article content={article} />
 			</div>
 		</>
