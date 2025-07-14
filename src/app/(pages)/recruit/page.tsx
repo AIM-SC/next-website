@@ -15,7 +15,12 @@ const jobIntroductionPage = () => {
 			<Heading
 				engTitle="RECRUIT"
 				jpTitle="学生スタッフ採用"
-				abst={<>AIM Commons 相模原で働く<span className="inline-block">学生スタッフの業務を紹介します</span></>}
+				abst={
+					<>
+						AIM Commons 相模原で働く
+						<span className="inline-block">学生スタッフの業務を紹介します</span>
+					</>
+				}
 			/>
 			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-8 pb-[4%] lg:p-12 xl:flex-row">
 				<div className="w-full xl:w-1/2">
@@ -32,7 +37,8 @@ const jobIntroductionPage = () => {
 				<div className="w-full xl:ml-4 xl:w-1/2">
 					<div className="font-bold text-lg md:text-[26px]">
 						<h1 className="mb-2 leading-7 md:leading-9">
-							AIM Commons 相模原の<span className="inline-block">学生スタッフとは？</span>
+							AIM Commons 相模原の
+							<span className="inline-block">学生スタッフとは？</span>
 						</h1>
 						<div className="my-2 text-[#d9ae4c] text-sm">STUDENT STAFF</div>
 					</div>
@@ -77,7 +83,8 @@ const jobIntroductionPage = () => {
 					<div>
 						レギュラー業務
 						<p className="text-base text-gray-600">
-							全ての学生スタッフが担当する<span className="inline-block">基本的な業務です</span>
+							全ての学生スタッフが担当する
+							<span className="inline-block">基本的な業務です</span>
 						</p>
 					</div>
 					<div className="!py-0 grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3 xl:gap-[3%]">
@@ -130,7 +137,8 @@ const jobIntroductionPage = () => {
 					<div>
 						プロジェクト型業務
 						<p className="text-base text-gray-600">
-							自分の関心や得意分野を活かして<span className="inline-block">選択的に取り組む業務です</span>
+							自分の関心や得意分野を活かして
+							<span className="inline-block">選択的に取り組む業務です</span>
 						</p>
 						<p className="text-base text-gray-600">
 							兼任・新規立ち上げも可能です
@@ -193,7 +201,8 @@ const jobIntroductionPage = () => {
 					<div>
 						管理スタッフ業務
 						<p className="text-base text-gray-600">
-							学生スタッフをまとめる<span className="inline-block">管理スタッフが行う業務です</span>
+							学生スタッフをまとめる
+							<span className="inline-block">管理スタッフが行う業務です</span>
 						</p>
 					</div>
 					<div className="!py-0 grid grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3 xl:gap-[3%]">

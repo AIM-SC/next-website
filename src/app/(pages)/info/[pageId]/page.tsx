@@ -67,7 +67,12 @@ export default async function Info({ params }: { params: { pageId: string } }) {
 			<Heading
 				engTitle="NEWS"
 				jpTitle="お知らせ"
-				abst={<>AIM Commons 相模原からの<span className="inline-block">お知らせ一覧</span></>}
+				abst={
+					<>
+						AIM Commons 相模原からの
+						<span className="inline-block">お知らせ一覧</span>
+					</>
+				}
 			/>
 			<Articlelist
 				contents={contents}

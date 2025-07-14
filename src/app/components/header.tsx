@@ -45,7 +45,8 @@ export default function Header() {
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
 
 							<p className="my-3 font-bold text-sm text-stone-400 sm:text-base ">
-								AIM Commons 相模原を<span className="inline-block">初めて使う方へ</span>
+								AIM Commons 相模原を
+								<span className="inline-block">初めて使う方へ</span>
 							</p>
 							<ul>
 								<li className={cn("px-5 py-3 text-sm sm:text-base")}>
@@ -70,7 +71,8 @@ export default function Header() {
 							</ul>
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
 							<p className="my-3 font-bold text-sm text-stone-400 sm:text-base">
-								AIM Commons 相模原を<span className="inline-block">使いこなしたい方へ</span>
+								AIM Commons 相模原を
+								<span className="inline-block">使いこなしたい方へ</span>
 							</p>
 							<p className="my-2 ml-2 font-bold text-sm text-stone-400 sm:text-base">
 								ワークショップ
@@ -94,7 +96,8 @@ export default function Header() {
 								</li>
 							</ul>
 							<p className="my-2 ml-2 font-bold text-sm text-stone-400 sm:text-base">
-								AIM Commons 相模原からの<span className="inline-block">情報発信</span>
+								AIM Commons 相模原からの
+								<span className="inline-block">情報発信</span>
 							</p>
 							<ul>
 								<li className={cn("px-5 py-3 text-sm sm:text-base")}>
@@ -110,7 +113,8 @@ export default function Header() {
 							<SheetHeader className="mb-[10px] h-[20px] border-b" />
 							{/* biome-ignore lint/nursery/useSortedClasses: <explanation> */}
 							<p className="my-3 font-bold text-stone-400 text-sm sm:text-base">
-								もっとAIM Commons 相模原に<span className="inline-block">関わりたい方へ</span>
+								もっとAIM Commons 相模原に
+								<span className="inline-block">関わりたい方へ</span>
 							</p>
 							<ul>
 								<li className={cn("px-5 py-3 text-sm sm:text-base")}>

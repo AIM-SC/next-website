@@ -146,7 +146,11 @@ export default function SwitchCampus() {
 	const rules = [
 		{
 			image: "/images/introduce/rule01.png",
-			text: <>学習目的での利用を<span className="inline-block">お願いします</span></>,
+			text: (
+				<>
+					学習目的での利用を<span className="inline-block">お願いします</span>
+				</>
+			),
 		},
 		{
 			image: "/images/introduce/rule02.png",
@@ -155,16 +159,29 @@ export default function SwitchCampus() {
 		},
 		{
 			image: "/images/introduce/rule03.png",
-			text: <>荷物を置いての長時間退出は<span className="inline-block">ご遠慮ください</span></>,
+			text: (
+				<>
+					荷物を置いての長時間退出は
+					<span className="inline-block">ご遠慮ください</span>
+				</>
+			),
 		},
 		{
 			image: "/images/introduce/rule04.png",
-			text: <>他の人の学習の妨げになる音出しは<span>ご遠慮ください</span></>,
+			text: (
+				<>
+					他の人の学習の妨げになる音出しは<span>ご遠慮ください</span>
+				</>
+			),
 			note: "(ゲーム、大きな声での会話モニターを使用した動画鑑賞など)",
 		},
 		{
 			image: "/images/introduce/rule05.png",
-			text: <>睡眠目的での利用は<span className="inline-block">ご遠慮ください</span></>,
+			text: (
+				<>
+					睡眠目的での利用は<span className="inline-block">ご遠慮ください</span>
+				</>
+			),
 		},
 	];
 
