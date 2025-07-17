@@ -72,13 +72,11 @@ export default function SwitchMovieType({
 				</label>
 			</div>
 
-			<div className="rounded-lg bg-white p-12 xl:p-16">
+			<div
+				className={`rounded-lg bg-white ${filterType === "longMovie" ? "p-8 sm:p-12 md:px-[16%] lg:px-12" : "2lg:p-12 p-8 3xl:px-[4%] xs:px-[20%] md:p-12 lg:px-[12%] xl:px-[8%] 2xl:px-12"}`}
+			>
 				<div
-					className={`grid gap-12 xl:gap-16 ${
-						filterType === "longMovie"
-							? "grid-cols-1 lg:grid-cols-2"
-							: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-					}`}
+					className={`grid gap-8 ${filterType === "longMovie" ? "grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3" : "2lg:grid-cols-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"}`}
 				>
 					{filteredVideos.map((videoId) => (
 						<div key={`video-${videoId}`} className="flex">

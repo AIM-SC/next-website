@@ -11,7 +11,7 @@ type ArticlelistProps = {
 	tagId?: string;
 };
 
-export default function Articlelist({
+export default function ArticleList({
 	contents,
 	basePath,
 	currentPage,

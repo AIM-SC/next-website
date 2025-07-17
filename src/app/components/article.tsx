@@ -9,7 +9,7 @@ import parse, {
 import Tag from "./tag";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { LinkPreview } from "./link-preview";
+import { LinkPreview } from "./linkPreview";
 
 export default function Article({ content }: { content: ArticleType }) {
 	const options: HTMLReactParserOptions = {

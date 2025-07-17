@@ -45,12 +45,12 @@ const TopPage = async () => {
 			</div>
 
 			{/* Aboutセクション */}
-			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-8 pb-[4%] lg:p-12 xl:flex-row">
+			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-6 sm:p-12 lg:px-24 xl:flex-row xl:px-12">
 				<div className="w-full xl:w-1/2">
 					<Image
-						src="/images/general/about.png"
+						src="/images/general/about.webp"
 						alt="AIMの説明画像"
-						className="mb-4 h-auto w-full rounded-md"
+						className="h-auto w-full rounded-md"
 						width={500}
 						height={300}
 						layout="responsive"

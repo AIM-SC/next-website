@@ -48,7 +48,7 @@ const moviePage = async () => {
 	shortVideoIds = shortVideoIds.slice(0, 9);
 
 	return (
-		<div className="py-[75px] text-[20px] text-black leading-10">
+		<div className="py-[75px]">
 			<Heading
 				engTitle="MOVIES"
 				jpTitle="YouTube動画"

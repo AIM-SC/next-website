@@ -1,9 +1,9 @@
-import Articlelist from "@/app/components/articlelist";
+import ArticleList from "@/app/components/articleList";
 import { LIMIT } from "@/libs/constants";
 import { getBlogList, getTagList } from "@/libs/microcms";
-import Tag from "@/app/components/tag";
 import type { Metadata } from "next";
 import Heading from "@/app/components/heading";
+import Taglist from "@/app/components/tagList";
 
 export const metadata: Metadata = {
 	title: "業務ブログ",
@@ -53,34 +53,25 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 				<p className="text-sm md:text-base">
 					現在、このページに記事はありません。
 				</p>
-				<hr className="mt-8 border-[#d9ae4c] border-[1px]" />
-				<div className="mt-2 ml-2">タグから探す</div>
-				<div className="mt-2 ml-4">
-					<Tag tags={tagContents} variant="card" />
-				</div>
+				<Taglist tagContents={tagContents} />
 			</div>
 		);
 	}
 
 	return (
-		<div className="py-[75px] font-bold text-[20px] text-black leading-10">
+		<div className="py-[75px]">
 			<Heading
 				engTitle="BLOGS"
 				jpTitle="業務ブログ"
 				abst="AIM Commons 相模原スタッフからの発信"
 			/>
-
-			<Articlelist
+			<ArticleList
 				contents={contents}
 				basePath="blog"
 				currentPage={currentPage}
 				totalCount={totalCount}
 			/>
-			<hr className="mt-8 border-[#d9ae4c] border-[1px]" />
-			<div className="mt-2 ml-2">タグから探す</div>
-			<div className="mt-2 mb-6 ml-4">
-				<Tag tags={tagContents} variant="card" />
-			</div>
+			<Taglist tagContents={tagContents} />
 		</div>
 	);
 }

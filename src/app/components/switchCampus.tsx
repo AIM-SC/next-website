@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function SwitchCampus() {
 	const introCards = [
 		{
-			image: "/images/introduce/floor01.jpg",
+			image: "/images/introduce/floor01.webp",
 			title: "PC貸出",
 			url: "https://www.aim.aoyama.ac.jp/rental/note-pc/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -25,7 +25,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/general/equipment.jpg",
+			image: "/images/general/equipment.webp",
 			title: "機器貸出",
 			url: "https://www.aim.aoyama.ac.jp/rental/production/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -44,7 +44,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/floor02.jpg",
+			image: "/images/introduce/floor02.webp",
 			title: "静音ブース",
 			url: "https://www.aim.aoyama.ac.jp/rental/meetingpod/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -61,7 +61,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/floor03.jpg",
+			image: "/images/introduce/floor03.webp",
 			title: "動画編集ブース",
 			url: "https://www.aim.aoyama.ac.jp/rental/production/",
 			time: "受付：9:45-16:30（返却は16:45まで）",
@@ -72,7 +72,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/floor04.jpg",
+			image: "/images/introduce/floor04.webp",
 			title: "ソファ",
 			time: "利用：9:00-20:00",
 			text: (
@@ -82,13 +82,13 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/floor05.jpg",
+			image: "/images/introduce/floor05.webp",
 			title: "畳",
 			time: "利用：9:00-20:00",
 			text: <div>靴を脱いで、少人数で作業することができます。</div>,
 		},
 		{
-			image: "/images/introduce/floor06.jpg",
+			image: "/images/introduce/floor06.webp",
 			title: "PC設備",
 			time: "利用：9:00-20:00",
 			text: <div>PCが設置してある席です。IT講習会の勉強もできます。</div>,
@@ -100,7 +100,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/floor07.jpg",
+			image: "/images/introduce/floor07.webp",
 			title: "個人用作業スペース",
 			time: "利用：9:00-20:00",
 			text: (
@@ -110,7 +110,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/floor08.jpg",
+			image: "/images/introduce/floor08.webp",
 			title: "フリースペース",
 			time: "利用：9:00-20:00",
 			text: (
@@ -120,7 +120,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/floor09.jpg",
+			image: "/images/introduce/floor09.webp",
 			title: "プリンター",
 			url: "https://www.aim.aoyama.ac.jp/printstation/",
 			time: "利用：9:00-20:00",
@@ -129,7 +129,7 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/locker.jpg",
+			image: "/images/introduce/locker.webp",
 			title: "PC貸出ロッカー",
 			url: "https://www.aim.aoyama.ac.jp/rental/note-pc/",
 			time: "利用：8:30-20:00",
@@ -145,7 +145,7 @@ export default function SwitchCampus() {
 
 	const rules = [
 		{
-			image: "/images/introduce/rule01.png",
+			image: "/images/introduce/rule01.webp",
 			text: (
 				<>
 					学習目的での利用を<span className="inline-block">お願いします</span>
@@ -153,12 +153,12 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/rule02.png",
+			image: "/images/introduce/rule02.webp",
 			text: "食事はできません",
 			note: "（蓋が閉まる＆直立する飲み物は持ち込めます。コンビニコーヒーのように、紙カップに簡単なフタが付いただけの容器は禁止です。）",
 		},
 		{
-			image: "/images/introduce/rule03.png",
+			image: "/images/introduce/rule03.webp",
 			text: (
 				<>
 					荷物を置いての長時間退出は
@@ -167,16 +167,17 @@ export default function SwitchCampus() {
 			),
 		},
 		{
-			image: "/images/introduce/rule04.png",
+			image: "/images/introduce/rule04.webp",
 			text: (
 				<>
-					他の人の学習の妨げになる音出しは<span>ご遠慮ください</span>
+					他の人の学習の妨げになる音出しは
+					<span className="inline-block">ご遠慮ください</span>
 				</>
 			),
 			note: "(ゲーム、大きな声での会話モニターを使用した動画鑑賞など)",
 		},
 		{
-			image: "/images/introduce/rule05.png",
+			image: "/images/introduce/rule05.webp",
 			text: (
 				<>
 					睡眠目的での利用は<span className="inline-block">ご遠慮ください</span>
@@ -189,61 +190,65 @@ export default function SwitchCampus() {
 		<div className="w-full bg-[#F0EBDC]">
 			<div className="rounded-md bg-white">
 				<div>
-					<div className="pt-5 text-center">
-						<h2 className="font-bold text-xl">アクセスマップ</h2>
-						<p className="text-[#8C8C8C]">相模原：B棟 4階</p>
-					</div>
-					<div className="mb-5">
+					<div className="flex flex-col gap-6 p-6">
+						<div className="text-center">
+							<h2 className="font-bold text-xl">アクセスマップ</h2>
+							<p className="text-[#8C8C8C]">相模原：B棟 4階</p>
+						</div>
 						<Image
-							src="/images/introduce/floor_map.jpg"
+							src="/images/introduce/floor_map.webp"
 							alt={"map"}
 							width={1120}
 							height={840}
 							className="mx-auto"
 						/>
-					</div>
-					<h2 className="text-center font-bold text-xl">室内案内図</h2>
-					<Image
-						src="/images/introduce/floor00.png"
-						alt={"map"}
-						width={1120}
-						height={840}
-						className="mx-auto h-[70%] w-[70%] items-center"
-					/>
-					<div className="text-center">
-						<h2 className="my-5 font-bold text-xl" id="jumpToIntroduce">
-							開室時間
-						</h2>
-						<p className="text-3xl text-[#d9ae4c]">9:00-20:00</p>
+						<h2 className="text-center font-bold text-xl">室内案内図</h2>
+						<Image
+							src="/images/introduce/floor00.webp"
+							alt={"map"}
+							width={1120}
+							height={840}
+							className="mx-auto"
+						/>
+						<div className="text-center">
+							<h2 className="my-6 font-bold text-xl" id="jumpToIntroduce">
+								開室時間
+							</h2>
+							<p className="text-3xl text-[#d9ae4c]">9:00-20:00</p>
+						</div>
 					</div>
 
-					<div className="grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
-						{introCards.map((card) => (
-							<IntroCard
-								key={card.title}
-								image={card.image}
-								title={card.title}
-								url={card.url}
-								time={card.time}
-								text={card.text}
-								// accordionTextがある場合のみ渡す
-								accordionText={card.accordionText && card.accordionText}
-							/>
-						))}
+					<div className="p-8 sm:px-[20%] md:p-8 lg:px-[8%] xl:px-8 2xl:px-[4%]">
+						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+							{introCards.map((card) => (
+								<IntroCard
+									key={card.title}
+									image={card.image}
+									title={card.title}
+									url={card.url}
+									time={card.time}
+									text={card.text}
+									// accordionTextがある場合のみ渡す
+									accordionText={card.accordionText && card.accordionText}
+								/>
+							))}
+						</div>
 					</div>
 
 					<h2 className="pt-5 text-center font-bold text-xl">
 						利用にあたってのお願い
 					</h2>
-					<div className="grid grid-cols-1 gap-8 p-8 text-center md:grid-cols-2 lg:gap-12 lg:p-12 xl:grid-cols-3">
-						{rules.map((rule) => (
-							<Rule
-								key={rule.image} // 各要素に一意のキーを設定
-								image={rule.image}
-								text={rule.text}
-								note={rule.note} // noteがない場合はundefinedが渡されます
-							/>
-						))}
+					<div className="p-8 sm:px-[20%] md:p-8 lg:px-[8%] xl:px-8 2xl:px-[4%]">
+						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+							{rules.map((rule) => (
+								<Rule
+									key={rule.image} // 各要素に一意のキーを設定
+									image={rule.image}
+									text={rule.text}
+									note={rule.note} // noteがない場合はundefinedが渡されます
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
