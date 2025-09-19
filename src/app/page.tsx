@@ -7,17 +7,17 @@ import {
 	faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 import { format } from "date-fns";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { getInfoList } from "@/libs/microcms";
-import AbleCard from "./components/ableCard/ableCard";
-import Box from "./components/box";
-import Information from "./components/infromation";
-import ClientSwiper from "./components/swiper";
-import Time from "./components/time";
-import UserDisplay from "./components/userDisplay/userDisplay";
-import UserDisplayLoading from "./components/userDisplay/userDisplayLoading";
+import AbleCard from "./components/top/ableCard";
+import LinkCard from "./components/top/linkCard";
+import Information from "./components/facility/infromation";
+import ClientSwiper from "./components/top/swiper";
+import UserDisplay from "./components/top/userDisplay/userDisplay";
+import UserDisplayLoading from "./components/top/userDisplay/userDisplayLoading";
+import HeaderCard from "./components/layout/heading/headerCard";
+import OpenHour from "./components/top/openHour";
 
 const TopPage = async () => {
 	// お知らせデータの取得
@@ -38,49 +38,41 @@ const TopPage = async () => {
 	});
 
 	return (
-		<div className="bg-[#F0EBDC]">
+		<div>
 			{/* Swiperセクション */}
 			<div className="mx-auto w-full">
 				<ClientSwiper />
 			</div>
 
 			{/* Aboutセクション */}
-			<div className="my-8 flex flex-col-reverse items-center justify-center gap-4 rounded-lg bg-white p-8 pb-[4%] lg:p-12 xl:flex-row">
-				<div className="w-full xl:w-1/2">
-					<Image
-						src="/images/general/about.png"
-						alt="AIMの説明画像"
-						className="mb-4 h-auto w-full rounded-md"
-						width={500}
-						height={300}
-						layout="responsive"
-						objectFit="cover"
-					/>
-				</div>
-				<div className="w-full xl:ml-4 xl:w-1/2">
-					<div className="font-bold text-lg md:text-[26px]">
-						<h1 className="mb-2 leading-7 md:leading-9">
-							AIM Commons 相模原
-							<br />
-							（ラーニングコモンズ）とは？
-						</h1>
-						<div className="my-2 text-[#d9ae4c] text-sm">ABOUT US</div>
-					</div>
-					<p className="leading-loose">
-						AIM Commons
-						相模原は、相模原キャンパスB棟に設置された学習スペースです。
+			<HeaderCard
+				title={
+					<>
+						AIM Commons 相模原
 						<br />
-						平日の授業実施日は開室しており、青学生は誰でも利用できます。
-						<br />
-						グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。
-						<br />
-						学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。
-						<br />
-						一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
-					</p>
-				</div>
-			</div>
-
+						（ラーニングコモンズ）とは？
+					</>
+				}
+				engTitle="ABOUT US"
+				content={
+					<>
+						<p>
+							AIM Commons
+							相模原は、相模原キャンパスB棟に設置された学習スペースです。
+						</p>
+						<p>平日の授業実施日は開室しており、青学生は誰でも利用できます。</p>
+						<p>
+							グループ学習やディスカッションができるように、設置されているディスプレイやホワイトボードを自由に利用可能です。
+						</p>
+						<p>
+							学習に必要な機材がない場合でも、ノートPCやビデオカメラの貸出サービスを利用できます。
+						</p>
+						<p>
+							一部の貸出機材については、使い方を学べるワークショップを学生スタッフが行っています。
+						</p>
+					</>
+				}
+			/>
 			<h1 className="mt-12 mb-8 text-center font-bold text-xl md:text-[26px]">
 				AIM Commons 相模原で<span className="inline-block">できること</span>
 			</h1>
@@ -141,7 +133,7 @@ const TopPage = async () => {
 			<div className="grid gap-4 lg:grid-cols-[4fr_6fr] lg:gap-8 xl:grid-cols-[4fr_6fr]">
 				{/* 開室時間の表示 */}
 				<div className="grid grid-cols-1 gap-4 text-center lg:gap-8">
-					<Time
+					<OpenHour
 						title="開室時間"
 						notes="※授業実施日のみ"
 						subtitle="OPENING HOURS"
@@ -186,7 +178,7 @@ const TopPage = async () => {
 				</h1>
 				<div className="rounded-lg">
 					<div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3 lg:gap-8">
-						<Box
+						<LinkCard
 							icon={faEnvelopeOpenText}
 							title="お知らせ"
 							subtitle="NEWS"
@@ -199,7 +191,7 @@ const TopPage = async () => {
 							}
 							link="./info"
 						/>
-						<Box
+						<LinkCard
 							icon={faVideo}
 							title="YouTube動画"
 							subtitle="MOVIES"
@@ -212,7 +204,7 @@ const TopPage = async () => {
 							}
 							link="./movies"
 						/>
-						<Box
+						<LinkCard
 							icon={faNewspaper}
 							title="業務ブログ"
 							subtitle="BLOGS"

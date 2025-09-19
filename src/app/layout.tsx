@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Header from "./components/layout/header";
+import Footer from "./components/layout/footer";
 import { BIZ_UDPGothic } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -60,10 +60,6 @@ export default function RootLayout({
 		<html lang="ja">
 			<head>
 				<GoogleAnalytics gaId={gaId} />
-				<link
-					rel="stylesheet"
-					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=link&display=optional"
-				/>
 			</head>
 			<body className={`${udp.className} flex min-h-screen flex-col`}>
 				<Header />

@@ -1,9 +1,9 @@
 import { XMLParser } from "fast-xml-parser";
-import SwitchMovieType from "../../components/switchMovieType";
+import SwitchMovieType from "../../components/movies/switchMovieType";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from "next";
-import Heading from "@/app/components/heading";
+import Heading from "@/app/components/layout/heading/heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,7 +48,7 @@ const moviePage = async () => {
 	shortVideoIds = shortVideoIds.slice(0, 9);
 
 	return (
-		<div className="py-[75px] text-[20px] text-black leading-10">
+		<div className="py-[75px]">
 			<Heading
 				engTitle="MOVIES"
 				jpTitle="YouTube動画"

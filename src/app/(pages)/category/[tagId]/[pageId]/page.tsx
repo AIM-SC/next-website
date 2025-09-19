@@ -1,9 +1,9 @@
-import Articlelist from "@/app/components/articlelist";
+import Articlelist from "@/app/components/article/articleList";
 import { LIMIT } from "@/libs/constants";
 import { getCategoryArticleList, getTagList } from "@/libs/microcms";
-import Tag from "@/app/components/tag";
-import Heading from "@/app/components/heading";
+import Heading from "@/app/components/layout/heading/heading";
 import { notFound } from "next/navigation";
+import Taglist from "@/app/components/article/tagList";
 
 export async function generateMetadata({
 	params: { tagId },
@@ -106,7 +106,7 @@ export default async function CategoryArticleList({
 	if (currentPage > maxPage || Number.isNaN(currentPage) || currentPage < 1) {
 		console.error("Page exceeds maxPage:", { currentPage, maxPage });
 		return (
-			<div className="py-[75px] font-bold text-[20px] text-black leading-10">
+			<div className="py-[75px]">
 				<Heading
 					engTitle="ARTICLES"
 					jpTitle={
@@ -122,17 +122,13 @@ export default async function CategoryArticleList({
 				<p className="text-sm md:text-base">
 					現在、このページに記事はありません。
 				</p>
-				<hr className="mt-8 border-[#d9ae4c] border-[1px]" />
-				<div className="mt-2 ml-2">タグから探す</div>
-				<div className="mt-2 ml-4">
-					<Tag tags={tagContents} variant="card" />
-				</div>
+				<Taglist tagContents={tagContents} />
 			</div>
 		);
 	}
 
 	return (
-		<div className="py-[75px] font-bold text-[20px] text-black leading-10">
+		<div className="py-[75px]">
 			<Heading
 				engTitle="ARTICLES"
 				jpTitle={
@@ -149,11 +145,7 @@ export default async function CategoryArticleList({
 				totalCount={totalCount}
 				tagId={tagPath}
 			/>
-			<hr className="mt-8 border-[#d9ae4c] border-[1px]" />
-			<div className="mt-2 ml-2">タグから探す</div>
-			<div className="mt-2 ml-4">
-				<Tag tags={tagContents} variant="card" />
-			</div>
+			<Taglist tagContents={tagContents} />
 		</div>
 	);
 }

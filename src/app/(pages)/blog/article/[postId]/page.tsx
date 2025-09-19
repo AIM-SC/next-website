@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getBlogDetail, getBlogList } from "../../../../../libs/microcms";
-import Article from "@/app/components/article";
-import Heading from "@/app/components/heading";
+import Article from "@/app/components/article/article";
+import Heading from "@/app/components/layout/heading/heading";
 import type { Metadata } from "next";
 import { draftMode, cookies } from "next/headers"; // cookiesをインポート
 import { Button } from "@/components/ui/button";
@@ -116,8 +116,8 @@ export default async function StaticDetailPage({
 					</Link>
 				</>
 			)}
-			<div className="py-[75px] text-[20px] text-black leading-10">
-				<Heading engTitle="INFO" jpTitle="お知らせ" />
+			<div className="py-[75px]">
+				<Heading engTitle="BLOGS" jpTitle="業務ブログ" />
 				<Article content={article} />
 			</div>
 		</>
