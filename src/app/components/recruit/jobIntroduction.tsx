@@ -4,12 +4,11 @@ type Props = {
 	image: string;
 	title: string;
 	text: React.ReactNode;
-	className?: string;
 };
 
-const JobIntroduction = ({ image, title, text, className }: Props) => {
+const JobIntroduction = ({ image, title, text }: Props) => {
 	return (
-		<div className={`${className} flex flex-col rounded-md bg-white`}>
+		<div className="flex flex-col rounded-md bg-white">
 			{/* 画像の表示 */}
 			<Image
 				src={image}

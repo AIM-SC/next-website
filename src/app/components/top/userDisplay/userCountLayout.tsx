@@ -1,5 +1,5 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import Title from "../title";
+import SectionTitle from "../sectionTitle";
 
 type Props = {
 	children: React.ReactNode;
@@ -10,7 +10,7 @@ export function UserCountLayout({ children, note }: Props) {
 	return (
 		<Card className="border-0 p-6">
 			<div className="mb-3 border-b text-center">
-				<Title
+				<SectionTitle
 					maintitle="現在の利用者数"
 					subtitle="CURRENT USERS"
 					notes={note}

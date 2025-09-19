@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
+import useSWR from "swr";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
@@ -10,33 +11,26 @@ interface LinkPreviewProps {
 	children: ReactNode;
 }
 
+// SWR用のフェッチャー関数
+const fetcher = async (
+	url: string,
+): Promise<{ ogp: OgpData | null; success: boolean }> => {
+	const response = await fetch(`/api/ogp?url=${encodeURIComponent(url)}`);
+	if (!response.ok) {
+		throw new Error("Failed to fetch OGP data");
+	}
+	return response.json();
+};
+
 export function LinkPreview({ url, children }: LinkPreviewProps): JSX.Element {
-	const [ogpData, setOgpData] = useState<OgpData | null>(null);
-	const [loading, setLoading] = useState<boolean>(true);
-	const [error, setError] = useState<boolean>(false);
+	const { data, error, isLoading } = useSWR(url, fetcher, {
+		revalidateOnFocus: false,
+		revalidateOnReconnect: false,
+	});
 
-	useEffect(() => {
-		const fetchOgpData = async (): Promise<void> => {
-			try {
-				const response = await fetch(`/api/ogp?url=${encodeURIComponent(url)}`);
-				const data = await response.json();
+	const ogpData = data?.success && data.ogp ? { ...data.ogp, url } : null;
 
-				if (data.success && data.ogp) {
-					setOgpData({ ...data.ogp, url });
-				} else {
-					setError(true);
-				}
-			} catch {
-				setError(true);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchOgpData();
-	}, [url]);
-
-	if (loading) {
+	if (isLoading) {
 		return (
 			<div className="my-4">
 				<div className="block no-underline">

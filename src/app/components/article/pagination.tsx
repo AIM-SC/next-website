@@ -28,26 +28,27 @@ export const Pagination = ({
 	const isDisabled = (condition: boolean) =>
 		condition ? "opacity-50 pointer-events-none" : "";
 
+	const linkStyle =
+		"relative rounded-md bg-[#F6F3EA] p-2 px-5 text-sm shadow hover:opacity-70 md:p-2 md:px-5 md:text-lg";
+	const iconStyle =
+		"absolute top-1 right-2 bottom-0 md:top-auto md:right-2 md:bottom-[6px]";
+
 	return (
 		<ul className="mt-20 flex items-start justify-center space-x-3 md:space-x-4">
 			<li>
 				<Link
 					href={createHref(1)}
-					className={`relative rounded-md bg-[#F6F3EA] p-2 px-5 text-sm shadow hover:opacity-70 md:p-2 md:px-5 md:text-lg ${isDisabled(
-						currentPage === 1,
-					)}`}
+					className={`${isDisabled(currentPage === 1)} ${linkStyle}`}
 				>
-					<ChevronFirst className="absolute top-1 right-2 bottom-0 md:top-auto md:right-2 md:bottom-[6px]" />
+					<ChevronFirst className={`${iconStyle}`} />
 				</Link>
 			</li>
 			<li>
 				<Link
 					href={createHref(currentPage - 1)}
-					className={`relative rounded-md bg-[#F6F3EA] p-2 px-5 text-sm shadow hover:opacity-70 md:p-2 md:px-5 md:text-lg ${isDisabled(
-						currentPage === 1,
-					)}`}
+					className={`${isDisabled(currentPage === 1)} ${linkStyle}`}
 				>
-					<ChevronLeft className="absolute top-1 right-2 bottom-0 md:top-auto md:right-2 md:bottom-[6px]" />
+					<ChevronLeft className={`${iconStyle}`} />
 				</Link>
 			</li>
 			<li>
@@ -58,21 +59,17 @@ export const Pagination = ({
 			<li>
 				<Link
 					href={createHref(currentPage + 1)}
-					className={`relative rounded-md bg-[#F6F3EA] p-2 px-5 text-sm shadow hover:opacity-70 md:p-2 md:px-5 md:text-lg ${isDisabled(
-						currentPage === totalPages,
-					)}`}
+					className={`${isDisabled(currentPage === totalPages)} ${linkStyle}`}
 				>
-					<ChevronRight className="absolute top-1 right-2 bottom-0 md:top-auto md:right-2 md:bottom-[6px]" />
+					<ChevronRight className={`${iconStyle}`} />
 				</Link>
 			</li>
 			<li>
 				<Link
 					href={createHref(totalPages)}
-					className={`relative rounded-md bg-[#F6F3EA] p-2 px-5 text-sm shadow hover:opacity-70 md:p-2 md:px-5 md:text-lg ${isDisabled(
-						currentPage === totalPages,
-					)}`}
+					className={`${isDisabled(currentPage === totalPages)} ${linkStyle}`}
 				>
-					<ChevronLast className="absolute top-1 right-2 md:top-auto md:right-2 md:bottom-[6px]" />
+					<ChevronLast className={`${iconStyle}`} />
 				</Link>
 			</li>
 		</ul>

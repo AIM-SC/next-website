@@ -1,38 +1,22 @@
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import FooterItem from "./footerItem";
 
 const footer = () => {
 	return (
 		<div>
 			<div className="mt-6 flex flex-col items-center justify-center gap-3 font-bold sm:flex-row">
-				<Link
-					href="https://www.aoyama.ac.jp/"
-					target="_blank"
-					rel="noreferrer"
-					className="flex items-center gap-1"
-				>
-					青山学院大学公式サイト
-					<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="size-4" />
-				</Link>
-				<Link
-					href="https://www.aim.aoyama.ac.jp/faq/"
-					target="_blank"
-					rel="noreferrer"
-					className="flex items-center gap-1"
-				>
-					よくある質問
-					<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="size-4" />
-				</Link>
-				<Link
-					href="https://www.aim.aoyama.ac.jp/customer_support/"
-					target="_blank"
-					rel="noreferrer"
-					className="flex items-center gap-1"
-				>
-					お問い合わせ
-					<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="size-4" />
-				</Link>
+				<FooterItem
+					link="https://www.aoyama.ac.jp/"
+					text="青山学院大学公式サイト"
+				/>
+				<FooterItem
+					link="https://www.aim.aoyama.ac.jp/faq/"
+					text="よくある質問"
+				/>
+				<FooterItem
+					link="https://www.aim.aoyama.ac.jp/customer_support/"
+					text="お問い合わせ"
+				/>
 			</div>
 			<div className="text-center text-xs">
 				<div className="mt-4">

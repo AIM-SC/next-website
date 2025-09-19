@@ -1,9 +1,9 @@
 import { XMLParser } from "fast-xml-parser";
-import SwitchMovieType from "../../components/switchMovieType";
+import SwitchMovieType from "../../components/movies/switchMovieType";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from "next";
-import Heading from "@/app/components/heading";
+import Heading from "@/app/components/layout/heading/heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 

@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Tag from "./tag";
 
-export default function Card({ content }: { content: ArticleType }) {
+export default function ArticleCard({ content }: { content: ArticleType }) {
 	return (
 		<div className="relative mx-auto w-full flex-shrink-0 rounded-xl bg-[#F6F3EA] p-5 shadow hover:opacity-70">
 			<Image

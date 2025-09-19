@@ -1,7 +1,7 @@
 import type { ArticleType, ArticleWithSourceType } from "@/types/microcms";
 import Link from "next/link";
-import Card from "./card";
 import { Pagination } from "./pagination";
+import ArticleCard from "./articleCard";
 
 type ArticlelistProps = {
 	contents: ArticleType[] | ArticleWithSourceType[];
@@ -30,7 +30,7 @@ export default function ArticleList({
 
 					return (
 						<Link key={content.id} href={href} className="mx-auto block w-fit">
-							<Card content={content} />
+							<ArticleCard content={content} />
 						</Link>
 					);
 				})}

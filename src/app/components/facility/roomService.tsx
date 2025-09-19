@@ -1,9 +1,9 @@
 "use client";
-import IntroCard from "@/app/components/introCard";
-import Rule from "@/app/components/rule";
+import IntroCard from "@/app/components/facility/introCard";
+import Rule from "@/app/components/facility/rule";
 import Image from "next/image";
 
-export default function SwitchCampus() {
+export default function RoomService() {
 	const introCards = [
 		{
 			image: "/images/introduce/floor01.webp",
@@ -187,7 +187,7 @@ export default function SwitchCampus() {
 	];
 
 	return (
-		<div className="w-full bg-[#F0EBDC]">
+		<div>
 			<div className="rounded-md bg-white">
 				<div>
 					<div className="flex flex-col gap-6 p-6">
@@ -234,10 +234,9 @@ export default function SwitchCampus() {
 							))}
 						</div>
 					</div>
-
-					<h2 className="pt-5 text-center font-bold text-xl">
-						利用にあたってのお願い
-					</h2>
+					<div className="text-center">
+						<h2 className="my-6 font-bold text-xl">利用にあたってのお願い</h2>
+					</div>
 					<div className="p-8 sm:px-[20%] md:p-8 lg:px-[8%] xl:px-8 2xl:px-[4%]">
 						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
 							{rules.map((rule) => (

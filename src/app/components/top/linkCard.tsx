@@ -1,9 +1,9 @@
-import Title from "./title";
 import Link from "next/link";
 import {
 	FontAwesomeIcon,
 	type FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
+import SectionTitle from "./sectionTitle";
 
 type Props = {
 	icon: FontAwesomeIconProps["icon"];
@@ -13,7 +13,7 @@ type Props = {
 	link: string;
 };
 
-const Box = ({ icon, title, subtitle, description, link }: Props) => {
+const LinkCard = ({ icon, title, subtitle, description, link }: Props) => {
 	return (
 		<div className="w-full rounded-lg bg-white shadow-md transition-opacity hover:shadow-lg">
 			<Link href={link} className="items-center p-4">
@@ -21,7 +21,7 @@ const Box = ({ icon, title, subtitle, description, link }: Props) => {
 					<FontAwesomeIcon icon={icon} className="size-[100px]" />
 				</div>
 				<div className="px-2 text-center">
-					<Title maintitle={title} subtitle={subtitle} />
+					<SectionTitle maintitle={title} subtitle={subtitle} />
 					<p className="whitespace-pre-line">{description}</p>
 				</div>
 			</Link>
@@ -29,4 +29,4 @@ const Box = ({ icon, title, subtitle, description, link }: Props) => {
 	);
 };
 
-export default Box;
+export default LinkCard;

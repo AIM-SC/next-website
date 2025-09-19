@@ -24,6 +24,9 @@ const StyledSwiper = styled(Swiper)`
   }
 `;
 
+const imageStyle: string =
+	"aspect-[16/9] w-full object-cover md:aspect-[2/1] lg:aspect-[5/2]";
+
 const ClientSwiper = () => (
 	<StyledSwiper
 		modules={[Navigation, Pagination, A11y, Autoplay]} // Autoplayをモジュールに追加
@@ -40,7 +43,7 @@ const ClientSwiper = () => (
 				alt="Slide-1"
 				width={800}
 				height={450}
-				className="aspect-[16/9] w-full object-cover md:aspect-[2/1] lg:aspect-[5/2]"
+				className={imageStyle}
 			/>
 		</SwiperSlide>
 		<SwiperSlide>
@@ -49,7 +52,7 @@ const ClientSwiper = () => (
 				alt="Slide-1"
 				width={800}
 				height={450}
-				className="aspect-[16/9] w-full object-cover md:aspect-[2/1] lg:aspect-[5/2]"
+				className={imageStyle}
 			/>
 		</SwiperSlide>
 		<SwiperSlide>
@@ -58,7 +61,7 @@ const ClientSwiper = () => (
 				alt="Slide-1"
 				width={800}
 				height={450}
-				className="aspect-[16/9] w-full object-cover md:aspect-[2/1] lg:aspect-[5/2]"
+				className={imageStyle}
 			/>
 		</SwiperSlide>
 	</StyledSwiper>

@@ -1,9 +1,9 @@
-import Articlelist from "@/app/components/articleList";
+import Articlelist from "@/app/components/article/articleList";
 import { LIMIT } from "@/libs/constants";
 import { getCategoryArticleList, getTagList } from "@/libs/microcms";
-import Heading from "@/app/components/heading";
+import Heading from "@/app/components/layout/heading/heading";
 import { notFound } from "next/navigation";
-import Taglist from "@/app/components/tagList";
+import Taglist from "@/app/components/article/tagList";
 
 export async function generateMetadata({
 	params: { tagId },
@@ -106,7 +106,7 @@ export default async function CategoryArticleList({
 	if (currentPage > maxPage || Number.isNaN(currentPage) || currentPage < 1) {
 		console.error("Page exceeds maxPage:", { currentPage, maxPage });
 		return (
-			<div className="py-[75px] font-bold text-[20px] text-black leading-10">
+			<div className="py-[75px]">
 				<Heading
 					engTitle="ARTICLES"
 					jpTitle={

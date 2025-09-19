@@ -1,9 +1,9 @@
-import ArticleList from "@/app/components/articleList";
+import ArticleList from "@/app/components/article/articleList";
 import { LIMIT } from "@/libs/constants";
 import { getBlogList, getTagList } from "@/libs/microcms";
 import type { Metadata } from "next";
-import Heading from "@/app/components/heading";
-import Taglist from "@/app/components/tagList";
+import Heading from "@/app/components/layout/heading/heading";
+import Taglist from "@/app/components/article/tagList";
 
 export const metadata: Metadata = {
 	title: "業務ブログ",
@@ -45,8 +45,8 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 
 	if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
 		return (
-			<div className="py-[75px] font-bold text-[20px] text-black leading-10">
-				<Heading engTitle="BLOG" jpTitle="業務ブログ" />
+			<div className="py-[75px]">
+				<Heading engTitle="BLOGS" jpTitle="業務ブログ" />
 				<h1 className="mb-2 font-bold text-xl md:text-2xl">
 					記事が見つかりません
 				</h1>

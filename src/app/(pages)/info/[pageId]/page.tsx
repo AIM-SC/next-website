@@ -1,9 +1,9 @@
-import Articlelist from "@/app/components/articleList";
+import Articlelist from "@/app/components/article/articleList";
 import { LIMIT } from "@/libs/constants";
 import { getInfoList, getTagList } from "@/libs/microcms";
 import type { Metadata } from "next";
-import Heading from "@/app/components/heading";
-import Taglist from "@/app/components/tagList";
+import Heading from "@/app/components/layout/heading/heading";
+import Taglist from "@/app/components/article/tagList";
 
 export const metadata: Metadata = {
 	title: "お知らせ",

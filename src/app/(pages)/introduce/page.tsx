@@ -1,5 +1,5 @@
-import Heading from "@/app/components/heading";
-import SwitchCampus from "../../components/switchCampus";
+import Heading from "@/app/components/layout/heading/heading";
+import RoomService from "../../components/facility/roomService";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,14 +9,14 @@ export const metadata: Metadata = {
 
 const moviePage = async () => {
 	return (
-		<div className="py-[75px] text-[20px] text-black leading-10">
+		<div className="py-[75px]">
 			<Heading
 				engTitle="FACILITIES"
 				jpTitle="施設紹介"
 				abst="設備について詳しくご紹介します"
 			/>
-			<div className="min-h-screen bg-[#F0EBDC]" id="jumpToMap">
-				<SwitchCampus />
+			<div id="jumpToMap">
+				<RoomService />
 			</div>
 		</div>
 	);

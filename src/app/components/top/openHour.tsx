@@ -1,4 +1,4 @@
-import Title from "./title";
+import SectionTitle from "./sectionTitle";
 
 type Location = {
 	id: string;
@@ -13,11 +13,11 @@ type Props = {
 	locations: Location[];
 };
 
-const Time = ({ title, notes, subtitle, locations }: Props) => {
+const OpenHour = ({ title, notes, subtitle, locations }: Props) => {
 	return (
 		<div className="rounded-lg bg-white p-6">
 			<div className="mb-4 border-b text-center">
-				<Title maintitle={title} subtitle={subtitle} notes={notes} />
+				<SectionTitle maintitle={title} subtitle={subtitle} notes={notes} />
 			</div>
 			<div className="space-y-4 ">
 				{locations.map((location) => (
@@ -33,4 +33,4 @@ const Time = ({ title, notes, subtitle, locations }: Props) => {
 	);
 };
 
-export default Time;
+export default OpenHour;

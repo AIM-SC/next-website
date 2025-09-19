@@ -4,7 +4,7 @@ type Props = {
 	notes?: string;
 };
 
-const Title = ({ maintitle, subtitle, notes }: Props) => {
+const SectionTitle = ({ maintitle, subtitle, notes }: Props) => {
 	return (
 		<div className="w-full rounded-md bg-white">
 			<div className="p-3">
@@ -20,4 +20,4 @@ const Title = ({ maintitle, subtitle, notes }: Props) => {
 	);
 };
 
-export default Title;
+export default SectionTitle;
