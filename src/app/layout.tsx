@@ -30,7 +30,10 @@ export const metadata: Metadata = {
 		"技術",
 	],
 	openGraph: {
-		title: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
+		title: {
+			template: "%s | AIM Commons 相模原",
+			default: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
+		},
 		description:
 			"AIM Commons 相模原とは、青山学院大学情報メデイアセンターに属している、ITに特化した学習用の施設及びそれに付帯するサービスの総称です。",
 		url: "https://commons.aim.aoyama.ac.jp",
@@ -40,10 +43,27 @@ export const metadata: Metadata = {
 				width: "200",
 				height: "100",
 				url: "https://commons.aim.aoyama.ac.jp/images/logo/nav_logo.svg",
+				alt: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
 			},
 		],
 		locale: "jp",
 		type: "article",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: {
+			template: "%s | AIM Commons 相模原",
+			default: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
+		},
+		description:
+			"AIM Commons 相模原とは、青山学院大学情報メデイアセンターに属している、ITに特化した学習用の施設及びそれに付帯するサービスの総称です。",
+		site: "@AIM Commons 相模原",
+		images: {
+			url: "https://commons.aim.aoyama.ac.jp/images/logo/nav_logo.svg",
+			width: 1200,
+			height: 630,
+			alt: "AIM Commons 相模原 | 青山学院大学情報メディアセンター",
+		},
 	},
 };
 
