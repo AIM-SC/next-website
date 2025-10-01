@@ -4,10 +4,19 @@ import { getBlogList, getTagList } from "@/libs/microcms";
 import type { Metadata } from "next";
 import Heading from "@/app/components/layout/heading/heading";
 import Taglist from "@/app/components/article/tagList";
+import PageWrapper from "@/app/components/layout/pageWrapper";
 
 export const metadata: Metadata = {
 	title: "業務ブログ",
 	description: "AIM Commons 相模原スタッフからの発信です",
+	openGraph: {
+		title: "業務ブログ",
+		description: "AIM Commons 相模原スタッフからの発信です",
+	},
+	twitter: {
+		title: "業務ブログ",
+		description: "AIM Commons 相模原スタッフからの発信です",
+	},
 };
 
 export async function generateStaticParams() {
@@ -45,7 +54,7 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 
 	if (Number.isNaN(currentPage) || currentPage < 1 || currentPage > maxPage) {
 		return (
-			<div className="py-[75px]">
+			<PageWrapper>
 				<Heading engTitle="BLOGS" jpTitle="業務ブログ" />
 				<h1 className="mb-2 font-bold text-xl md:text-2xl">
 					記事が見つかりません
@@ -54,12 +63,12 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 					現在、このページに記事はありません。
 				</p>
 				<Taglist tagContents={tagContents} />
-			</div>
+			</PageWrapper>
 		);
 	}
 
 	return (
-		<div className="py-[75px]">
+		<PageWrapper>
 			<Heading
 				engTitle="BLOGS"
 				jpTitle="業務ブログ"
@@ -72,6 +81,6 @@ export default async function Blog({ params }: { params: { pageId: string } }) {
 				totalCount={totalCount}
 			/>
 			<Taglist tagContents={tagContents} />
-		</div>
+		</PageWrapper>
 	);
 }

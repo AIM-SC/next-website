@@ -4,6 +4,7 @@ import { getCategoryArticleList, getTagList } from "@/libs/microcms";
 import Heading from "@/app/components/layout/heading/heading";
 import { notFound } from "next/navigation";
 import Taglist from "@/app/components/article/tagList";
+import PageWrapper from "@/app/components/layout/pageWrapper";
 
 export async function generateMetadata({
 	params: { tagId },
@@ -12,13 +13,6 @@ export async function generateMetadata({
 }) {
 	const tagListResponse = await getTagList();
 
-	if (!tagListResponse) {
-		return {
-			title: "業務ブログ",
-			description: "AIM Commons 相模原スタッフからの発信です",
-		};
-	}
-
 	const currentTag = tagListResponse.find(
 		(tag: { path: string }) => tag.path === tagId,
 	);
@@ -26,8 +20,16 @@ export async function generateMetadata({
 	if (currentTag) {
 		const tagName = currentTag.title;
 		return {
-			title: tagName,
+			title: `${tagName}`,
 			description: `${tagName}に関連する記事一覧です`,
+			openGraph: {
+				title: `${tagName}`,
+				description: `${tagName}に関連する記事一覧です`,
+			},
+			twitter: {
+				title: `${tagName}`,
+				description: `${tagName}に関連する記事一覧です`,
+			},
 		};
 	}
 }
@@ -106,7 +108,7 @@ export default async function CategoryArticleList({
 	if (currentPage > maxPage || Number.isNaN(currentPage) || currentPage < 1) {
 		console.error("Page exceeds maxPage:", { currentPage, maxPage });
 		return (
-			<div className="py-[75px]">
+			<PageWrapper>
 				<Heading
 					engTitle="ARTICLES"
 					jpTitle={
@@ -123,12 +125,12 @@ export default async function CategoryArticleList({
 					現在、このページに記事はありません。
 				</p>
 				<Taglist tagContents={tagContents} />
-			</div>
+			</PageWrapper>
 		);
 	}
 
 	return (
-		<div className="py-[75px]">
+		<PageWrapper>
 			<Heading
 				engTitle="ARTICLES"
 				jpTitle={
@@ -146,6 +148,6 @@ export default async function CategoryArticleList({
 				tagId={tagPath}
 			/>
 			<Taglist tagContents={tagContents} />
-		</div>
+		</PageWrapper>
 	);
 }

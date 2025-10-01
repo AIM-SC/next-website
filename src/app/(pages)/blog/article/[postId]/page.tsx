@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { draftMode, cookies } from "next/headers"; // cookiesをインポート
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import PageWrapper from "@/app/components/layout/pageWrapper";
 
 export async function generateMetadata({
 	params,
@@ -38,13 +39,13 @@ export async function generateMetadata({
 			title: `${blog.title}`,
 			description: `${blog.title}に関する記事です`,
 			type: "article",
-			url: `https://commons.aim.aoyama.ac.jp/blog/${params.postId}`,
+			url: `https://commons.aim.aoyama.ac.jp/blog/article/${params.postId}`,
 			siteName: "AIM Commons 相模原",
 			images: {
-				url: "https://commons.aim.aoyama.ac.jp/images/logo/logo_commons.jpeg",
+				url: blog.thumbnail.url,
 				width: 1200,
 				height: 630,
-				alt: blog.title,
+				alt: `${blog.title} | AIM Commons 相模原`,
 			},
 		},
 		twitter: {
@@ -53,10 +54,10 @@ export async function generateMetadata({
 			description: `${blog.title}に関する記事です`,
 			site: "@AIM Commons 相模原",
 			images: {
-				url: "https://commons.aim.aoyama.ac.jp/images/logo/logo_commons.jpeg",
+				url: blog.thumbnail.url,
 				width: 1200,
 				height: 630,
-				alt: blog.title,
+				alt: `${blog.title} | AIM Commons 相模原`,
 			},
 		},
 	};
@@ -116,10 +117,10 @@ export default async function StaticDetailPage({
 					</Link>
 				</>
 			)}
-			<div className="py-[75px]">
+			<PageWrapper>
 				<Heading engTitle="BLOGS" jpTitle="業務ブログ" />
 				<Article content={article} />
-			</div>
+			</PageWrapper>
 		</>
 	);
 }

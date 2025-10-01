@@ -5,10 +5,19 @@ import type { Metadata } from "next";
 import JobTitle from "@/app/components/recruit/jobTitle";
 import JobSection from "@/app/components/recruit/jobSection";
 import HeaderCard from "@/app/components/layout/heading/headerCard";
+import PageWrapper from "@/app/components/layout/pageWrapper";
 
 export const metadata: Metadata = {
 	title: "学生スタッフ採用",
 	description: "AIM Commons 相模原の採用情報を紹介します",
+	openGraph: {
+		title: "学生スタッフ採用",
+		description: "AIM Commons 相模原の採用情報を紹介します",
+	},
+	twitter: {
+		title: "学生スタッフ採用",
+		description: "AIM Commons 相模原の採用情報を紹介します",
+	},
 };
 
 const jobIntroductionPage = () => {
@@ -180,7 +189,7 @@ const jobIntroductionPage = () => {
 	];
 
 	return (
-		<div className="py-[75px]">
+		<PageWrapper>
 			<Heading
 				engTitle="RECRUIT"
 				jpTitle="学生スタッフ採用"
@@ -259,7 +268,7 @@ const jobIntroductionPage = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</PageWrapper>
 	);
 };
 

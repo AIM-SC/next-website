@@ -6,10 +6,19 @@ import type { Metadata } from "next";
 import Heading from "@/app/components/layout/heading/heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import PageWrapper from "@/app/components/layout/pageWrapper";
 
 export const metadata: Metadata = {
 	title: "YouTube動画",
 	description: "AIM Commonsが作成している配信動画の一覧です",
+	openGraph: {
+		title: "YouTube動画",
+		description: "AIM Commonsが作成している配信動画の一覧です",
+	},
+	twitter: {
+		title: "YouTube動画",
+		description: "AIM Commonsが作成している配信動画の一覧です",
+	},
 };
 
 type VideoId = string;
@@ -48,7 +57,7 @@ const moviePage = async () => {
 	shortVideoIds = shortVideoIds.slice(0, 9);
 
 	return (
-		<div className="py-[75px]">
+		<PageWrapper>
 			<Heading
 				engTitle="MOVIES"
 				jpTitle="YouTube動画"
@@ -72,7 +81,7 @@ const moviePage = async () => {
 					<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 				</Link>
 			</Button>
-		</div>
+		</PageWrapper>
 	);
 };
 
